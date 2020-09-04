@@ -4,68 +4,46 @@ import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
 import ExternalLink from '@common/ExternalLink';
+import parkRules from '../../../static/park_rules/park_rules.pdf' 
+
 
 const FAQS = [
   {
-    title: 'What tech does Gatsby use?',
+    title: 'What are the lot fees at Hidden Acres?',
     content: () => (
       <>
-        Enjoy the power of the latest web technologies – React.js , Webpack ,
-        modern JavaScript and CSS and more — all set up and waiting for you to
-        start building
+        Lot fees start at $35 a night for daily visitors. More information about rates can be found in our <ExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=b28521e1-060f-4b0b-a205-821d4aa3f37f"> Reservation Portal</ExternalLink>.
       </>
     ),
   },
   {
-    title: 'Where can you source data from?',
+    title: 'What are the dimension of the lots at Hidden Acres?',
     content: () => (
       <>
-        Gatsby’s rich data plugin ecosystem lets you build sites with the data
-        you want — from one or many sources: Pull data from headless CMSs, SaaS
-        services, APIs, databases, your file system, and more directly into your
-        pages using GraphQL.
+        Lots start at 25' x 50', and our largest lots are 30' x 65'. 
       </>
     ),
   },
   {
-    title: 'How do I scale Gatsby sites?',
+    title: 'Is Hidden Acres pet friendly?',
     content: () => (
       <>
-        Gatsby.js is Internet Scale. Forget complicated deploys with databases
-        and servers and their expensive, time-consuming setup costs,
-        maintenance, and scaling fears. Gatsby.js builds your site as “static”
-        files which can be deployed easily on dozens of services.
+        Yes we are! We allow for cats, dogs under 30 pounds, and all service animals. You can find more information in the <a href={parkRules}>park rules</a>.
       </>
     ),
   },
   {
-    title: 'How does do I future-proof my website?',
+    title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
-        Do not build a website with last decade’s tech. The future of the web is
-        mobile, JavaScript and APIs—the{` `}
-        <ExternalLink href="https://jamstack.org/">JAMstack</ExternalLink>.
-        Every website is a web app and every web app is a website. Gatsby.js is
-        the universal JavaScript framework you’ve been waiting for.
-      </>
-    ),
-  },
-  {
-    title: 'What exactly does Gatsby build?',
-    content: () => (
-      <>
-        Gatsby.js is a static PWA (Progressive Web App) generator. You get code
-        and data splitting out-of-the-box. Gatsby loads only the critical HTML,
-        CSS, data, and JavaScript so your site loads as fast as possible. Once
-        loaded, Gatsby prefetches resources for other pages so clicking around
-        the site feels incredibly fast.
+        You can find all our rules here: <a href={parkRules}>park rules</a>.
       </>
     ),
   },
 ];
 
 const Faq = () => (
-  <Section id="faq">
+  <Section id="faq" accent='secondary'>
     <Container>
       <h1 style={{ marginBottom: 40 }}>Frequently Asked Questions</h1>
       <div>

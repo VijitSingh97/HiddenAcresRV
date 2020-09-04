@@ -12,16 +12,16 @@ import TwitterIcon from '@static/icons/twitter.svg';
 
 const SOCIAL = [
   {
-    icon: GithubIcon,
-    link: 'https://github.com/ajayns/gatsby-absurd',
-  },
-  {
     icon: InstagramIcon,
-    link: 'https://instagram.com/ajay_ns',
+    link: 'https://instagram.com/Hidden_Acres_RV',
   },
   {
     icon: TwitterIcon,
-    link: 'https://twitter.com/ajayns08',
+    link: 'https://twitter.com/Hidden_Acres_RV',
+  },
+  {
+    icon: GithubIcon,
+    link: 'https://github.com/VijitSingh97',
   },
 ];
 
@@ -30,8 +30,8 @@ const Footer = () => (
     query={graphql`
       query {
         art_pot: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "customers_pot" }
+          sourceInstanceName: { eq: "park" }
+          name: { eq: "open_water" }
         ) {
           childImageSharp {
             fluid(maxWidth: 960) {
@@ -52,12 +52,12 @@ const Footer = () => (
         <FooterWrapper>
           <StyledContainer>
             <Copyright>
-              <h2>Absurd</h2>
+              <h2>Hidden Acres</h2>
               <span>
-                Illustrations by
+                Webpage created by
                 {` `}
-                <ExternalLink href="https://twitter.com/diana_valeanu">
-                  @diana_valeanu
+                <ExternalLink href="https://www.linkedin.com/in/vijit-singh/">
+                  Vijit Singh
                 </ExternalLink>
               </span>
             </Copyright>

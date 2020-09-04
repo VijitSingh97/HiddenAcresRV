@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-absurd",
+  "name": "hiddenacresrvpark",
   "private": true,
-  "description": "An absurd starter for Gatsby",
+  "description": "Website for Hidden Acres RV Park located in Princeton, TX",
   "version": "0.1.0",
-  "author": "Ajay NS <ajay.ns@outlook.com>",
+  "author": "Vijit Singh <vijit.n.singh@gmail.com>",
   "dependencies": {
     "@svgr/webpack": "^4.1.0",
     "gatsby": "^2.0.76",

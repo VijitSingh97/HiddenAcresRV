@@ -9,9 +9,9 @@ const About = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
+        park_hidden: file(
+          sourceInstanceName: { eq: "park" }
+          name: { eq: "hidden" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -20,9 +20,9 @@ const About = () => (
           }
         }
 
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
+        park_close: file(
+          sourceInstanceName: { eq: "park" }
+          name: { eq: "close" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -31,9 +31,9 @@ const About = () => (
           }
         }
 
-        art_ideas: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "ideas" }
+        park_space: file(
+          sourceInstanceName: { eq: "park" }
+          name: { eq: "space" }
         ) {
           childImageSharp {
             fluid(maxWidth: 760) {
@@ -44,48 +44,45 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
+      <Section id="about" accent='secondary'>
         <Container>
           <Grid>
             <div>
-              <h2>Speed past the competition</h2>
+              <h2>Quiet and Friendly</h2>
               <p>
-                Gatsby.js builds the fastest possible website. Instead of
-                waiting to generate pages when requested, pre-build pages and
-                lift them into a global cloud of servers — ready to be delivered
-                instantly to your users wherever they are.
+                No freeway - no railroad - no street lights. Clear view of the stars at night. 
+                Enjoy the company of a small community of 24 RVs.
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_fast.childImageSharp.fluid} />
+              <Img fluid={data.park_hidden.childImageSharp.fluid} />
             </Art>
           </Grid>
           <Grid inverse>
             <Art>
-              <Img fluid={data.art_learn.childImageSharp.fluid} />
+              <Img fluid={data.park_hidden.childImageSharp.fluid} />
             </Art>
             <div>
-              <h2>Nothing new to learn here</h2>
+              <h2>Suburban Staples Nearby</h2>
               <p>
-                Enjoy the power of the latest web technologies – React.js ,
-                Webpack , modern JavaScript and CSS and more — all set up and
-                waiting for you to start building.
+                Located on Lake Lavon just 15 miles east of Plano, and 15 miles south east of McKinney. 
+                Close to boat ramps and swimming areas. Downtown Dallas is a short 30 minute drive.
+                You are only 15 minutes to major mall, movie complex and restaurants. Gas and propane are nearby.
               </p>
             </div>
           </Grid>
           <Grid>
             <div>
-              <h2>Grow and build your ideas</h2>
+              <h2>Renowned Local Attractions</h2>
               <p>
-                Waste no more time on tooling and performance. Focus on the the
-                site you want to build and nothing more.
-                <br />
-                <br />
-                Gatsby is fast in every way that matters.
+              There are several local and fun attractions located within a short drive of the RV park! The Allen outlet mall,
+              the American Airlines Center, the Fairview Town Center, Firewheel Town Center, Hawaiian Falls water park,
+              the Mesquite Championship Rodeo, the President George W. Bush Library, Southfork Ranch, In-Synch Exotic Animal Zoo,
+              the Heard Natural Science Museum & Wildlife Sanctuary, and so much more!
               </p>
             </div>
             <Art>
-              <Img fluid={data.art_ideas.childImageSharp.fluid} />
+              <Img fluid={data.park_space.childImageSharp.fluid} />
             </Art>
           </Grid>
         </Container>

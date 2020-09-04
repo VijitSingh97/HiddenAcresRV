@@ -2,13 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'An absurd gatsby starter',
-  title: 'Absurd',
+  description: 'Website for Hidden Acres RV Park located in Princeton, TX',
+  title: 'Hidden Acres RV Park',
   url: '',
-  author: 'ajayns',
-  keywords: ['gatsby', 'site', 'absurd'],
+  author: 'Vijit Singh',
+  keywords: ['Hidden Acres RV Park', 'RV Park', 'Hidden Acres', 'RV Park Princeton', 'RV Park Lavon'],
   img: '',
-  twitterId: '@ajayns_',
+  twitterId: '@DatTurban',
   facebookId: '',
 };
 

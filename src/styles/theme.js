@@ -13,14 +13,14 @@ const theme = {
   color: {
     white: {
       regular: '#FFFFFF',
-      dark: '#F6F6F6',
+      dark: '#dfdbe0',
     },
     black: {
       lighter: '#ABA8AF',
       light: '#564F62',
       regular: '#211E26',
     },
-    primary: '#8bd8ed',
+    primary: '#eb6234',
   },
   screen: {
     xs: '575px',

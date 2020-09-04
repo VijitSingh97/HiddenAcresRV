@@ -3,20 +3,18 @@ import React from 'react';
 import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
 
-import Header from '@sections/Header';
+import Reservation from '@sections/Reservation';
 import About from '@sections/About';
-import Brands from '@sections/Brands';
-import Team from '@sections/Team';
+import Amenities from '@sections/Amenities';
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
 
 const IndexPage = () => (
   <Layout>
     <Navbar />
-    <Header />
+    <Reservation />
     <About />
-    <Brands />
-    <Team />
+    <Amenities />
     <Faq />
     <Footer />
   </Layout>
