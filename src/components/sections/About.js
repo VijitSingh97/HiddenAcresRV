@@ -60,7 +60,7 @@ const About = () => (
           </Grid>
           <Grid inverse>
             <Art>
-              <Img fluid={data.park_hidden.childImageSharp.fluid} />
+              <Img fluid={data.park_close.childImageSharp.fluid} />
             </Art>
             <div>
               <h2>Suburban Staples Nearby</h2>

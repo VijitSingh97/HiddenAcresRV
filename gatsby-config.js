@@ -1,7 +1,18 @@
 const path = require('path');
 
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   plugins: [
+    {
+      resolve: `gatsby-source-googlemaps-static`,
+      options: {
+          key: process.env.GOOGLE_MAPS_STATIC_API_KEY,
+          center: `33.063936, -96.512772`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-svgr`,

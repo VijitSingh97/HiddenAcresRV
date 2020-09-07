@@ -4,6 +4,7 @@ import Layout from '@common/Layout';
 import Navbar from '@common/Navbar';
 
 import Reservation from '@sections/Reservation';
+import Location from '@sections/Location';
 import About from '@sections/About';
 import Amenities from '@sections/Amenities';
 import Faq from '@sections/Faq';
@@ -13,6 +14,7 @@ const IndexPage = () => (
   <Layout>
     <Navbar />
     <Reservation />
+    <Location />
     <About />
     <Amenities />
     <Faq />
