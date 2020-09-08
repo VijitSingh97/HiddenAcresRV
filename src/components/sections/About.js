@@ -77,7 +77,7 @@ const About = () => (
               <p>
               There are several local and fun attractions located within a short drive of the RV park! The Allen outlet mall,
               the American Airlines Center, the Fairview Town Center, Firewheel Town Center, Hawaiian Falls water park,
-              the Mesquite Championship Rodeo, the President George W. Bush Library, Southfork Ranch, In-Synch Exotic Animal Zoo,
+              the Mesquite Championship Rodeo, the President George W. Bush Library, Southfork Ranch, In-Sync Exotic Animal Zoo,
               the Heard Natural Science Museum & Wildlife Sanctuary, and so much more!
               </p>
             </div>
