@@ -2,11 +2,11 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'Website for Hidden Acres RV Park located in Princeton, TX',
-  title: 'Hidden Acres RV Park',
+  description: 'Website for Hidden Acres RV Campground located in Princeton, TX',
+  title: 'Hidden Acres RV Campground',
   url: '',
   author: 'Vijit Singh',
-  keywords: ['Hidden Acres RV Park', 'RV Park', 'Hidden Acres', 'RV Park Princeton', 'RV Park Lavon'],
+  keywords: ['Hidden Acres RV Campground', 'RV Park', 'Hidden Acres', 'RV Park Princeton', 'RV Park Lavon'],
   img: '',
   twitterId: '@DatTurban',
   facebookId: '',

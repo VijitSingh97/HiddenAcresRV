@@ -40,7 +40,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Hidden Acres RV Park`,
+        name: `Hidden Acres RV Campground`,
         short_name: `Hidden Acres`,
         start_url: `/`,
         background_color: `#8bd8ed`,
