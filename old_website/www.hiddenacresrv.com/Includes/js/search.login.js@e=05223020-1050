@@ -1,0 +1,582 @@
+﻿var vMoveCount = 0;
+var vListMenuBackgroundColor = null;
+/******************** Login Event ***************************/
+$(window).on('load', function () {
+    window.removeEventListener('message', messageHandler, true);
+    UpdateLoginStatus();
+    //$(".ulMenu").show();
+    //$('a.Login_Menu').click(function () {
+    //    CallLoginDialog(isLoginStatus());
+    //});
+    $('a.LogOutMenu_out').click(function () {
+        CallLoginDialog(true);
+    });
+    $('a.LogInMenu_in').click(function () {
+        CallLoginDialog(false);
+    });
+
+    $('a.My_Account_Menu').click(function() { });
+
+    $('td.My_Account_Menu').click(function() {
+        if (isLoginStatus()) {
+            MyAccountMenu(true);
+            ShowMyAccountList(this);
+        }
+    });
+
+    //    $('td.My_Account_Menu').mouseleave(function() {
+    //        if (isLoginStatus()) {
+    //            MyAccountMenu(false);
+    //        }
+    //    });
+
+    $('a.MyAccountBar').click(function() {
+        try {
+            var vObj = $(this);
+            var vParentObj = vObj.parent('li.MenuLinkHandler');
+            window.location.pathname = "/My-Account/" + vObj.attr('PathName');
+        } catch (ex) {
+            alert('My Account');
+        }
+    });
+
+    $('span.ListMyProfile').click(function() {
+        if (isLoginStatus()) {
+            try {
+                var vObj = $(this);
+                // active - menu
+                window.location.pathname = "/My-Account/" + vObj.attr('PathName');
+            } catch (ex) {
+                alert('My Account');
+            }
+        }
+    });
+
+    /*************************** My Account **********************************/
+    $('div.MyAccountListMenu').mouseover(function(event) {
+        if (isLoginStatus()) {
+            MyAccountMenu(true);
+        }
+    });
+
+    $('div.MyAccountListMenu').mouseleave(function(event) {
+        if (isLoginStatus()) {
+            var vObj = $('a.My_Account_Menu');
+            vMenuObj = $(this)
+            var vY = parseInt(vMenuObj.css('top'), 10);
+            var vClientY = parseInt(event.clientY, 10);
+            if (vClientY >= vY || vClientY <= vY - 30) {
+                vMenuObj.hide();
+                $('#MyAccountListMenuIFrame').hide();
+                MyAccountMenu(false);
+            }
+        }
+    });
+
+    $('td.My_Account_Menu').mouseover(function(event) {
+        if (isLoginStatus()) {
+            vMenuObj = $('div.MyAccountListMenu')
+            if (vMenuObj.is(':hidden') == false) {
+                vMenuObj.show();
+            }
+        }
+    });
+
+    $('td.My_Account_Menu').mouseleave(function(event) {
+        if (isLoginStatus()) {
+
+            var vScrolltop = $(window).scrollTop();
+            var vObj = $(this);
+            vMenuObj = $('div.MyAccountListMenu')
+
+            var vClientY = parseInt(event.clientY, 10) + vScrolltop;
+            var vY = parseInt(vMenuObj.css('top'), 10);
+
+            if (vClientY >= vY) {
+            } else {
+                vMenuObj.hide();
+                $('#MyAccountListMenuIFrame').hide();
+                MyAccountMenu(false);
+            }
+        }
+    });
+
+    $('td.MyMenuList').mouseover(function(event) {
+        if (isLoginStatus()) {
+            var vObj = $(this);
+            if (vListMenuBackgroundColor == null) {
+                vListMenuBackgroundColor = $('#zd_tMenuContainer').css('background-color');
+            }
+
+            if (vListMenuBackgroundColor == "rgb(255, 255, 255)" || vListMenuBackgroundColor == "white") {
+                vListMenuBackgroundColor = "rgb(37, 57, 108)";
+            }
+
+            vObj.css('background-color', vListMenuBackgroundColor);
+            vObj.css('color', '#ffffff');
+        }
+    });
+
+    $('td.MyMenuList').mouseleave(function(event) {
+        if (isLoginStatus()) {
+            var vObj = $(this);
+            vObj.css('background-color', '#ffffff');
+            vObj.css('color', '#25396C');
+        }
+    });
+
+    $('td.MyMenuList').click(function() {
+        if (isLoginStatus()) {
+            LinkMenuList($(this));
+        }
+    });
+
+    $('img.MyMenuList').click(function() {
+        if (isLoginStatus()) {
+            LinkMenuList($(this));
+        }
+    });
+
+    $('a.MyMenuList').click(function() {
+        if (isLoginStatus()) {
+            LinkMenuList($(this));
+        }
+    });
+     
+
+    $("#content").css("padding-right", "0px");
+    $("#content").css("float", "none");
+
+    CallActiveAcountDialog2();
+});
+
+function CallActiveAcountDialog2() {
+    try {
+        //var vLoginStatusObj = $('a.LoginStatus');
+        //if (vLoginStatusObj.html() != 'Logout') {
+        var vPathName = window.location.pathname.toUpperCase();
+        vPathName = vPathName.replace(GetParkName(true).toUpperCase(), "");
+        var vIndex = vPathName.indexOf('/ACTIVE-ACCOUNT/');
+        if (vIndex == 0 && vPathName.length == 52) {
+            var vUserID = vPathName.substr(16);
+            var vURL = "Login/Signup_Complete_Popup.aspx?UserID=" + vUserID;
+            openDlg(vURL, 430, 250, 'Signup_Complete');
+        }
+        //}
+    } catch (ex) {
+    }
+}
+
+ 
+
+function updateByDlg(vValue, vType) {
+    if (vType == "Signup_Complete") {
+        ReturnDomainPage();
+    }
+}
+
+function updateByDlg3(vValue, vType) {
+
+    try {
+//        alert(vValue);
+//        alert(vType);
+        switch (vType.toLowerCase()) {
+            case 'login_popup':
+                if (vValue.toLowerCase() == 'login_success') { 
+                    UpdateLoginStatus("Logout"); 
+                } else
+                    if (vValue.toLowerCase() == 'login_success2') {
+                        ReturnDomainPage();
+                } else
+                    if (vValue.toLowerCase() == 'signup_popup') {
+                        CallLoginDialog(false);
+                } else
+                    if (vValue.toLowerCase() == 'create_new_account') {
+                    var vURL = "Login/Signup_Popup.aspx";
+                        //  openDlg(vURL, 650, 750, 'Signup_Popup'); 
+                    //doEventListener();
+                    CallHttpsDialog(vURL, 650, 780, "Signup_Popup");
+                } else
+                    if (vValue.toLowerCase() == 'forgot') {
+                    var vURL = "Login/Forgot_Password_Popup.aspx";
+                   // openDlg(vURL, 590, 460, 'Forgot_Password_Popup');
+                    //doEventListener();
+                    CallHttpsDialog(vURL, 590, 460, 'Forgot_Password_Popup');
+                } else
+                    if (vValue.toLowerCase() == 'trouble') {
+                    var vURL = "Login/Logging_Trouble.aspx";
+                    //openDlg(vURL, 550, 460, 'Logging_Trouble');
+                    //doEventListener();
+                    CallHttpsDialog(vURL, 550, 490, 'Logging_Trouble');
+                } else
+                    if (vValue.toLowerCase() == 'email_delivery_notify') {
+                    var vURL = "Login/Email_Delivery_Notify.aspx";
+                    CallHttpsDialog(vURL, 550, 460, 'email_delivery_notify');
+                }
+                break;
+            case 'logging_trouble':
+                if (vValue.toLowerCase() == 'click_here1') {
+                     var vURL = "Login/Forgot_Password_Popup.aspx";
+                    //openDlg(vURL, 590, 460, 'Forgot_Password_Popup');
+                     //doEventListener();
+                     CallHttpsDialog(vURL, 590, 460, 'Forgot_Password_Popup');
+                } else
+                if (vValue.toLowerCase() == 'click_here2') {
+                    var vURL = "Login/Contact_Support.aspx";
+                    //openDlg(vURL, 530, 520, 'Signup_Popup');
+                  //  doEventListener();
+                    CallHttpsDialog(vURL, 530, 520, 'Signup_Popup');
+                } else
+                if (vValue.toLowerCase() == 'return') {
+                
+                }
+                break;
+            case 'logout_popup':
+                UpdateLoginStatus("login");
+                break;
+            case 'signup_success':
+                // var vURL = "Login/Signup_Complete_Popup.aspx?UserName=" + vValue;
+                // openDlg(vURL, 430, 250, 'Signup_Complete');
+                break;
+            case 'signup_popup':
+                {
+                    if (vValue.toLowerCase() == 'login_popup') 
+                    {
+                        CallLoginDialog(false);
+                    }
+                    break;
+                }
+        }
+    } catch (ex) {
+        alert('updateByDlg :' + ex.message);
+    }
+
+}
+
+function CallHttpsDialog(vURL, vWidth, vHeight, vType) {
+    try {
+        var vhostname = window.location.hostname; 
+        var vURL = "https://" + vhostname + "/" + vURL;
+        doEventListener();
+        openColorBoxDlg(vURL, vWidth, vHeight, vType);
+    } catch (ex) {
+        alert("CallLoginDialog:" + ex);
+    }
+}
+
+function GetParkName(vWithSplit)
+{
+    var vParkName = $(".ParkName").val();
+    if (vParkName.length>0)
+    {
+        if (vWithSplit)
+        {
+            return "/" + vParkName;
+        }
+        else {
+            return vParkName;
+        }        
+    }
+    return "";
+}
+
+var visOpenLoginDlg = false;
+/******************** Login Method ***************************/
+function CallLoginDialog(vIsLogin) {
+    try {
+        var vhostname = window.location.hostname;
+        if (vIsLogin == false) {
+            //var vURL = "/Login/Login_Popup.aspx";
+            //openDlg(vURL, 650, 380, 'Login_Popup');
+            var vURL = "https://" + vhostname + GetParkName(true) + "/Login/MemberLogin";
+            //openColorBoxDlg(vURL, 650, 350, "");
+           // var winObj = window.open(vURL, '', 'width=650,height=750,menubar=no,toolbar=no,location=no,directories=no,status=no,scrollbars=yes,resizable=yes');
+            //visOpenLoginDlg = true;
+            //doEventListener(); 
+           // openColorBoxDlg(vURL, 650, 450, "");
+            window.location.href = vURL;
+            
+            //var loop = setInterval(function () {
+            //    if (winObj.closed) {
+            //        clearInterval(loop);
+            //        updateByDlg3('Login_Success', 'Login_Popup');
+            //        //parent.location.reload();
+            //    }
+            //}, 1);
+        } else {
+            // CallLogout(); 
+           // $(".btnLogout").click();
+            var vURL = "/Login/Logout.aspx?ParkName=" + GetParkName(false);
+            window.location.href = "https://" + vhostname + vURL;
+            //openDlg(vURL, 1, 1, 'Logout_Popup');
+            //setTimeout("document.location.reload()", 500);
+        }
+    } catch (ex) {
+        alert("CallLoginDialog:" + ex);
+    }
+}
+
+function ShowMyAccountList(vObj) {
+
+    var vPos = absPos(vObj);
+    var vMenuObj = $('div.MyAccountListMenu');
+    var vIFrameObj = $('#MyAccountListMenuIFrame');
+    
+
+    vMenuObj.css('left', vPos.x);
+    vMenuObj.css('top', vPos.y + $(vObj).outerHeight());
+
+    vIFrameObj.css('top', vMenuObj.css('top'));
+    vIFrameObj.css('left', vMenuObj.css('left'));
+    vIFrameObj.css('width', vMenuObj.width() + 3);
+    vIFrameObj.css('height', vMenuObj.height() + 2);
+
+    vMenuObj.show();
+    vIFrameObj.show();
+
+    //var vURL = "Login/Signup_Popup.aspx";
+    //openDlg(vURL, 650, 560, 'Signup_Popup');
+
+    //var vURL = "Login/Create_New_Account.aspx";
+    //openDlg(vURL, 650, 720, 'Signup_Popup');
+
+    // var vURL = "Login/Forgot_Password_Popup.aspx";
+    // openDlg(vURL, 650, 560, 'Signup_Popup');
+
+    // var vURL = "Login/Contact_Support.aspx";
+    // openDlg(vURL, 650, 520, 'Signup_Popup');
+
+    //var vURL = "Login/Logging_Trouble.aspx";
+    //openDlg(vURL, 650, 580, 'Signup_Popup');
+
+    // procCONSUMERS_IsActive
+    // procCONSUMERS_GetByCO_USER_NAME
+    // procCONSUMERS_Insert
+}
+
+function MyAccountMenu(vIsOver) {
+
+    var vTdMy_Account_Menu = $('td.My_Account_Menu');
+    var vAMy_Account_Menu = $('a.My_Account_Menu');
+
+    if (vIsOver) {
+        vTdMy_Account_Menu.css('background-color', '#ffffff');
+        vAMy_Account_Menu.css('color', '#000000');
+
+        vTdMy_Account_Menu.css('border-top', 'solid 1px #CCCCCC');
+        vTdMy_Account_Menu.css('border-left', 'solid 1px #CCCCCC');
+        vTdMy_Account_Menu.css('border-right', 'solid 1px #CCCCCC');
+    } else {
+        var vfColor = $('#zd_tMenuContainer').attr('fcolor');
+
+        vTdMy_Account_Menu.css('background-color', 'Transparent');
+        if (vfColor == '') vfColor = '#ffffff';
+        vAMy_Account_Menu.css('color', vfColor);
+
+        vTdMy_Account_Menu.css('border-top', 'solid 1px Transparent');
+        vTdMy_Account_Menu.css('border-left', 'solid 1px Transparent');
+        vTdMy_Account_Menu.css('border-right', 'solid 1px Transparent');
+    }
+}
+
+function LinkMenuList(vObj) {
+    try {
+        var strPath = GetParkName(true) + "/My-Account/" + vObj.attr('PathName');
+        if (strPath != window.location.pathname) { 
+            showBlockLoading();
+            setTimeout(function () {
+                window.location.pathname = GetParkName(true) + "/My-Account/" + vObj.attr('PathName');
+            }, 120);
+        }
+    } catch (ex) {
+        alert('My Account');
+    }
+}
+
+function isLoginStatus() {
+    try {
+        var vLoginMenuObj = $('a.Login_Menu');
+        if (vLoginMenuObj.html() == 'Logout') return true;
+    } catch (ex) {}
+    return false;
+}
+
+function ReturnDomainPage() {
+    var vURL = null;
+    if (window.location.port == '') {
+        vURL = window.location.protocol + '//' + window.location.hostname + GetParkName(true);
+    } else {
+        vURL = window.location.protocol + '//' + window.location.hostname + ':' + window.location.port + GetParkName(true);
+    }
+    window.location.href = vURL;
+}
+
+function UpdateLoginStatus(vLoginStatus) {
+    try {
+        var vIsMyAccountPage = false;
+        var vPathName = window.location.pathname.toLowerCase();
+        if (vPathName.indexOf('/my-account/') == 0) vIsMyAccountPage = true;
+
+        if (typeof (vLoginStatus) != 'undefined') {
+            // if (vLoginStatus == 'login') {}
+            if (vIsMyAccountPage) {
+                ReturnDomainPage();
+            } else {
+            
+               window.location.reload(); //Need to load the user profile menu, so need to refresh
+            }
+        } else {
+            
+            if (typeof (vLoginStatus) == 'undefined') {
+                var vLoginStatusObj = $('a.LoginStatus');
+                vLoginStatus = vLoginStatusObj.html();
+            }
+            
+            var vLoginMenuObj = $('a.Login_Menu');
+            var vMyAccountMenuObj = $('a.My_Account_Menu');
+            if (vLoginStatus == "Login") {
+                //vLoginMenuObj.html("Login/Create Account");
+                $(".LogInMenu").show();
+                $(".LogOutMenu").hide();
+                //vLoginMenuObj.parent().css('width', '160px');
+                //vLoginMenuObj.parent().css('text-align', 'left');
+            } else {
+                $(".LogInMenu").hide();
+                $(".LogOutMenu").show();
+                vLoginMenuObj.html(vLoginStatus);
+            }
+             
+            //if (vLoginStatus == 'Logout') {
+            //   // vMyAccountMenuObj.html('My Account');
+            //    vMyAccountMenuObj.css('display', 'block');
+            //      //vMyAccountMenuObj.css('cursor', 'pointer');
+            //} else {
+            //    //alert(vLoginStatus)
+            //    //vMyAccountMenuObj.html('');
+            //    //vMyAccountMenuObj.css('display', 'none');
+            //    //vMyAccountMenuObj.css('cursor', 'default');
+            //}
+            if (vIsMyAccountPage && vLoginStatus == "Login") ReturnDomainPage();
+        }        
+        return true;
+    } catch (ex) {
+        alert("UpdateLoginStatus:" + ex)
+     }
+    return false;
+}
+
+
+function CallLogout() {
+    try {
+        var paramData = "";
+        paramData = "{" + paramData + "}";
+        var url = LinkPath("WebService.ashx");
+        url += "?ActionType=1004";
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            cache: false,
+            data: paramData,
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+
+            success: function(vValue, textStatus) {
+                try {
+                    alert('Value :' + vValue + ' TextStatus :' + textStatus);
+                } catch (ex) { }
+            },
+            beforeSend: function(vXMLHttpRequest) { },
+            complete: function(vXMLHttpRequest) { },
+            error: function(vXMLHttpRequest, textStatus, errorThrown) {
+                alert("CallLogout Error : " + vXMLHttpRequest.responseText);
+            }
+        });
+    } catch (ex) {
+        alert('CallLogout :' + ex.message);
+    }
+}
+
+function isLogin() {
+//    debugger;
+//    var vLoginMenuObj = $('a.Login_Menu');
+//    vLoginMenuObj.click();
+
+    UpdateLoginStatus();
+//    $('a.Login_Menu').click(function () {
+//        alert("ok");
+        CallLoginDialog(isLoginStatus());
+//    });
+}
+
+function absPos(node) {
+    var x = y = 0;
+    do {
+        x += node.offsetLeft;
+        y += node.offsetTop;
+    } while (node = node.offsetParent);
+
+    return {
+        'x': x,
+        'y': y
+    };
+}
+
+
+
+function checkWhiteList(origin) {
+    var originWhiteList = "https://" + window.location.hostname;
+    if (originWhiteList.toLowerCase() == origin.toLowerCase()) {
+        return true;
+    }
+
+    originWhiteList = "http://" + window.location.hostname;
+    if (originWhiteList.toLowerCase() == origin.toLowerCase()) {
+        return true;
+    }
+
+    return false;
+}
+
+ 
+function messageHandler(e) { 
+    if (checkWhiteList(e.origin)) {
+        processMessage(e.data);
+    } else {
+        // ignore message
+    }
+}
+
+function processMessage(vMsg) { 
+    if (vMsg == "close") {
+        $.colorbox.close();
+        window.removeEventListener('message', messageHandler, true);
+        window.location.reload();
+    }
+    else if (vMsg.startsWith("updateByDlg3")) {
+        var vParam = vMsg.split("^");
+        updateByDlg3(vParam[1], vParam[2]);
+    }
+    else if (vMsg.startsWith("location")) {
+        var vLocation = vMsg.split(":")[1];
+        var vlat = vLocation.split(",")[0];
+        var vlng = vLocation.split(",")[1];       
+        PerformSearch(vlat, vlng);
+        window.removeEventListener('message', messageHandler, true);
+    }
+}
+
+
+function doEventListener()
+{
+    window.removeEventListener('message', messageHandler, true);
+    window.addEventListener("message", messageHandler, true);
+}
+
+
+window.onpageshow = function (e) {
+    var a = e || window.event; 
+    if (a.persisted) {
+        window.location.reload()
+    }
+}

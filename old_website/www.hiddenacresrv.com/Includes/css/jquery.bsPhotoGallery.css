@@ -1,0 +1,109 @@
+#bsPhotoGalleryModal .modal-content {
+    border-radius:0;
+	padding: 14px 0;
+}
+#bsPhotoGalleryModal .modal-dialog img {
+    text-align:center;
+    margin:0 auto;
+    width:100%;
+	padding: 0 12px;
+}
+#bsPhotoGalleryModal .modal-body {
+    padding:0px !important;
+}
+#bsPhotoGalleryModal .bsp-close {
+  position: absolute; 
+  right: -14px; 
+  top: -11px; 
+  font-size: 30px; 
+  color:#fff; 
+  text-shadow: 1px 1px 18px #000;
+}
+
+#bsPhotoGalleryModal .bsp-close:hover {
+  cursor: pointer;
+  opacity:.6;
+  text-shadow: none;
+  
+}
+.bspHasModal {
+  cursor: pointer;
+}
+.bspHasModal .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.imgWrapper {
+  overflow: hidden;
+/*max-height: 99px;*/
+  padding: 4px;
+  border: 1px solid #ccc;
+}
+
+a.bsp-controls, 
+a.bsp-controls:visited, 
+a.bsp-controls:active {
+  position: absolute;
+  top: 44%;
+  font-size: 26px;
+  color: #fff;
+  text-shadow: 1px 1px 18px #000;
+}
+a.bsp-controls.next {
+  right:-10px;
+}
+a.bsp-controls.previous {
+  left:-10px;
+}
+a.bsp-controls:hover {
+  opacity:.6;
+  text-shadow: none;
+}
+.bsp-text-container {
+  clear:both;
+  display:block;
+  padding-bottom: 5px;
+}
+#bsPhotoGalleryModal h6{
+  font-weight: bold;
+  color: #000;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 5px;
+}
+#bsPhotoGalleryModal .pText {
+  font-size: 11px;
+  margin-bottom: 0px;
+  padding: 0 12px 5px;
+} 
+
+.row .photo-gallery ul.row li {
+	width:calc(100% + 26px);
+	margin-left: -13px;
+	padding-right: -13px;
+}
+
+.photo-gallery ul .imgWrapper {
+	padding: 0;
+	border: 0;
+}
+.photo-gallery ul {
+	margin: 0;
+}
+
+.photo-gallery .row [class*="col-"] col-xxs-12 {
+	margin: 0;
+	padding-left: -13px;
+	padding-right: -13px;
+}
+
+@media screen and (max-width: 380px){
+   .col-xxs-12 {
+     width:100%;
+   }
+   .col-xxs-12 img {
+     width:100%;
+   }
+}

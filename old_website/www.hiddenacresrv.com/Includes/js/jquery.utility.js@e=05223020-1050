@@ -1,0 +1,527 @@
+﻿function LinkPath(vFile) {
+    var vURL = null;
+    var vLocation = window.location;
+
+    var vPort = vLocation.port;
+    if (vPort != '' && vPort != '80') {
+        vPort = ":" + vPort;
+    }
+    if (vPort == '80') vPort = '';
+
+    var vVirtualPath = '';
+
+    // E.g Locahost
+    if (vLocation.hostname.indexOf('.') < 0) {
+        var vPathname = window.location.pathname;
+        if (vPathname.indexOf('/') == 0) {
+            vPathname = window.location.pathname.substr(1);
+        }
+        var vIndex = vPathname.indexOf('/');
+        vVirtualPath = vPathname.substr(0, vIndex + 1);
+    }
+
+    if (vFile.substring(0, 1) == "/") {
+        vURL = vLocation.protocol + "//" + vLocation.hostname + vPort + "/" + vVirtualPath + vFile;
+    } else {
+        vURL = vLocation.protocol + "//" + vLocation.hostname + vPort + "/" + vVirtualPath + vFile;
+    }
+    return vURL;
+}
+
+
+//function LinkPath(vFile)
+//{
+//    var vURL = null;
+//    var vLocation = window.location;
+//    var vPort = vLocation.port;
+//    if (vPort != '') vPort = ":" + vPort;  
+      
+//    if (vFile.substring(0, 1) == "/")
+//    {
+//        vURL = vLocation.protocol + "//" + vLocation.hostname + vPort + vFile;
+//    } else {
+//        vURL = vLocation.protocol + "//" + vLocation.hostname + vPort +  "/" + vFile;
+//    }
+//    return vURL;
+//}
+
+function BrowserLinkPath(vFile)
+{
+    var vURL = null;
+    var vLocation = window.location;
+    var vPort = vLocation.port;
+    if (vPort != '') vPort = ":" + vPort;  
+    
+    if (vFile.substring(vFile.length-1) == "/")
+    {
+        vURL = vFile + getParsePortal();
+    } else {
+        vURL = vFile + "/" +  getParsePortal();
+    }
+      
+    if (vFile.substring(0, 1) == "/")
+    {
+        vURL = vLocation.protocol + "//" + vLocation.hostname + vPort + vURL;
+    } else {
+        vURL = vLocation.protocol + "//" + vLocation.hostname + vPort +  "/" + vURL;
+    }
+    return vURL;
+}
+
+// Get the portal name
+// E.g : portal=camp-california
+function getParsePortal()
+{
+    var vPathName = window.location.pathname.toLowerCase();
+    var vIndex = vPathName.indexOf('portal=');
+    if (vIndex > -1)
+    {
+        vPathName = vPathName.substring(vIndex);
+        var vIndex2 = vPathName.indexOf('/');
+        if (vIndex2 > 0)
+        {
+            vPathName = vPathName.substring(0,vIndex2);
+        }
+    }   
+    return vPathName; 
+}
+
+function maskWindow(vFadeIn)
+{
+
+    try {
+        var vMaskObj = $('#maskWindow');
+        vMaskObj.css('backgroundColor','black');        
+        if (vFadeIn)
+        {
+            //            var vWidth = '100%';
+            //            var vHeight = '100%';
+            //            var vDocObj = $(window.document);
+            //            
+            //            if($.browser.msie)
+            //            {                
+            //                var v1 = vDocObj.height();
+            //                var v2 = vDocObj.outerWidth()
+            //                var v3 = vDocObj.outerHeight()
+            //                
+            //                vWidth = vDocObj.innerWidth();
+            //                vHeight = vDocObj.innerHeight(); 
+            //            } else {
+            //                vWidth = getTotalWidth();
+            //                vHeight = getTotalHeight(); 
+            //            }
+            var vSize = getDocumentSize();   
+            vMaskObj.width(vSize.width);
+            if (vSize.height < 600) vSize.height = 600;
+            vMaskObj.height(vSize.height);  
+            vMaskObj.fadeIn('slow');
+        } else {
+            vMaskObj.fadeOut('slow');
+        }
+    } catch (ex) {
+        alert('maskwindow :' + ex.message);
+    }
+}
+
+ 
+
+function ajaxValue(vObj)
+{
+    if (typeof(vObj.d) != 'undefined') return vObj.d;
+    return vObj;
+}
+
+function isUndefined(vObj)
+{
+    if (typeof(vObj) == 'undefined') return true;
+    return false;
+}
+
+function getTotalHeight()
+{
+    //alert(document.body.scrollWidth + ' >>' + document.body.scrollHeight);
+    var v1 = document.documentElement;
+    var v2 = document.body;
+    //debugger;
+    if($.browser.msie){
+        return document.compatMode == "CSS1Compat"? document.documentElement.clientHeight : document.body.clientHeight;
+    }else{
+        return self.innerHeight;
+    }
+}
+
+function getTotalWidth ()
+{ 
+    if($.browser.msie){
+        return document.compatMode == "CSS1Compat"? document.documentElement.clientWidth :
+                 document.body.clientWidth;
+    }else{
+        return self.innerWidth;
+    }
+}      
+
+
+function getDocumentSize() 
+{
+	var xScroll, yScroll;
+	if (window.innerHeight && window.scrollMaxY) {	
+		xScroll = window.innerWidth + window.scrollMaxX;
+		yScroll = window.innerHeight + window.scrollMaxY;
+	} else if (document.body.scrollHeight > document.body.offsetHeight){ // all but Explorer Mac
+		xScroll = document.body.scrollWidth;
+		yScroll = document.body.scrollHeight;
+	} else { // Explorer Mac...would also work in Explorer 6 Strict, Mozilla and Safari
+		xScroll = document.body.offsetWidth;
+		yScroll = document.body.offsetHeight;
+	}
+	var windowWidth, windowHeight;
+	if (self.innerHeight) {	// all except Explorer
+		if(document.documentElement.clientWidth){
+			windowWidth = document.documentElement.clientWidth; 
+		} else {
+			windowWidth = self.innerWidth;
+		}
+		windowHeight = self.innerHeight;
+	} else if (document.documentElement && document.documentElement.scrollHeight) { // Explorer 6 Strict Mode
+		windowWidth = document.documentElement.scrollWidth;
+		windowHeight = document.documentElement.scrollHeight;
+	} else if (document.body) { // other Explorers
+		windowWidth = document.body.clientWidth;
+		windowHeight = document.body.clientHeight;
+	}	
+	// for small pages with total height less then height of the viewport
+	if(yScroll < windowHeight){
+		pageHeight = windowHeight;
+	} else { 
+		pageHeight = yScroll;
+	}
+	// for small pages with total width less then width of the viewport
+	if(xScroll < windowWidth){	
+		pageWidth = xScroll;		
+	} else {
+		pageWidth = windowWidth;
+	}
+	//arrayPageSize = new Array(pageWidth,pageHeight,windowWidth,windowHeight);
+	return {width:pageWidth, height:pageHeight, _width:windowWidth, _height:windowHeight};
+}
+
+// Replace blank
+function replaceURLBlank(vString)
+{
+    vString = vString.replace(new RegExp('&','g'), 'and');
+    vString = vString.replace(new RegExp('/','g'), ' or ');
+    vString = vString.replace(new RegExp(' ','g'), '-');    
+    return vString;
+}
+
+// Show the alert mesage
+function AlertMsg(vFile, vMethod, vException)
+{
+    var vMessage = 'File :' + vFile;
+    vMessage += '\rMethod :' + vMethod;
+    vMessage += '\rException :' + vException;
+    alert(vMessage);
+}
+
+function keyEsc()
+{
+//    var keyChar = -1
+//    if   (document.layers)  keyChar =e.which;
+//    if   (document.all) keyChar =   event.keyCode; 
+//    if   (keyChar=="27") return  false;
+} 
+
+
+//function issafe(str)
+//{
+//    var reg = /^.*[||/|<|>].*$/;
+//    return !reg.test(str); 
+//}
+
+//function chksafe(a)
+//{ 
+//    fibdn = new array ( ,\, 、, ,, ;, /);
+//    i=fibdn.length;
+//    j=a.length;
+//    for (ii=0;ii { for (jj=0;jj { temp1=a.charat(jj);
+//    temp2=fibdn[ii];
+//    if (tem;p1==temp2)
+//    { return 0; }
+//    }
+//    }
+//    return 1;
+//}
+ 
+
+function VerifyData(vCSSName) {
+    var vSelectObj = null;
+    var vMessage = "";
+    try {
+        if (typeof (vCSSName) == 'undefined') vCSSName = 'MustTextBoxCSS';
+        var vObjs = $('.' + vCSSName);
+        vObjs.each(function(index) {
+            var vObj = $(this);
+            var vValue = vObj.val();
+            if (vValue == null || vValue == '' || vValue == '-1') {
+                if (vMessage == "") {
+                    vMessage = "-" + vObj.attr('ErrorMessage');
+                    vSelectObj = vObj;
+                } else {
+                    vMessage += "\r\n-" + vObj.attr('ErrorMessage');
+                }
+            }
+        });
+
+
+        var vPhoneMsg = checkPhoneLength();
+        if (vPhoneMsg.length > 0) {
+            vMessage += "\r\n-" + vPhoneMsg;
+        }
+    } catch (ex) {
+        alert("VerifyFields :" + ex.message);
+    }
+
+    if (vSelectObj == null) {
+        return true;
+    } else {
+        alert(vMessage);
+        vSelectObj.focus();
+    }
+    return false;
+}
+
+
+
+function IsMobile() {
+    try {
+        var c = window.location.hash;
+        if (!c.match("fromapp")) {
+            if ((navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i))) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+    catch (ex) {
+        return false;
+    }
+
+}
+
+
+function PostMessageCross(vMsg) {
+    try{
+        window.top.postMessage(vMsg, "http://" + window.location.hostname);
+    }
+    catch(ex)
+    {
+
+    }
+    try{
+        window.top.postMessage(vMsg, "https://" + window.location.hostname);
+    }
+    catch(ex)
+    {
+
+    }
+}
+
+
+
+
+// Occur when open a div dialog
+function openColorBoxDlg(vURL, vWidth, vHeight, vType) {
+    try {
+        if (vURL.toLowerCase().indexOf('https://') == 0 ||
+            vURL.toLowerCase().indexOf('http://') == 0) {
+        } else {
+            if (vURL.indexOf('/') != 0) vURL = '/' + vURL;
+            vURL = getHostPath() + vURL;
+        }
+        var vcloseButton = true;
+         
+        if (typeof (vType) != 'undefined' && vType.length > 0)
+        { 
+            if (vType == "HideCloseButton")
+            {
+                vcloseButton = false;
+            }
+        }
+
+        $.colorbox(
+             {
+                 href: vURL,
+                 overlayClose: false,
+                 iframe: true,
+                 width: vWidth,
+                 height: vHeight,
+                 closeButton: vcloseButton,
+                 scrolling: false,
+                 onClosed: function () {
+                     doColorBoxClose();
+                 }
+             });
+
+        if (IsMobile() == true || $(window).width() < 480) {
+            colorboxResize();
+        }
+    } catch (ex) {
+        alert('>openDlg :' + ex.message);
+    }
+}
+
+function openInColorBoxDlg(vURL, vWidth, vHeight, vType) {
+    try {
+        if (vURL.toLowerCase().indexOf('https://') == 0 ||
+            vURL.toLowerCase().indexOf('http://') == 0) {
+        } else {
+            if (vURL.indexOf('/') != 0) vURL = '/' + vURL;
+            vURL = getHostPath() + vURL;
+        }
+        if (typeof (vType) == 'undefined') vTitle = '';
+
+        parent.$.colorbox(
+             {
+                 href: vURL,
+                 iframe: true,
+                 width: vWidth,
+                 height: vHeight,
+                 scrolling: false,
+                 onClosed: function () {
+                     parent.doColorBoxClose();
+                 }
+             });
+    } catch (ex) {
+        alert('>openDlg :' + ex.message);
+    }
+}
+
+function colorboxResize() {
+    var cboxOptions = {
+        width: '90%',
+        height: '85%',
+        maxWidth: '1110px',
+        maxHeight: '85%',
+    }
+
+    $.colorbox.resize({
+        width: window.innerWidth > parseInt(cboxOptions.maxWidth) ? cboxOptions.maxWidth : cboxOptions.width,
+        height: window.innerHeight > parseInt(cboxOptions.maxHeight) ? cboxOptions.maxHeight : cboxOptions.height
+    });
+}
+
+// vDialogTitle, vURL, vDialogWidth, vDialogHeight, vIsCover, vLink, vIFrameID, vIsScroll, vLocation
+function openLocDlg(vURL, vLeft, vTop, vWidth, vHeight) {
+    try {
+        if (vURL.toLowerCase().indexOf('https://') == 0 ||
+            vURL.toLowerCase().indexOf('http://') == 0) {
+        } else {
+            if (vURL.indexOf('/') != 0) vURL = '/' + vURL;
+            vURL = getHostPath() + vURL;
+        }
+        var vLocation = { left: vLeft, top: vTop };
+        dialog.open('', vURL, vWidth, vHeight, true, true, null, false, vLocation);
+    } catch (ex) {
+        alert('openDlg :' + ex.message);
+    }
+}
+
+
+ 
+ 
+
+
+function validateArrivalDate(vFromDateObj, vToDateObj)
+{
+    var vFromDate = new Date($(vFromDateObj).val());
+    var vToDate = new Date($(vToDateObj).val());
+    var today = new Date(addDate(new Date(), 0));
+    if (vFromDate < today) {
+        var vErrorMsgList = new ErrorMessageList();        
+        alert(vErrorMsgList.getUIMsg("ArrivalDateMustbeGreaterThanCurrentDate"));
+        $(vFromDateObj).val(addDate(new Date(), 0));
+        $(vToDateObj).val(addDate(new Date(), 1));
+        //$(vFromDateObj).foucs();
+       
+        return false;
+    }
+
+    //var vDateFromVal = $(vFromDateObj).val();
+    //var vDateToVal = $(vToDateObj).val();
+    //if (vDateFromVal == vDateToVal) {
+    //    var vErrorMsgList = new ErrorMessageList();
+    //    alert(vErrorMsgList.getUIMsg("DepartureDateMustbeGreaterThanArrivalDate"));
+    //    $(vFromDateObj).val(addDate(vFromDate, -1));
+    //    //$(vToDateObj).val(addDate(new Date(), 1));
+    //    //$(vFromDateObj).foucs();
+
+    //    return false;
+    //}
+
+    return true;
+}
+
+function validateDepartureDate(vFromDateObj, vToDateObj) {
+    var vFromDate = new Date($(vToDateObj).val());
+    var vToDate = new Date($(vToDateObj).val());
+    var today = new Date(addDate(new Date(), 0));
+    if (vFromDate <= today) {
+        var vErrorMsgList = new ErrorMessageList();
+        alert(vErrorMsgList.getUIMsg("DepartureDateMustbeGreaterThanCurrentDate"));
+        $(vFromDateObj).val(addDate(new Date(), 0));
+        $(vToDateObj).val(addDate(new Date(), 1));
+        //$(vFromDateObj).foucs();
+
+        return false;
+    }
+
+    var vDateFromVal = $(vFromDateObj).val();
+    var vDateToVal = $(vToDateObj).val();
+    if (vDateFromVal == vDateToVal) {
+        var vErrorMsgList = new ErrorMessageList();
+        alert(vErrorMsgList.getUIMsg("DepartureDateMustbeGreaterThanArrivalDate"));
+       // $(vFromDateObj).val(addDate(new Date(), 0));
+        $(vToDateObj).val(addDate(vFromDate, 1));
+        //$(vFromDateObj).foucs();
+
+        return false;
+    }
+
+    return true;
+}
+
+// validate Departure Date about reserve according to the Days Count
+function validateReserveDepartureDate(vFromDateObj, vToDateObj, vDaysCountObj) {
+    var vFromDate = new Date($(vFromDateObj).val());
+    var todate = new Date(addDate(new Date(), 0));
+    var vDaysCount = $(vDaysCountObj).val();
+
+    if (parseInt(vDaysCount).toString() == "NaN") {
+        alert("Please enter a valid Number of Days.");
+        var vDaysCountId = $(vDaysCountObj).attr("id");
+        $(vDaysCountObj).val("");
+        document.getElementById(vDaysCountId).focus();
+        return false;
+    } else {
+        var _vDaysCount = parseInt(vDaysCount);
+        $(vFromDateObj).val(addDate(vFromDate, 0));
+        $(vToDateObj).val(addDate(vFromDate, _vDaysCount));
+    }
+
+    return true;
+}
+
+
+function checkPhoneLength()
+{
+    var strMsg = "";
+    $(".MaskPhone").each(function () {
+        if ($(this).val().length > 0 && $(this).val().length < 10) {
+            var vErrorMsgList = new ErrorMessageList();
+            strMsg = vErrorMsgList.getUIMsg("MatchPhone");
+        }
+    })
+
+    return strMsg;
+}

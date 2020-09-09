@@ -1,0 +1,87 @@
+﻿ErrorMessageList = function () {
+    this.messageList = new Object();
+    this.initUIMsg();
+};
+
+ErrorMessageList.prototype.initUIMsg = function () {
+    try {
+        this.createUIMsg("ArrivalDateMustbeGreaterThanCurrentDate", "Warning", "Arrival Date cannot be prior to the current date.");
+        this.createUIMsg("DepartureDateMustbeGreaterThanCurrentDate", "Warning", "Departure Date must be greater than the current date.");
+        this.createUIMsg("DepartureDateMustbeGreaterThanArrivalDate", "Warning", "Departure Date must be greater than the Arrival date.");
+        this.createUIMsg("RemoveOrder", "Warning", "Are you sure you want to delete?");
+        this.createUIMsg("RemoveUnit", "Warning", "Are you sure you want to delete?");
+        this.createUIMsg("MatchPhone", "Warning", "Please include entire phone number");
+    } catch (ex) {
+        alert(ex);
+    } 
+};
+
+ErrorMessageList.prototype.createUIMsg = function (msgKey, msgTitle, msgBody) {
+    var vMsg = new Object();
+
+    vMsg.title = msgTitle;
+    vMsg.body = msgBody;
+
+    this.messageList[msgKey] = vMsg;
+
+    //return msgList;
+};
+
+ErrorMessageList.prototype.getUIMsg = function (vMsgKey) {
+    log("Msg Key:" + vMsgKey);
+    var bFoundMsg = false;
+
+    try {
+
+        var messageList = this.messageList;
+
+        if (messageList != null) {
+            var vMsg = messageList[vMsgKey];
+            if (objectExist(vMsg)) {
+                bFoundMsg = true;
+                return vMsg.body;
+            }
+        }
+
+    } catch (ex) {
+        alert("getUIMsg for key : " + vMsgKey + " Error:" + ex);
+    }
+
+    if (!bFoundMsg) {
+        var vMsg = new Object();
+
+        vMsg.title = "Not found Message";
+        vMsg.body = "Not found message of " + vMsgKey + " in UI Message library";
+
+        return vMsg.body;
+    }
+
+};
+
+
+function objectExist(vObj) {
+    if (typeof vObj == "undefined")
+        return false;
+
+    if (vObj == null)
+        return false;
+
+    return true;
+}
+
+function log(vMsg) {
+}
+
+
+function appendErrorMsg(vMsgList, vMsg, vErrorObj) {
+    if (vMsgList.length > 0) {
+        vMsgList += "\n" + vMsg;
+    } else {
+        vMsgList = vMsg;
+    }
+
+    if (!IsNull(vErrorObj))
+        FocusRequired(vErrorObj);
+
+    return vMsgList;
+}

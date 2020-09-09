@@ -1,0 +1,1003 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head id="ctl00_zd_hMaster"><title>
+	hiddenacresrv.com - Reviews for 
+</title><meta name="Description" content="hiddenacresrv.com - Read reviews for  or share your experience for " /><meta charset="utf-8" />
+	<!-- set the viewport width and initial-scale on mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PortalShellCenter.master -->
+
+
+   
+
+    
+        <script type="text/javascript" src="../Includes/js/jquery.min.js@v=3.3.1" ></script>
+        <script type="text/javascript" src="../Includes/js/jquery-migrate.min.js@v=3.0.1" ></script>
+        <script type="text/javascript" src="../Includes/js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="../Includes/js/accessibledatepicker.js@v=1.2" ></script>
+        <script type="text/javascript" src="../Includes/js/jquery.browser.min.js" ></script>
+        <script type="text/javascript" src="../Includes/js/otherPlugs.js" ></script>
+        <script type="text/javascript" src="../Includes/js/jquery.main.js@e=05223020-1050" ></script>
+        <script type="text/javascript" src="../Includes/js/colorbox/jquery.colorbox-min.js" ></script>
+        <script type="text/javascript" src="../Includes/js/jquery.blockUI.js@v=2.70" ></script>
+        <script type="text/javascript" src="../Includes/js/jquery.utility.js@e=05223020-1050" ></script>
+        <script type="text/javascript" src="../Includes/js/PageBlock.js@e=05223020-1050" ></script>
+        <script type="text/javascript" src="../Includes/dialog/div.dialog.js@e=05223020-1050" ></script>
+        <script type="text/javascript" src="../Includes/js/search.login.js@e=05223020-1050" ></script>
+        <script type="text/javascript" src="../Includes/js/jquery.maskedinput.min.js@e=3.3.2"></script> 
+        <script type="text/javascript" src="../Includes/js/MsgLib.js@e=05223020-1050" ></script>
+
+
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/colorbox.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="../online/includes/css/online_book.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/accessibledatepicker.css@e=05223020-1050.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/main.css@e=05223020-1050.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/theme.css@e=05223020-1050.css" />        
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/basePortalShell.css@e=05223020-1050.css" />
+        <link rel="stylesheet" type="text/css" media="all" href="../Includes/css/Google/google.css" />
+         
+        
+       
+ 
+  
+        <script type="text/javascript" language="javascript" src="../Includes/js/jquery.extensions.js"></script>  
+    <script type="text/javascript" language="javascript" src="../Includes/js/jquery.jqURL.js"></script>
+    <script type="text/javascript" language="javascript" src="../Includes/js/jquery.query-url-2.1.2.js"></script>
+    <script type="text/javascript" language="javascript" src="../Includes/js/search.utility.js@e=05223020-1050"></script> 
+    
+    <script type="text/javascript" language="javascript">
+
+//    function LoadIFrame()
+//	{
+//	    var vObj = $("#ReviewIFrame");
+//	    if (vObj != null && vObj[0] != null)
+//	    {
+//	         //vObj[0].src = "http://survey.guestrated.com/TakeSurvey.aspx?CustomerID=7857&SurveyID=m2KH552&PortalID=";
+//	    }
+//	}
+
+        $(window).on('load', function () {
+            try {
+                $('[data-toggle="tooltip"]').tooltip();
+                if ($('.overall-grade').length > 0) {
+                    $(":asp('zd_ddlFilterByRating')").change(function() {
+                        UpdateGridData();
+                    });
+
+                    $(":asp('zd_ddlNumberOfReviews')").change(function() {
+                        UpdateGridData();
+                    });
+
+                    $(":asp('zd_ddlResultsPerPage')").change(function() {
+                        UpdateGridData();
+                    });
+
+                    function UpdateGridData() {
+                        $(":asp('zd_txtFilterByRating')")[0].value = $(":asp('zd_ddlFilterByRating')")[0].value;
+                        $(":asp('zd_txtNumberOfReviews')")[0].value = $(":asp('zd_ddlNumberOfReviews')")[0].value;
+                        $(":asp('zd_txtResultsPerPage')")[0].value = $(":asp('zd_ddlResultsPerPage')")[0].value;
+                        $(":asp('btnUpdateResults')").click();
+                    }
+
+                    LoadReviewResults();
+                    // LoadIFrame();
+                    LoadIFrameAD();
+
+                    if ($(".RightAds").length == 0) {
+                        $("#content").css("padding-right", "0");
+                    }
+                } else {
+                    window.parent.CallWriteAReview();
+                }
+
+                $(".reviews-filter").click();
+            }
+            catch(ex)
+            {
+                alert(ex);
+            }
+            
+        });
+    </script>
+
+   
+    
+    
+
+<script type='text/javascript'>
+    var googletag = googletag || {};
+    googletag.cmd = googletag.cmd || [];
+    (function () {
+        var gads = document.createElement('script');
+        gads.async = true;
+        gads.type = 'text/javascript';
+        var useSSL = 'https:' == document.location.protocol;
+        gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+        var node = document.getElementsByTagName('script')[0];
+        node.parentNode.insertBefore(gads, node);
+    })();
+</script>
+
+<script type='text/javascript'>
+    googletag.cmd.push(function () {
+        googletag.defineSlot('/268333676/south-dakota-leader-bottom', [728, 90], 'div-gpt-ad-1432314929706-0').addService(googletag.pubads());
+        googletag.defineSlot('/268333676/south-dakota-leader-top', [728, 90], 'div-gpt-ad-1432314929706-1').addService(googletag.pubads());
+        googletag.defineSlot('/268333676/south-dakota-widesky-right', [160, 600], 'div-gpt-ad-1432314929706-2').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+    });
+</script>
+</head>
+<body id="ctl00_zd_bodyPortShell"> 
+    <noscript><div>Javascript must be enabled for the correct page display</div></noscript>
+	<a class="accessibility" href="Reviews.html#main">Skip to Content</a>
+	<!-- main container of all the page elements -->
+
+    <form name="aspnetForm" method="post" action="http://www.hiddenacresrv.com/Hidden-Acres-RV-Park/reviews.aspx?vpo_id=&amp;de_id=7857&amp;pode_id=&amp;selectedTab=reviews&amp;ordersourceid=&amp;curef_id=&amp;return_url=" id="aspnetForm" class="park-form1">
+<div>
+
+</div>
+
+
+<script src="../ScriptResource.axd@d=sIkMJ-EXJg9fftiK8SfTaEyNhBRHa5Sk1KsU2nSzL33vVydaN5Fb3t5FTqzbvrCYDsTRXVOeSoK4JgiwL_3Hf2134hYC8v3Et3s2EsnPO5n_7UBh63dDJoepBFIFrmhj3iT2G7oarO5TKa5cD8OKD-3KSDZmVH8rmxfp-uRLR31OdaMTGH-0h2DrLfsX5jiy0" type="text/javascript"></script>
+        <input name="ctl00$txtParkName" type="text" value="Hidden-Acres-RV-Park" id="ctl00_txtParkName" class="ParkName" style="display:none;" />
+        
+        
+         
+         <div id="ctl00_divTrackAccount" style="display:none;"></div>
+          
+          <div id="divMaskWindow" class="mask" style="filter: alpha(opacity=20); opacity: 0.2; height:1500px; background-Color:black; text-align: center;justify-content: center;align-items: center;display:None;">
+            <img src="../Includes/img/pb.gif" />
+        </div>
+
+        <div id="divTimeOut" class="fixed-top-alert alert-danger" style="display: none;"><span class="glyphicon glyphicon-time" aria-hidden="true">&nbsp;</span>Time Remaining to complete reservation: <span id="timer" class="remaining-time">00:00</span></div>
+       
+         <div id="wrapper" class="div_main">
+             <!-- header of the page -->
+		    <header id="header">
+			    <div class="header-holder" style="background-color: #DBD7CC">
+				    <div>
+					    <!-- page logo -->					
+					    <div class="logo">
+						    <span>
+							    <!-- mobile screens -->
+							    <img src="https://frontoffice.blob.core.windows.net/webimage/7857_17635.jpg" alt="Park banner graphic mobile" class="small">
+							    <!-- larger/laptop/desktop screens -->
+							    <img src="https://frontoffice.blob.core.windows.net/webimage/7857_17634.jpg" alt="Park banner graphic">
+						    </span>
+					    </div>
+				    </div>
+			    </div>
+			    <!-- main navigation of the page -->
+			    <nav id="nav" class="container">
+			
+				    <!-- retrun link appears in mobile sizes isolated ton top-left screen --> 
+                    
+				
+				    <!-- navbar opener -->
+				    <a href="Reviews.html#" class="nav-opener" data-toggle="collapse"><span class="glyphicon glyphicon-menu-hamburger">&nbsp;</span>Menu</a>	
+							
+				    <div class="main-nav">
+					    <ul class="list-unstyled">
+                             <li class=""><a href="Overview.html" class="Overview">Overview</a></li><li class=""><a href="https://properties.camping.com/Hidden-Acres-RV-Park/Reservations" class="Reservations">Reservations</a></li><li class=""><a href="Rates.html" class="Rates">Rates</a></li><li class=""><a href="Map.html" class="Map">Map</a></li><li class=""><a href="Facilities.html" class="Facilities">Facilities</a></li><li class=""><a href="Activities.html" class="Activities">Activities</a></li><li class=""><a href="Local.html" class="Local">Local</a></li><li class=""><a href="Photos.html" class="Photos">Photos</a></li><li class=""><a href="SiteMap.html">Site Map <span class="sr-only">(current)</span></a></li><li class="active"><a href="Reviews.html" class="Reviews">Reviews</a></li>  
+					    </ul>
+				    </div>
+				
+				    <ul class="cart-nav">
+
+					    <li>
+                            <a href="https://www.hiddenacresrv.com/Hidden-Acres-RV-Park/reservations/reserve" id="ctl00_liMyCart" aria-label="shopping cart"><span class="visible-1100-plus">My Cart &nbsp;</span><i class="icon-basket"><span class="hidden">cart</span></i></a> 
+					    </li>
+									
+					    <li class="dropdown">
+                            <a href="Reviews.html#" class="dropdown-toggle account center-text" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="visible-1100-plus">My Account </span><i class="icon-user-fill"><span class="hidden">&nbsp;</span></i></a>
+				             
+					      <ul class="dropdown-menu account-dropdown-menu">
+						   <li class="LogInMenu" ><a href="Reviews.html#"  class="Login_Menu LogInMenu_in">Login</a></li>
+
+					      </ul>
+					  
+                             <a href="Reviews.html#" class="Login_Menu" style="display: none;"><span class="visible-md-plus">Login/Create Account</span></a>
+					    </li>
+				    </ul>
+			    </nav>		
+			    </header>
+             
+ 		<!-- contain main informative part of the site -->            
+            <div id="main" class="container" >
+
+               
+
+                
+    
+	<div id="content">
+				<!-- overview -->
+				<article class="overview"> 
+                     
+
+<div class="box">
+	<div class="text" tabindex="0">
+		<h1 tabindex="0">Hidden Acres RV Park</h1>
+		<div class="clearfix">
+			<div class="left-col">
+				<address tabindex="0" style="max-width: none;">
+                     10364 County Rd. 740 <br /> Princeton, TX 75407
+				</address>
+				<ul class="contact-info list-unstyled">
+					<li tabindex="0"> 
+                        
+                        <a href="tel: 9727361264"><p class="phone">(972) 736-1264</p></a> 
+					</li>
+					<li tabindex="0"><p class="email"><a href="mailto:HiddenAcresRVPark@gmail.com" >HiddenAcresRVPark@gmail.com</a></p></li>
+				</ul>
+
+			</div>
+			<div class="right-col website">
+                 
+			
+				<strong class="rated">
+				<span class="overall-grade" >
+				<a class="view-reviews" href="Reviews.html">
+				<span class="overall-grade"><img src="../images/GuestRated_Blank.gif" alt="B plus rating" tabindex="0"></span>
+				</a>
+
+				</span>
+				<a class="view-reviews" href="Reviews.html">Guest Rated</a>
+				</strong>
+				<hr>
+				<ul class="icons list-unstyled">
+					<li><a href="javascript:addtoMyFavorite()" data-toggle="tooltip" data-placement="top" title="Favorites"><i class="icon-favorites"><span class="sr-only">favorites</span></i></a></li>
+					<li><a href="mailto:HiddenAcresRVPark@gmail.com?subject=Shared website link&body=http://www.hiddenacresrv.com/Hidden-Acres-RV-Park/Reviews" data-toggle="tooltip" data-placement="top" title="Email Park"><i class="icon-envelope"><span class="sr-only">email park</span></i></a></li>
+					<li><a href="javascript:addMyFavorite('#Reviews')" data-toggle="tooltip" data-placement="top" title="Bookmarks"><i class="icon-bookmark"><span class="sr-only">bookmark</span></i></a></li>
+					<li><a class="view-reviews" href="Reviews.html" data-toggle="tooltip" data-placement="top" title="Reviews"><i class="icon-reviews"><span class="sr-only">park reviews</span></i></a></li>
+					<li><a class="write-a-review" href="write-a-review.html" data-toggle="tooltip" data-placement="top" title="Write Reviews"><i class="icon-comments"><span class="sr-only">write review</span></i></a></li>
+
+                   
+				</ul>
+			</div>
+		</div>
+	</div>
+	 
+	<div class="img-holder" id="gallery-slide-show" > 
+            <a href="Reviews.html#" onclick="showPhotos()" style="display:none; "> <img src="https://frontoffice.blob.core.windows.net/webimage/7857_4991_med.jpg"  align=middle alt="" style="" /></a><a href="Reviews.html#" onclick="showPhotos()" style="display:none; "> <img src="https://frontoffice.blob.core.windows.net/webimage/7857_4992_med.jpg"  align=middle alt="" style="" /></a><a href="Reviews.html#" onclick="showPhotos()" style="display:none; "> <img src="https://frontoffice.blob.core.windows.net/webimage/7857_4993_med.jpg"  align=middle alt="" style="" /></a><a href="Reviews.html#" onclick="showPhotos()" style="display:none; "> <img src="https://frontoffice.blob.core.windows.net/webimage/7857_4994_med.jpg"  align=middle alt="" style="" /></a> 
+	</div>	
+</div>
+
+
+ 
+
+
+<div class="contact-info" style="display:none;"> 
+        
+        
+        
+        <p class="spec">
+            
+        </p>
+        <p style="padding-top:5px;">
+            
+        </p>
+         <div id="ctl00_zd_ctpContentMain_zd_wucOverviewHeader_zd_PhotosMenu" class="top_bar_photos" style="overflow:hidden; width:178px;border:solid 0px red;">
+            
+        </div>
+    </div>
+
+ 
+
+<div style="display:none;">
+    <input type="text" id="txtIsGuestReviews" />
+</div>
+
+<script type="text/javascript">
+	function LoadSendToPhone(vURL)
+	{
+	    if (vURL != null)
+	    {
+	        $.nyroModalSettings({height: 400, width: 600});
+	        $.nyroModalManual({forceType: 'iframe', modal: false,url: vURL});
+	    }
+	}
+
+	function CallWriteAReview() 
+	{
+	    var obj = $('#zd_aReviews');
+	    if (obj != null) 
+	    {
+	        var vLink = obj[0].href;
+	        var vIndex = vLink.lastIndexOf('/') + 1;
+	        //vLink = vLink.substr(0, vIndex) + 'write-a-reviews';
+	        vLink = vLink.substr(0, vIndex) + 'write-a-review';
+	        window.top.location = vLink;
+	    }	    
+	}
+
+	function addtoMyFavorite() {
+	    if (window.confirm("Adding to Favorites will add this Destination to your favorites list in your profile account\n and show the My Favorites Icon on future search listings.")) {
+	        var _values = 100;
+	        var date = new Date();
+
+	        document.cookie = "dValue=" + escape(_values);
+	        window.location.reload();
+	    }
+	    //        date.setTime(date.getTime() - 10000);
+	    //        document.cookie = "dValue" + "=a; expires=" + date.toGMTString();
+	}
+
+	function delCookie(name) {
+	    var date = new Date();
+	    date.setTime(date.getTime() - 10000);
+	    document.cookie = name + "=a; expires=" + date.toGMTString();
+	}
+
+	function onLogin(vValue, vType, name) {
+	    var date = new Date();
+	    date.setTime(date.getTime() - 10000);
+	    document.cookie = name + "=a; expires=" + date.toGMTString();
+	    
+        isLogin();
+	}
+
+	function IsGuestReviews() {
+	    var txtIsGuestReviews = document.getElementById("txtIsGuestReviews");
+	    txtIsGuestReviews.value = 'True';
+	    return txtIsGuestReviews.value;
+	}
+
+	$(document).ready(function () {
+	    try {
+	        slideShow();
+	       
+
+	        var isGuestReviews = 'True';
+	        if (isGuestReviews == "True") {
+	            $("p.View-Review").show();
+	            $("p.Write-Review").show();
+	            //$("li#zd_liReviews").show();
+	        } else {
+	            $("p.View-Review").hide();
+	            $("p.Write-Review").hide();
+	            //$("li#zd_liReviews").hide();
+	        } 
+
+	    } catch (ex) {
+	        alert(ex.message);
+	    }
+	});
+
+    function showPhotos()
+    {
+        showBlockLoading();
+        setTimeout(function(){ 
+                window.location.href = 'http://www.hiddenacresrv.com/Hidden-Acres-RV-Park/Photos';
+        }, 120);
+    }
+ 
+</script>
+
+
+					<h2 tabindex="0">PARK REVIEWS</h2>
+					
+					<!--Reviews Area -->
+					
+					<section class="reviews">
+						<header class="header">
+							<div class="bar">
+								<ul class="list-unstyled">
+									<li><a href="Reviews.html#">(<span id="ctl00_zd_ctpContentMain_zd_litAll">0</span>) All Reviews</a></li>
+									<li><a href="Reviews.html#">(<span id="ctl00_zd_ctpContentMain_zd_litRecomm">0</span>) Recommended</a></li>
+									<li><a href="Reviews.html#">(<span id="ctl00_zd_ctpContentMain_zd_litNotRecomm">0</span>) Not Recommended</a></li>
+								</ul>
+								<a href="Reviews.html#reviews-filter" class="reviews-filter opener" data-toggle="collapse">Filter <i class="icon-arrow-up-down"><span class="hidden">&nbsp;</span></i></a>
+							</div>
+							<!-- reviews filter -->
+							<div class="collapse" id="reviews-filter">
+								<div  class="filter">
+									<div class="three-columns">
+										<div class="form-group">
+											<label for="numbers">Filter by:</label> 
+                                            <select name="ctl00$zd_ctpContentMain$zd_ddlFilterByRating" id="ctl00_zd_ctpContentMain_zd_ddlFilterByRating">
+	<option selected="selected" value="-1">All Ratings</option>
+	<option value="1">A Ratings</option>
+	<option value="2">B Ratings</option>
+	<option value="3">C Ratings</option>
+	<option value="4">D Ratings</option>
+	<option value="5">F Ratings</option>
+
+</select>
+										</div>
+                                        <div class="form-group">
+											<label for="sort-by">Number of reviews:</label>
+											 <select name="ctl00$zd_ctpContentMain$zd_ddlNumberOfReviews" id="ctl00_zd_ctpContentMain_zd_ddlNumberOfReviews">
+	<option selected="selected" value="100">100</option>
+	<option value="200">200</option>
+	<option value="300">300</option>
+
+</select>
+										</div>		
+										<div class="form-group">
+											<label for="per-page">Results Per Page:</label>
+											 <select name="ctl00$zd_ctpContentMain$zd_ddlResultsPerPage" id="ctl00_zd_ctpContentMain_zd_ddlResultsPerPage">
+	<option selected="selected" value="10"> 10</option>
+	<option value="20"> 20</option>
+	<option value="30"> 30</option>
+	<option value="50"> 50</option>
+	<option value="100"> 100</option>
+
+</select>
+										</div>
+																		
+									</div>
+									<button class="hidden" type="submit">submit</button>
+								</div>
+							</div>
+						</header>
+						
+						 
+                             <div id="ctl00_zd_ctpContentMain_zd_upGrid" class="reviews-holder">
+	                
+                                <div style="display:none">
+                                    <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtFilterByRating" id="ctl00_zd_ctpContentMain_zd_txtFilterByRating" value="-1" />
+                                    <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtNumberOfReviews" id="ctl00_zd_ctpContentMain_zd_txtNumberOfReviews" value="100" />
+                                    <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtResultsPerPage" id="ctl00_zd_ctpContentMain_zd_txtResultsPerPage" value="10" />
+                                    <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtPageIndex" id="ctl00_zd_ctpContentMain_zd_txtPageIndex" />
+                                     
+                                    <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtRecordCount" id="ctl00_zd_ctpContentMain_zd_txtRecordCount" value="0" />
+                                            <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtRecommendedCount" id="ctl00_zd_ctpContentMain_zd_txtRecommendedCount" value="0" />
+                                            <input type="hidden" name="ctl00$zd_ctpContentMain$zd_txtNotRecommendedCount" id="ctl00_zd_ctpContentMain_zd_txtNotRecommendedCount" value="0" />
+                                    <input type="submit" name="ctl00$zd_ctpContentMain$btnUpdateResults" value="Update" id="ctl00_zd_ctpContentMain_btnUpdateResults" />
+                                </div>
+         
+                                    <!-- Start Result Table -->
+                                
+  <style type="text/css">
+    .mindesc
+    { 
+    	color:#127e12;
+    }
+
+    .reviewdesc
+    {	
+    	padding-top:0px;
+    	/*width:535px;*/
+    	float:none;
+    	border:solid 0px pink;
+    	overflow:hidden;
+    }
+
+    .minResponsedesc
+    { 
+    	color:#127e12;
+    }
+
+    .responsedesc
+    {	
+    	padding-top:0px;
+    	/*width:535px;*/
+    	float:none;
+    	border:solid 0px pink;
+    	overflow:hidden;
+    }
+</style>   
+<script type="text/javascript" language="javascript">
+    
+
+    function sqlStringReplace() {
+        // alert($('div#zd_ReviewsPaging a').length);
+        $('div#zd_ReviewsPaging a').each(function() {
+            var vObj = $(this);
+            vObj[0].href = vObj[0].href.replace("__doPostBack", "doPostBack")
+        });
+    }
+
+    function doPostBack(eventTarget, eventArgument) {
+        // alert(eventArgument);
+        $(":asp('zd_txtPageIndex')")[0].value = eventArgument;
+        if ($(":asp('zd_ddlFilterByRating')").length > 0) {
+            $(":asp('zd_txtFilterByRating')")[0].value = $(":asp('zd_ddlFilterByRating')")[0].value;
+        }
+        if ($(":asp('zd_ddlNumberOfReviews')").length > 0) {
+            $(":asp('zd_txtNumberOfReviews')")[0].value = $(":asp('zd_ddlNumberOfReviews')")[0].value;
+        }
+        if ($(":asp('zd_ddlResultsPerPage')").length > 0) {
+            $(":asp('zd_txtResultsPerPage')")[0].value = $(":asp('zd_ddlResultsPerPage')")[0].value;
+        }
+        $(":asp('btnUpdateResults')").click();
+    }
+
+    function AdjustReviewContent(vShowHeight) {
+        try {
+            $('div.mindesc').css('cursor', 'pointer');
+            $('div.reviewdesc').each(function(index) {
+
+                var $container = $('#review_' + index);
+                var vManageResponseObj = $('#MResponse_' + index);
+
+                var vTempHeight = vShowHeight;
+                var vContentHeight = $container.height();
+                if (vShowHeight > vContentHeight) {
+                    vTempHeight = vContentHeight;
+                }
+                
+                var vReviewHeight = $container.height();
+                $container.attr('maxheight', vContentHeight);
+                $container.attr('minheight', vTempHeight);
+
+                if (vManageResponseObj.length > 0) {
+                    if (vContentHeight > vTempHeight) {
+                        $container.css('height', vTempHeight - 24);
+                        $container.attr('minheight', vTempHeight - 24);
+                    }
+                } else
+                if (vContentHeight > vTempHeight) {
+                    $container.css('height', vTempHeight);
+                }
+
+                var vVisible = 'hidden';
+                if (vContentHeight > vTempHeight) vVisible = 'visible';
+                $('#more_' + index).css('visibility', vVisible);
+            });
+
+            // Exec Click Event when click
+            $('div.mindesc').click(function (e) {
+                try {
+                    var vthis = $(this);
+
+                    var vCollapse = vthis.attr('isCollapse');
+                    var vDescID = "review_" + vthis.attr('ItemIndex');
+                    var vDescObj = $('#' + vDescID);
+
+                    // vCollapse == 'true' is support firefox
+                    if (vCollapse == null || vCollapse == true || vCollapse == 'true') {
+
+                        vthis.attr('isCollapse', false);
+                        //var vHeight = vDescObj.height();
+                        var vHeight = vDescObj.attr('maxheight');
+
+                        vDescObj.animate({ height: vHeight }, 'med');
+                        vthis.html('(less...)');
+                    } else {
+                        vthis.attr('isCollapse', true);
+                        var vHeight = vDescObj.attr('minheight');
+                        vDescObj.animate({ height: vHeight }, 'med');
+                        vthis.html('(more...)');
+                    }
+                     
+                } catch (ex) {
+                    alert('click :' + ex.message);
+                }
+            });
+        } catch (ex) {
+            alert('AdjustReviewContent :' + ex.message);
+        }
+    }
+
+    function AdjustResponseContent(vShowHeight) {
+        try {
+            $('div.minResponsedesc').css('cursor', 'pointer');
+            $('div.responsedesc').each(function (index) {
+
+                var $container = $('#response_' + index);
+
+                var vTempHeight = vShowHeight;
+                var vContentHeight = $container.height();
+                if (vShowHeight > vContentHeight) {
+                    vTempHeight = vContentHeight;
+                }
+
+                var vReviewHeight = $container.height();
+                $container.attr('maxheight', vContentHeight);
+                $container.attr('minheight', vTempHeight);
+
+                if (vContentHeight > vTempHeight) {
+                    $container.css('height', vTempHeight);
+                }
+
+
+                var vVisible = 'hidden';
+                if (vContentHeight > vTempHeight) vVisible = 'visible';
+                $('#response_more_' + index).css('visibility', vVisible);
+            });
+
+            // Exec Click Event when click
+            $('div.minResponsedesc').click(function (e) {
+                try {
+                    var vthis = $(this);
+
+                    var vCollapse = vthis.attr('isCollapse');
+                    var vDescID = "response_" + vthis.attr('ItemIndex');
+                    var vDescObj = $('#' + vDescID);
+
+                    // vCollapse == 'true' is support firefox
+                    if (vCollapse == null || vCollapse == true || vCollapse == 'true') {
+
+                        vthis.attr('isCollapse', false);
+                        //var vHeight = vDescObj.height();
+                        var vHeight = vDescObj.attr('maxheight');
+
+                        vDescObj.animate({ height: vHeight }, 'med');
+                        vthis.html('(less...)');
+                    } else {
+                        vthis.attr('isCollapse', true);
+                        var vHeight = vDescObj.attr('minheight');
+                        vDescObj.animate({ height: vHeight }, 'med');
+                        vthis.html('(more...)');
+                    }
+
+                } catch (ex) {
+                    alert('click :' + ex.message);
+                }
+            });
+        } catch (ex) {
+            alert('AdjustResponseContent :' + ex.message);
+        }
+    }
+
+    function AdjustManagementResponseContent() {
+
+        try {
+            $('div.mpmore').css('cursor', 'pointer');
+            $('div.ma_resp_detail').each(function(index) {
+
+                var $container = $(this);
+                var vReviewHeight = $container.height();
+
+                $container.attr('maxheight', vReviewHeight);
+                $container.attr('minheight', 0);
+
+                $container.css('height', 0);
+            });
+
+            // Exec Click Event when click
+            $('div.mpmore').click(function(e) {
+                try {
+                    var vthis = $(this);
+
+                    var vCollapse = vthis.attr('isCollapse');
+                    var vDescID = "mpdes_" + vthis.attr('ItemIndex');
+                    var vDescObj = $('#' + vDescID);
+
+                    // vCollapse == 'true' is support firefox
+                    if (vCollapse == null || vCollapse == true || vCollapse == 'true') {
+
+                        vthis.attr('isCollapse', false);
+                        var vHeight = vDescObj.attr('maxheight');
+                        vDescObj.animate({ height: vHeight }, 'med');
+                        vthis.html('(...minimize...)');
+                    } else {
+                        vthis.attr('isCollapse', true);
+                        var vHeight = vDescObj.attr('minheight');
+                        vDescObj.animate({ height: vHeight }, 'med');
+                        vthis.html('(...more...)');
+                    }
+                    
+                } catch (ex) {
+                    alert('click :' + ex.message);
+                }
+            });
+        } catch (ex) {
+            alert('AdjustManagementResponseContent :' + ex.message);
+        }
+    }
+    
+    function LoadReviewResults() {
+
+        try {
+            var vFontSize = '12px';
+            $("tbody tr:even").addClass("odd");
+            $("tbody tr:odd").addClass("even");
+
+            AdjustReviewContent(80);
+            AdjustResponseContent(80); 
+
+            $('input.recomm').click(function(e) {
+                var vObj = $(this);
+                var vCUSROR_ID = vObj.attr('CUSROR_ID');
+                if (vObj.hasClass('helpful')) {
+                    SendData(vObj, vCUSROR_ID, '1');
+                } else
+                    if (vObj.hasClass('nohelpful')) {
+                    SendData(vObj, vCUSROR_ID, '2');
+                } else
+                    if (vObj.hasClass('inappropriate')) {
+                    SendData(vObj, vCUSROR_ID, '3');
+                }
+
+                
+            });
+            sqlStringReplace();
+        } catch (ex) {
+            alert(ex)
+        }
+        
+    }
+
+    function RegisterSend(vRE_ID, vType, vUpdateObj, vResult) {
+        try {
+            
+            var vObj = $('#sw-wrapper');
+            vObj.attr('_' + vRE_ID, '1');
+            if (isNaN(vResult) == false) 
+            {
+                var vID = 'lab_' + vUpdateObj.attr('id');
+                var vHelpPercentObj = $('#helpPercID_' + vUpdateObj.attr('irow'));
+                
+                var vLabelObj = $('#' + vID);
+                switch (parseInt(vType,10)) {
+                    case 1:
+                        vLabelObj.html('&nbsp;Helpful&nbsp;(' + vResult + ')');
+                        vHelpPercentObj.attr('help', vResult);
+                        break;
+                    case 2:
+                        vLabelObj.html('&nbsp;Not&nbsp;Helpful&nbsp;(' + vResult + ')');
+                        vHelpPercentObj.attr('nohelp', vResult);
+                        break;
+                    case 3:
+                        vLabelObj.html('&nbsp;Not&nbsp;Appropriate&nbsp;(' + vResult + ')');
+                        break;
+                }
+                var vHelp = vHelpPercentObj.attr('help');
+                var vNoHelp = vHelpPercentObj.attr('nohelp');
+
+                var vPercent = Math.round(parseFloat(vHelp) / (parseFloat(vHelp) + parseFloat(vNoHelp)) * 100);
+                vHelpPercentObj.html(vPercent + '% of users found this review helpful');
+            }
+        } catch (ex) {
+            alert('RegisterSend:' + ex.message);
+        }
+    }
+
+    function IsSendData(vRE_ID, vType) {
+        var vObj = $('#sw-wrapper');
+        if (vObj.attr('_' + vRE_ID) == null) {
+            return true;
+        }
+        return false;
+    }
+
+
+    // 1. is help
+    // 2. is no help
+    // 3. Inappropriate
+    function SendData(vObj, vRE_ID, vType) 
+    {
+    
+        try {
+            if (IsSendData(vRE_ID, vType) == false) return;
+            
+            var paramData = '';
+            var vActionype = '1003'
+
+            var vCurrentObject = this;
+            var vURL = LinkPath("WebService.ashx");
+            vURL += "?ActionType=" + vActionype;
+            vURL += "&CUSROR_ID=" + vRE_ID;
+            vURL += "&Type=" + vType;
+
+            $.ajax({
+                type: "POST",
+                url: vURL,
+                cache: false,
+                data: paramData,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+
+                success: function(listItems) {
+                    RegisterSend(vRE_ID, vType, vObj, listItems[0]);
+                },
+                beforeSend: function() { },
+                complete: function() { },
+                error: function(msg) {
+                    alert("Exception : " + msg.statusText);
+                }
+            });
+        } catch (ex) {
+            alert(ex.message);
+        }
+    }
+</script>
+
+
+
+
+
+
+                                <!-- End Result Table -->
+            
+                                <!-- Start paging -->
+                                <div id="zd_ReviewsPaging" class="sw-paging">
+                                    <p>
+                                        
+                                    </p>
+                                </div>
+
+                                 
+                                <!-- End paging -->
+                                 
+</div> 							 
+					 
+						 
+					</section>
+					<!-- / Reviews Area  -->
+
+
+				</article>
+
+			</div>
+			<!-- ad banner of the page -->
+			
+
+<div id="ctl00_zd_ctpContentMain_RightAds1_divBlank">
+
+</div> 
+        
+     
+    
+    <script language="javascript" type="text/javascript">
+        Sys.Application.add_load(function() {
+            var form = Sys.WebForms.PageRequestManager.getInstance()._form;
+            form._initialAction = form.action = window.location.href;
+        });
+    </script> 
+    
+    <script type="text/javascript">
+
+        Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+        Sys.WebForms.PageRequestManager.getInstance().add_endRequest(endRequest);
+
+        function beginRequest(sender, args) {
+            showBlockLoading();
+        }
+
+        function endRequest(sender, args) {
+            LoadReviewResults();
+            LoadIFrameAD();
+            SetReviewCountInfo();
+            hideBlockLoading();
+        }
+
+        function SetReviewCountInfo() {
+            $(":asp('zd_litAll')").text($(":asp('zd_txtRecordCount')").val());
+            $(":asp('zd_litRecomm')").text($(":asp('zd_txtRecommendedCount')").val());
+            $(":asp('zd_litNotRecomm')").text($(":asp('zd_txtNotRecommendedCount')").val());
+        }
+
+        document.onkeydown = function () {
+            var ev = window.event || arguments[0];
+            if (ev.keyCode == 13) {
+                var sourceID = ev.target.id;
+                if (sourceID == $(".txtPageNumber").attr("id")) {
+                    doPostBack('', $(".txtPageNumber").val());
+                }
+                return false;
+            }
+        }
+    </script>
+
+
+                
+
+            </div>
+
+         
+       <!-- footer of the page -->
+		<footer id="footer">
+			<div class="container">
+				<!-- footer ad -->
+<!--				<div class="footer-ad">
+					<a href="#"><img src="images/footer-ad.jpg" alt="320x100 ad"></a>
+				</div>-->
+				<!-- copyrights -->
+				<p class="copyrights">Copyright &copy; 2013-2020 <br><a href="Reviews.html#">Leisure Interactive, LLC.</a> All rights reserved.<br> Any unauthorized redistribution or reproduction of any material contained herein is strictly prohibited.</p>
+			</div>
+		</footer>
+		<a class="accessibility" href="Reviews.html#wrapper">Back to top</a>
+               
+ 
+
+ <!-- copyrights -->
+                    
+            <a class="accessibility" href="Reviews.html#wrapper">Back to top</a>
+        </div>
+
+          
+
+            
+
+    <div id="maskWindow" class="mask" style="filter: alpha(opacity=20); opacity: 0.2;">
+        
+    </div>
+
+   <div id="maskWindowWithImg" class="mask" style="filter: alpha(opacity=20); opacity: 0.2;text-align: center;justify-content: center;align-items: center;">
+        <img src="../Includes/img/pb.gif" />
+    </div>
+
+
+
+     
+  
+    <a id="ctl00_LoginStatus" class="LoginStatus" href="javascript:__doPostBack(&#39;ctl00$LoginStatus$ctl02&#39;,&#39;&#39;)" style="display: none;">Login</a>
+    
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="57919F83" />
+</div>
+<script type='text/javascript' language='javascript'>
+<!--
+delCookie('dValue')// -->
+</script>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDUwMzE1MDcxZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUXY3RsMDAkTG9naW5TdGF0dXMkY3RsMDEFF2N0bDAwJExvZ2luU3RhdHVzJGN0bDAz0USqZZ+BLGJbV+NAwgYWpw8Frvt7Ns2NV4KJQ0bak4I=" /></form>
+ 
+    <script type="text/javascript">
+        
+
+        window.onscroll = function () {
+            var vscrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var node = $("#divTimeOut");
+            if (!node.is(':hidden')) {
+                if (vscrollTop == 0)
+                    node.css("position", "relative");
+                else
+                    node.css("position", "fixed");
+            }
+        }
+
+      
+        function goHomeUrl() {
+            try {
+                var vURL = "";
+                if ($(".Overview").length > 0)
+                {
+                    vURL = GetParkName(true) + "/Overview";
+                }
+                else {
+                    vURL = GetParkName(true) + "/Reservations";
+                }
+                
+                showBlockLoading();
+                setTimeout(function () {  
+                        window.location = window.location.origin + vURL;
+                }, 120);
+                
+                return false;
+            } catch (ex) {
+                
+            }
+        }
+
+        function goReservationsUrl() {
+            try {
+                var vURL = GetParkName(true) + "/Reservations";
+                showBlockLoading();
+                setTimeout(function () {
+                    window.location = window.location.origin + vURL;
+                }, 120);
+
+                return false;
+            } catch (ex) {
+
+            }
+        }
+    </script>
+     
+
+    <script src="https://www.google-analytics.com/ga.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        try {
+            var vTracker = $('#ctl00_divTrackAccount').attr('TrackAccount');
+            var pageTracker = _gat._getTracker(vTracker);
+
+            var vHostName = window.location.hostname;
+            var vIndex = vHostName.indexOf('.');
+            if (vIndex > 0) vHostName = vHostName.substr(vIndex);
+
+            pageTracker._setDomainName(vHostName);
+            pageTracker._trackPageview();
+        } catch (ex) { }
+    </script>
+</body>
+</html>

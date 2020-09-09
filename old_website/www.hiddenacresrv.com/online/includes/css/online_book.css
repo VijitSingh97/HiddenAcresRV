@@ -1,0 +1,886 @@
+﻿/**
+ * Required Field Background: Yellow
+**/		
+.MustTextBoxCSS
+{
+    /*background-color:#FFFFCC; */
+    font-size: 12px;
+    color:black;
+}
+
+.DisableTextBoxCSS
+{
+    background-color:#E0E0E0; 
+    font-size: 12px;
+    color:black;
+}   
+
+.OnlineMustTextBox
+{
+    color:#000000;
+    background-color:#FFFFCC; 
+    font-size:12px;
+    font-family:Arial;
+    font-weight:normal;
+    text-decoration:none;
+    text-align:left;
+}
+
+.OnlineMustTextBox575757
+{
+    color:#000000;
+    background-color:#FFFFCC; 
+    font-size:12px;
+    font-family:Arial;
+    font-weight:normal;
+    text-decoration:none;
+    text-align:left;
+    border-width:1px;
+    border-color:#575757;
+}        
+
+.OnlineTextBox
+{
+    background-color:#ffffff; 
+    font-size: 12px;
+    color:#000000;
+}  
+
+.OnlineDisTextBox
+{
+    background-color:#E0E0E0; 
+    font-size: 12px;
+    color:black;
+}    
+
+
+#sw-onlines
+{
+	width:750px;
+	border:solid 0px red;
+	margin-right: auto; 
+	margin-left: auto;	
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 13px;
+}
+
+#sw-onlines .label_name
+{
+	color:#000000;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 13px;
+    line-height:1;
+}
+
+/*#sw-online
+{
+	width:750px;
+	border:solid 0px red;
+	margin-right: auto; 
+	margin-left: auto;	
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+}*/
+
+#sw-online .PageHeader,
+#sw-online .PageHeader dl,
+#sw-online .PageHeader dt,
+#sw-online .PageHeader dd,
+#sw-online .PageHeader pre,
+#sw-online .PageHeader p,
+#sw-online .PageHeader blockquote,
+#sw-online .PageHeader th,
+#sw-online .PageHeader td, 
+#sw-online .PageHeader ul, 
+#sw-online .PageHeader li 
+{
+	float:none;
+	margin:auto; 
+	padding:auto; 
+	font-family: Arial, Arial, Helvetica, sans-serif;
+	line-height:normal;
+	font-size:12px; 
+	font-weight:normal; 
+	border-width:0px;	
+}
+
+#sw-online .LabelCSS
+{
+	font-size:12px;
+	line-height:20px;
+}
+
+#sw-online table.ViewUnitType th
+{
+	margin:0;
+	padding:0;
+	font-size: 12px;
+	font-weight:normal;
+	border-top:solid 1px #57585a;
+}
+
+#sw-online table.ViewUnitType td
+{
+	font-size: 12px;
+	text-align:center;
+	font-weight:normal;
+}
+/*
+#sw-online table.ViewUnitType td.left
+{
+	font-size: 12px;
+	text-align:center;
+	font-weight:normal;
+	border-left:solid 1px #57585a;
+}
+
+#sw-online table.ViewUnitType td.right
+{
+	font-size: 12px;
+	text-align:center;
+	font-weight:normal;
+	border-right:solid 1px #57585a;
+}
+*/
+
+#sw-online .AmpService
+{
+	font-size: 12px;
+}
+
+#sw-online .row_tilte
+{
+	background-color:#57585a;
+	height:25px;
+	color:#ffffff;
+	text-align:center;
+	font-weight:bold;
+	vertical-align:middle;	
+	padding-top:0px;
+	padding-bottom:0px;
+	font-size:12px;
+	border:1px solid #000;
+	
+}
+
+#sw-online .row_Tilte
+{
+	background-color:#57585a;
+	height:25px;
+	color:#ffffff;
+	text-align:center;
+	font-weight:bold;
+	vertical-align:middle;	
+	padding-top:0px;
+	padding-bottom:0px;
+	font-size:12px;
+	
+}
+
+#sw-online .row_data
+{
+	background-color:#ffffff;
+	height:22px;
+	color:#000000;
+	text-align:center;
+	font-weight:normal;
+	vertical-align:middle;	
+	padding-top:0px;
+	padding-bottom:0px;
+	font-size:12px;
+}
+
+#sw-online .row_data2
+{
+	height:22px;
+	color:#000000;
+	text-align:left;
+	font-weight:normal;
+	padding-top:0px;
+	padding-bottom:0px;
+	font-size:12px;
+	line-height:18px;
+}
+
+
+#sw-online td.weekdays {
+	text-decoration:none;
+	background-color:#BFBFBF;
+	font-weight:normal;
+}
+
+#sw-online td.weekend {
+	text-decoration:none;
+	/*background-color:#ffffff;*/
+	background-color:#E5E5E5;
+	font-weight:normal;
+} 
+
+#sw-online td.valid_cell {
+	text-decoration:none;
+	color:#000000;
+	background-color:#5A84B5;
+	font-weight:normal;
+}
+
+#sw-online td.in_valid_cell {
+	text-decoration:none;
+	/*background-color:#E5E5E5;*/
+	font-weight:normal;
+	background-color:#ffffff;
+}
+
+#sw-online a.next_calendar,
+#sw-online a.preview_calendar {
+	text-decoration:none;
+	color:#127e12;
+	font-weight:bold;
+	line-height:20px;
+}
+#sw-online a.disable_preview_calendar {
+	text-decoration:none;
+	color:#999999;
+	font-weight:bold;
+	line-height:20px;
+}
+#sw-online a.next_calendar:hover,
+#sw-online a.preview_calendar:hover {
+	text-decoration:none;
+	color:#127e12;
+	font-weight:bold;
+	line-height:20px;
+}
+
+#sw-online .row_desc
+{
+	color:#000000;
+	padding:3px 5px 3px 5px;	
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+}
+
+#sw-online .row_desc2
+{
+	color:#5F7894;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+}
+
+#sw-online .label_name
+{
+	color:#000000;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+    line-height:1;
+}
+
+#sw-online .asterisk
+{
+	color:#5884B7;
+	font-size: 20px;
+	font-weight:bold;
+}
+
+#sw-online .AsteriskCSS
+{
+	color :#ff0000;
+	font-size: 11px;
+	font-weight:bold;
+}
+
+#sw-online .LinkCSS
+{
+	color:#5F7894;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    padding-top:0px;
+    padding-bottom:0px;
+    margin-top:0px;
+    margin-bottom:0px;    
+    line-height:20px;
+}  
+
+#sw-online .LinkCSS:hover
+{
+    color:#5F7894;
+}
+
+#sw-online .labelCSS
+{
+	color:#000000;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    text-align:left;
+    line-height:18px;
+}  
+
+#sw-online div.Step1
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step1.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+#sw-online div.Step2
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step2.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+#sw-online div.Step3
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step3.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+#sw-online div.Step4
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step4.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+	margin-right: auto; 
+	margin-left: auto;
+}
+
+#sw-online div.setup2
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step1.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+}
+
+#sw-online div.setup3
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step1.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+}
+
+#sw-online div.setup4
+{
+	border:none;
+	color:black;
+	background:url(../../images/Step1.png);	
+	background-repeat:no-repeat;
+	background-position:bottom;
+	outline: none;
+	outline-color: transparent;
+	width:286px;
+	height:60px;
+}
+
+#sw-online input.Confirm
+{
+	background:url(../../images/Confirm.gif);
+	background-repeat:no-repeat;
+	background-position:center;
+	text-align:center;
+	vertical-align:top;
+	border:none;
+	outline: none;	
+	width:155px;
+	height:45px;
+	cursor:pointer;
+}
+
+#sw-online div.calendar_border
+{
+	width:200px;
+	height:238px;
+	border:solid 1px #C0C0C0;
+	font-size:12px;
+	font-weight:normal;
+}
+
+#sw-online .calendar_style
+{
+    /* border:solid 1px #57585a; */
+	border-collapse:separate;
+	text-align:center;
+	/*border:solid 0px #C0C0C0; */
+	border:solid 0px #C0C0C0;
+	font-size:12px;
+	font-weight:normal;
+
+} 
+
+#sw-online .calendar_style th
+{
+	border-collapse:collapse;
+	text-align:center;
+	width:25px;
+	height:25px;
+	padding:0;
+	margin:0;
+	font-size:12px;
+	font-weight:normal;	
+} 
+
+#sw-online .calendar_style td
+{
+	text-align:center;
+	width:25px;
+	height:25px;
+	padding:0;
+	margin:0;
+	font-size:12px;
+	font-weight:normal;	
+} 
+
+#sw-online .calendar_title
+{
+	color:#000000;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:bold;
+    text-decoration:none;
+    border:solid 1px #ffffff;
+    text-align:center;
+} 
+
+#sw-online .calendar_cell_head
+{
+	color:#ffffff;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    background-color:#57585a;
+    border:solid 1px #57585a;
+}  
+
+#sw-online .calendar_cell_day
+{
+	color:#000000;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    border: solid 1px #6699CA; 
+    cursor:pointer;
+}  
+
+#sw-online .calendar_cell_max_stay_start_day
+{
+	color:#000000;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    border: solid 1px #6699CA;
+    background-color :#6CD56C;
+    cursor:pointer;
+}  
+
+#sw-online .calendar_cell_max_stay_day
+{
+	color:#000000;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    border: solid 1px #6699CA;
+    background-color :#FBFFB1;
+    cursor:pointer;
+}  
+
+
+#sw-online .calendar_cell_today
+{
+	color:#000000;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    border: solid 1px #FF0000;
+    background-color : #ffffff;/*#ff0000;*/
+    cursor:pointer;
+}  
+
+#sw-online .calendar_cell_select_day
+{
+	color:#ffffff;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    border: solid 1px #32618F;
+    background-color:#6699CA;  
+    cursor:pointer;
+}  
+
+#sw-online .calendar_cell_select_today
+{
+	color:#ffffff;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:underline;
+    /*
+    border: solid 1px #32618F;
+    background-color:#ff0000;
+    */
+    
+    border: solid 1px #FF0000;
+    background-color:#6699CA;  
+    
+}  
+
+#sw-online .calendar_cell_day_disable
+{
+	color:#ffffff;
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    border: solid 1px #32618F;
+    background-color:#C0C0C0;
+    cursor:auto;
+}
+
+#sw-online .calendar_cell_empty
+{
+	color:rgb(95,120,148);
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    border: solid 1px #ffffff;
+    cursor:auto;
+ 
+}  
+
+#sw-online .calendar_cell_active
+{
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    border: solid 1px #ffffff;
+    /*background:url(../../images/active20.gif);*/
+	background-repeat:no-repeat;
+	background-position:center;    
+	cursor:auto;    
+}  
+
+#sw-online .calendar_cell_active_today
+{
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    border: solid 1px #ff0000;
+    /*background:url(../../images/active20.gif);*/
+	background-repeat:no-repeat;
+	background-position:center;    
+	cursor:auto;    
+}  
+
+#sw-online .calendar_cell_inactive_today
+{
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    border: solid 1px #ff0000;
+	background-repeat:no-repeat;
+	background-position:center;    
+	cursor:auto;  
+    background-color:#C0C0C0;
+}
+
+#sw-online .calendar_cell_inactive
+{
+    font-size:12px;
+    font-family: Arial;
+    font-weight:normal;
+    text-decoration:none;
+    border: solid 1px #ffffff;
+	/*
+	background:url(../../images/inactive20.gif);
+	background-repeat:no-repeat;
+	background-position:center;    
+	*/
+    border: solid 1px #32618F;
+    background-color:#C0C0C0;	
+    color:#ffffff;
+	cursor:auto;	
+}
+
+#sw-online .caledar_prev_next
+{
+	color:#5F7894;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+    cursor:pointer;
+}
+
+#sw-online a.more_alerts
+{
+	color:#127e12;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+
+}
+
+#sw-online a.more_alerts.hover
+{
+	color:#127e12;
+	font-family: Arial, Arial, Helvetica, sans-serif;
+    font-style:normal;
+    font-variant:normal;
+    font-size: 12px;
+    cursor:pointer;	 
+}
+.ButtonCSS
+{
+
+	border:none;
+	color:black;
+	background:#f3f3f3 url(../../images/buttonbg.jpg) repeat-x left bottom;	
+	border:1px solid #cdcdcd;
+	outline: none;
+	outline-color: transparent;
+	text-align:center;
+}
+
+/**
+.buttonCss
+{
+	color:Black; 
+	font-size:12px;
+	font-family:Arial;	
+}
+
+.label_normal 
+{
+	color:Black; 
+	font-size:12px;
+	font-family:Arial;	
+}
+
+
+.label_link
+{
+	color:blue; 
+	font-size:12px;
+	font-family:Arial;	
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.label_normal_italic
+{
+	color:Black; 
+	font-size:11px;
+	font-family:Arial;	
+	font-style:italic;
+}
+
+.label_normal_red
+{
+	color:red; 
+	font-size:12px;
+	font-family:Arial;	
+}
+
+.label_head
+{
+	background-color:#6699cc;
+	color:White;
+	width:200px;
+	height:22px;
+	padding-left:12px;
+}
+
+.label_list
+{
+	background-color:#ffffff;
+	color:black;
+	padding-left:12px;
+}
+
+
+.label_title
+{
+	font-size:15px;
+	font-weight:bold;
+}
+
+.My_Account_Normal 
+{
+	color:Black; 
+	font-size:12px;
+	font-family:Arial;
+	
+}
+
+.My_Account_Head
+{
+	background-color:#6699cc;
+	color:White;
+	width:200px;
+	height:22px;
+	padding-left:12px;
+}
+
+.My_Account_List
+{
+	background-color:#ffffff;
+	color:black;
+	padding-left:12px;
+}
+
+.My_Account_Title
+{
+	font-size:15px;
+	font-weight:bold;
+}
+
+.My_Account_Image
+{
+	width:120px;
+	height:120px;
+	background-color:Transparent;
+}
+
+.ListBorder
+{
+	border-bottom:solid 1px #e0e0e0;
+	border-right:solid 1px #e0e0e0;
+	border-top:solid 1px #e0e0e0;
+	border-left:solid 1px #e0e0e0;
+}
+
+.hrcss
+{
+	height: 1px;
+	border:none;     
+	padding-top:0px;
+	padding-bottom:0px;
+	border-top:solid 1px rgb(95,120,148);
+}
+
+.ListMyProfile
+{
+	cursor:pointer;
+	color:Black;
+}
+
+.AsteriskCSS
+{
+	color :Red;
+}
+
+.TextBoxCSS
+{
+    font-size: 12px;
+    color:black;
+}
+	
+.MustTextBoxCSS
+{
+    background-color:#FFFFCC; 
+    font-size: 12px;
+    color:black;
+}    
+
+.DisableTextBoxCSS
+{
+    background-color:#E0E0E0; 
+    font-size: 12px;
+    color:black;
+}
+
+.RowWhite
+{
+	color:Black; 
+	font-size:12px;
+	font-family:Arial;	
+	background-color:#ffffff
+}
+
+.RowDark
+{
+	color:Black; 
+	font-size:12px;
+	font-family:Arial;	
+	background-color:#CCCCCC
+}
+
+#sw-online .ctable th,
+#sw-online .ctable td
+{
+     padding-top:3px;
+}
+
+#sw-online .label_normal input,
+#sw-online .buttonCss input
+{
+	
+}
+**/

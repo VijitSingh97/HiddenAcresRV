@@ -1,0 +1,229 @@
+﻿ 
+.mask
+{
+	background-color:red;
+	display:none;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:90000;
+	width:100%;
+	height:100%;
+}
+
+.div-wrapper
+{
+	margin:auto;
+	background-color:white;	
+}
+
+.PortalShellContainer
+{
+	top: 0px;
+	left: 0px;
+	margin:auto;
+	padding: 0px 0px 0px 0px;
+	width: 1000px;
+	float:inherit;
+	width: 100%;
+}
+
+.PortalShellMastHeadWrapper
+{
+	float: none;
+	/*padding: 0px 2px 0px 2px;*/
+	padding: 0px 0px 0px 0px;
+	margin: 0px;
+	width: 100%;	
+	text-align:left;
+	overflow: hidden;
+	width: 1000px;
+}
+
+.PortalShellMenuWrapper
+{
+	float: none;
+	top: 0;
+	left: 0;
+	/*padding: 0px 2px 0px 2px;*/
+	padding: 0px 0px 0px 0px;
+	margin: 0px;	
+	height:100%;
+	text-align:left; 
+	overflow: hidden;
+	width: 1000px;
+}
+
+.ContentLeft
+{
+	overflow: hidden;
+	color: white;
+	padding-top: 3px;
+	right: auto;
+	height: 100%;	
+	
+	width:220px;
+	height:100%;
+	float:left;
+	text-align:left;
+	border:solid 0px red;
+}
+
+.ContentRight
+{
+	/*position: absolute;*/
+	height: 100%;
+	overflow: hidden;
+	color: white;	
+	left: auto;
+	padding-top: 3px;
+		
+	width:184px;
+	float:right;
+	text-align:center;
+	border:solid 0px yellow;
+}
+
+.ContentBottom
+{
+	overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+	padding-top: 5px;
+	padding-left: auto;
+	padding-right: auto;
+	text-align: center;
+	float:left; 
+	height:200px; 
+	width:800px;
+	border:solid 0px yellow;
+}
+
+.ContentMain
+{
+	/*position: absolute;*/
+	margin:auto;
+	overflow: hidden;
+	padding-left: auto;
+	padding-right: auto;
+	padding-top: 5px;
+	float:left; 	 
+	text-align:center; 
+	vertical-align:top;
+	border:solid 0px red;
+}
+
+* html .ContentMain
+{
+	/*IE6 hack*/
+	height: 100%;
+	/**width: 100%;*/
+}
+
+* html .ContentBottom
+{
+	/*IE6 hack*/
+	/*width: 100%;*/
+}
+
+
+
+
+/* Hack To Fix Issue With Nested Floating Divs In FireFox*/ 
+/*
+DIV.ContentLeft:after
+{
+	display: block; 
+	height: 0px; 
+    content: "."; 
+    clear: both; 
+    visibility: hidden;
+}
+*/
+
+/* **************************************************************************************
+//		Hidden Elements Section
+// ************************************************************************************** */
+
+.NoVisibility
+{
+	visibility: hidden;
+}
+
+.NoDisplay
+{
+	display: none;
+}
+
+.Display
+{
+	display: block;
+}
+
+.Hidden
+{
+	visibility: hidden;
+}
+
+.None
+{
+	display: none;
+}
+
+.NoBorder
+{
+	border: none;
+}
+
+/* **************************************************************************************
+//		Fix Floating Div Issues Section
+// ************************************************************************************** */
+
+/* contain floats */
+/*
+#content: after 
+{
+	display: block;
+	clear: both;
+	content: ".";
+	visibility: hidden;
+	overflow: hidden;
+	height: 0;
+}
+*/
+
+/* IE HACK */
+/*
+* html #content 
+{
+	height: 0;
+}
+*/
+
+.FixFloat_OverFlow
+{
+	overflow: hidden;
+}
+
+.Centered
+{
+	text-align: center;
+	margin: 0;
+	/*margin: auto;*/
+}
+
+*.Centered
+{
+	text-align: -moz-center;
+	margin: 0;
+	/*margin: auto;*/
+}
+
+/*.copyright 
+{
+	color:Black; 
+	font-size:13px;
+	font-family:Arial;
+	height:40px;
+	padding-top:12px;
+	border:None;
+	clear:both;
+}*/

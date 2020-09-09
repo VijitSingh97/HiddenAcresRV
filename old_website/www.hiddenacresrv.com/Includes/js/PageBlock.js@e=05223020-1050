@@ -1,0 +1,46 @@
+﻿
+function showBlockLoading(vMsg) {
+    try
+    {
+        var vMaskObj = $('#maskWindowWithImg');
+        vMaskObj.css('backgroundColor', 'black');
+        var vSize = getDocumentSize();
+        vMaskObj.width(vSize.width);
+        if (vSize.height < 600) vSize.height = 600;
+        vMaskObj.height(vSize.height);
+        vMaskObj.fadeIn('slow');
+        vMaskObj.css("opacity", "0.2");
+        vMaskObj.css('display', 'flex'); 
+    }
+    catch(ex)
+    {
+       
+    }
+}
+ 
+function hideBlockLoading() {
+    var vMaskObj = $('#maskWindowWithImg');
+    vMaskObj.css('backgroundColor', 'black');
+    vMaskObj.fadeOut('slow');
+
+
+
+    // $.unblockUI();
+    //setTimeout(function () { $.unblockUI(); }, 120);
+    //window.setTimeout($.unblockUI(), 120);
+   // maskWindow(false);
+}
+
+
+function HasValue(vObj) {
+    if (typeof vObj == "undefined")
+        return false;
+
+    if (vObj == null)
+        return false;
+
+    if (vObj == "")
+        return false;
+
+    return true;
+}

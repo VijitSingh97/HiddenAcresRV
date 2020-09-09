@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#datepicker,
+#arrivaldatepicker,
+#departuredatepicker,
+#arrivaldatepicker1,
+#departuredatepicker1,
+#arrivaldatepicker2,
+#departuredatepicker2 {
+    margin: 0;
+    height: 34px;
+    vertical-align: bottom;
+}
+.ui-datepicker-trigger,
+.ui-datepicker-trigger1,
+.ui-datepicker-trigger2 {
+    margin: 2px;
+    padding: 0 0 0 4px;
+    vertical-align: bottom;
+}
+.ui-datepicker-trigger img,
+.ui-datepicker-trigger1 img,
+.ui-datepicker-trigger2 img {
+    width: 34px;
+    height: 34px;
+}
+.offscreen {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+button.ui-datepicker-trigger,
+button.ui-datepicker-trigger1,
+button.ui-datepicker-trigger2 {
+    background-color:transparent !important;
+    border:none !important; 
+    margin:auto !important;
+}
+button.ui-datepicker-trigger:focus,
+button.ui-datepicker-trigger:hover,
+button.ui-datepicker-trigger:active,
+button.ui-datepicker-trigger1:focus,
+button.ui-datepicker-trigger1:hover,
+button.ui-datepicker-trigger1:active,
+button.ui-datepicker-trigger2:focus,
+button.ui-datepicker-trigger2:hover,
+button.ui-datepicker-trigger2:active {
+    border:none !important; 
+    margin:auto !important; 
+    outline:2px solid #8cc63f !important;
+    background-color:#fdf6e7 !important;
+}
+
+#ui-datepicker-div {
+    z-index: 1051 !important;	
+}
