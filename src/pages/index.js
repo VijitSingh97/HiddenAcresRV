@@ -12,6 +12,7 @@ import Footer from '@sections/Footer';
 const IndexPage = () => (
   <Layout>
     <Navbar />
+    <br />
     <Reservation />
     <About />
     <Amenities />
