@@ -50,7 +50,7 @@ const About = () => (
             <div>
               <h2>Quiet and Friendly</h2>
               <p>
-                No freeway - no railroad - no street lights. Clear view of the stars at night. 
+                No freeway - no railroad - no street lights. Clear view of the stars at night. Surrounded by Lake Lavon on two sides.
                 Enjoy the company of a small community of 24 RVs.
               </p>
             </div>
