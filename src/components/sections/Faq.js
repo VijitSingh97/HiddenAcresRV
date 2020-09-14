@@ -4,7 +4,7 @@ import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
 import ExternalLink from '@common/ExternalLink';
-import parkRules from '../../../static/park_rules/Campground Registration Form.pdf' 
+import parkRules from '../../../static/park_rules/Campground Rules.pdf' 
 
 
 const FAQS = [
@@ -28,7 +28,7 @@ const FAQS = [
     title: 'Is Hidden Acres pet friendly?',
     content: () => (
       <>
-        Yes we are! We allow for cats, dogs under 30 pounds, and all service animals. You can find more information our registration form here: <a href={parkRules}>park rules</a>.
+        Yes we are! We allow for cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <a href={parkRules}>campground rules</a>.
       </>
     ),
   },
@@ -36,7 +36,7 @@ const FAQS = [
     title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
-        You can find all our rules in our registration form here: <a href={parkRules}>park rules</a>.
+        You can find our campground rules here: <a href={parkRules}>campground rules</a>.
       </>
     ),
   },
