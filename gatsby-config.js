@@ -35,6 +35,13 @@ module.exports = {
         path: `${__dirname}/src/images/park`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `map`,
+        path: `${__dirname}/src/images/map`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
