@@ -1,32 +1,13 @@
-# gatsby-absurd
+# Hidden Acres RV Campground
+A beautiful homepage to Hidden Acres RV Campground, located in Princeton, TX. This webpage directs users to a reservation portal, describes the campground and local amenities, contact information, and FAQs. 
 
-An absurd Gatsby starter. The collection of illustrations, [absurd.design](https://absurd.design/) by [Diana Valeanu](https://twitter.com/diana_valeanu) is a very fascinating and beautiful project with some pretty thoughtful concepts. Experimentation on how that could be put together on a site ended up as this starter.
-
-![screenshot](https://user-images.githubusercontent.com/20743219/85018804-64ec4e00-b18b-11ea-9aa0-d4be033efff8.png)
-
-[Live Demo](https://gatsby-absurd.vercel.app/)
-
-## Installation
-
-Install the dependencies:
-
-### `yarn install`
-
-Run the development server:
-
-### `yarn dev`
-
-Production build to `/public`:
-
-### `yarn build`
-
-Cleanup cache (often fixes misc errors when run before `yarn dev`):
-
-### `yarn clean`
+![screenshot](https://github.com/VijitSingh97/HiddenAcresRV/blob/master/src/images/signage/big_sign.jpg)
 
 ## Content
 
-Each of the sections in the site are placed in `src/sections`. Data is usually separated out into objects/arrays to be rendered in the component.
+Each of the sections in the site are placed in `src/components/sections`. Data is usually separated out into objects/arrays to be rendered in the component.
+
+Also included is the old website for caching purposes in `old_website/` with original links
 
 ## SEO
 
@@ -34,4 +15,30 @@ The component `src/components/common/SEO.js` handles all meta data and SEO conte
 
 ## Styling
 
-This project uses [styled-components]() to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
+This project uses styled-components to handle styling: `src/styles/theme.js` defines the styling base and `src/styles/GlobalStyles.js` includes basic element styles along with the CSS Reset.
+
+## Prod Deployment
+1. Install dependencies
+
+    `yarn install`
+2. Build deployment files
+
+    `yarn build`
+3. Expose `public/`
+    
+    Export public facing files over port 80 or 443 using ngnix (out of scope for this read me)
+
+## Local Deployment
+1. Install dependencies
+    
+    `yarn install`
+2. Run project
+    
+    `yarn dev`
+3. View Project in your broswer
+    
+    Find the project running at http://localhost:8000
+
+### Adapted from:
+
+[gatsby-absurd](https://github.com/ajayns/gatsby-absurd)
