@@ -60,9 +60,13 @@ class Navbar extends Component {
       <Nav {...this.props}>
         <StyledContainer>
           <Brand>
-            Hidden Acres RV Campground
-            <br />
-            <center>Princeton, TX</center>
+            <center>
+              Hidden Acres RV Campground
+              <br />
+              <p2>
+                Princeton, TX
+              </p2>
+            </center>
           </Brand>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
