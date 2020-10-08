@@ -22,7 +22,7 @@ const AMENITIES = [
     role: 'Free electricity for daily and weekly visitors',
   },
   {
-    name: '20\'x25\' Parking per lot',
+    name: '24L\'x20W\' Parking per lot',
     image: 'parking.jpg',
     role: 'Accommodates 2-3 cars',
   },

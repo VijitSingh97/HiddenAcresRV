@@ -39,7 +39,7 @@ const Reservation = () => (
                 </h1>
                 <br />
                 <p>
-                  <StyledExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=b28521e1-060f-4b0b-a205-821d4aa3f37f">
+                  <StyledExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
                     Book a Reservation &nbsp;&#x2794;
                   </StyledExternalLink>
                 </p>
