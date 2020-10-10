@@ -46,7 +46,11 @@ class Navbar extends Component {
         mobile={mobile}
         offset={-64}
       >
-        {NAV_ITEMS.map(navItem => (
+        <NavItem>
+          <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</a>
+        </NavItem>
+        
+        {NAV_ITEMS.slice(1).map(navItem => (
           <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
         ))}
       </Scrollspy>

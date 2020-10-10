@@ -40,7 +40,7 @@ const Reservation = () => (
                 <br />
                 <p>
                   <StyledExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
-                    Book a Reservation &nbsp;&#x2794;
+                    Click here to reserve&nbsp;&#x2794;
                   </StyledExternalLink>
                 </p>
               </Text>
@@ -94,6 +94,7 @@ const Text = styled.div`
 const StyledExternalLink = styled(ExternalLink)`
   color: inherit;
   text-decoration: none;
+  font-size: 35px;
 
   &:hover {
     color: ${props => props.theme.color.black.regular};
