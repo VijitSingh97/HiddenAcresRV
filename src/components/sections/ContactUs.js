@@ -35,9 +35,11 @@ const ContactUs = () => (
               </h1>
               <br />
               <h2>
+                <a href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37">
                   10364 County Rd. 740 
                   <br />
                   Princeton, TX 75407
+                </a>
               </h2>
               <br />
               <br />
@@ -48,8 +50,9 @@ const ContactUs = () => (
                   contact us:
               </h1>
               <br />
+              
               <h2>
-                  (972) 736-1264
+                  <a href="tel:9727361264">(972) 736-1264</a>
               </h2>
               </Text>
             </Grid>
