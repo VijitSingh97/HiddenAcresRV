@@ -12,15 +12,15 @@ const FAQS = [
     title: 'What are the lot fees at Hidden Acres?',
     content: () => (
       <>
-        Lot fees start at $35 a night for daily visitors. More information about rates can be found in our <ExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=b28521e1-060f-4b0b-a205-821d4aa3f37f"> Reservation Portal</ExternalLink>.
+        Lot fees start at $45 a night for daily visitors. More information about rates can be found in our <ExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=b28521e1-060f-4b0b-a205-821d4aa3f37f"> Reservation Portal</ExternalLink>.
       </>
     ),
   },
   {
-    title: 'What are the dimension of the lots at Hidden Acres?',
+    title: 'What are the dimension of the RV pads at Hidden Acres?',
     content: () => (
       <>
-        Lots start at 25' x 50', and our largest lots are 30' x 65'. 
+        Pads start at 25' L x 16' W, and our largest pads are 45' L x 16' W. 
       </>
     ),
   },
