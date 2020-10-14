@@ -20,7 +20,7 @@ const FAQS = [
     title: 'What are the dimension of the RV pads at Hidden Acres?',
     content: () => (
       <>
-        Pads start at 30' L x 16' W, and our largest pads are 45' L x 16' W. Each unit also includes a 24' L x 20' W parking spot for 2 vehicles.
+        Pads start at 30' L x 16' W, and our largest pads are 45' L x 16' W. Each unit also includes a 24' L x 20' W parking spot for two vehicles.
       </>
     ),
   },
