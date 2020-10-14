@@ -42,6 +42,13 @@ module.exports = {
         path: `${__dirname}/src/images/map`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `logo`,
+        path: `${__dirname}/src/images/logo`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {

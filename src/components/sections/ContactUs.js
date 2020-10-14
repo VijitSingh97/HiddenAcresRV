@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
+// import ExternalLink from '@common/ExternalLink';
 
 const ContactUs = () => (
   <StaticQuery
@@ -102,13 +102,13 @@ const Text = styled.div`
   }
 `;
 
-const StyledExternalLink = styled(ExternalLink)`
-  color: inherit;
-  text-decoration: none;
+// const StyledExternalLink = styled(ExternalLink)`
+//   color: inherit;
+//   text-decoration: none;
 
-  &:hover {
-    color: ${props => props.theme.color.black.regular};
-  }
-`;
+//   &:hover {
+//     color: ${props => props.theme.color.black.regular};
+//   }
+// `;
 
 export default ContactUs;

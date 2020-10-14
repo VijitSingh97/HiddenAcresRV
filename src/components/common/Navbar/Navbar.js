@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
+import { StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
+import styled from 'styled-components';
 
 import { Container } from '@components/global';
 import {
@@ -63,6 +66,27 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
+          <StaticQuery
+            query={graphql`
+              query HeaderQuery {
+                parkLogo: file(
+                  sourceInstanceName: { eq: "logo" }
+                  name: { eq: "HiddenAcresRVCampgroundLogo1" }
+                ) {
+                  childImageSharp {
+                    fluid(maxWidth: 1000) {
+                      ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    }
+                  }
+                }
+              }
+            `}
+            render={data => (
+              <Art>
+                <Img fluid={data.parkLogo.childImageSharp.fluid} />
+              </Art>
+            )}
+          />
           <Brand>
             <center>
               Hidden Acres RV Campground
@@ -91,5 +115,11 @@ class Navbar extends Component {
     );
   }
 }
+
+const Art = styled.figure`
+  margin: 0;
+  max-width: 150px;
+  width: 50%;
+`;
 
 export default Navbar;

@@ -32,14 +32,14 @@ const AMENITIES = [
     role: 'Included in all reservations',
   },
   {
-    name: 'Boat Docks',
-    image: 'dock.jpg',
-    role: 'Easy to access',
-  },
-  {
     name: 'Walk to the Lake Front',
     image: 'beach.jpg',
     role: 'Relax and enjoy the calm water',
+  },
+  {
+    name: 'Boat Docks Neaby',
+    image: 'dock.jpg',
+    role: 'Easy to access',
   },
   {
     name: 'Proximity to Public Parks',

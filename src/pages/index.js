@@ -9,13 +9,13 @@ import Amenities from '@sections/Amenities';
 import ContactUs from '@sections/ContactUs'
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
+import styled from 'styled-components';
 
 const IndexPage = () => (
   <Layout>
-    <Navbar />
-    <br />
-    <br />
-    <br />
+    <NavbarSpacing>
+      <Navbar />
+    </NavbarSpacing>
     <Reservation />
     <About />
     <Amenities />
@@ -24,5 +24,9 @@ const IndexPage = () => (
     <Footer />
   </Layout>
 );
+
+const NavbarSpacing = styled.div`
+  padding-bottom: 100px;
+`;
 
 export default IndexPage;
