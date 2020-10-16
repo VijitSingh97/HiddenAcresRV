@@ -36,7 +36,7 @@ class Navbar extends Component {
   };
 
   getNavAnchorLink = item => (
-    <AnchorLink offset='100' href={`#${item.toLowerCase().replace(' ', '')}`} onClick={this.closeMobileMenu}>
+    <AnchorLink offset='140' href={`#${item.toLowerCase().replace(' ', '')}`} onClick={this.closeMobileMenu}>
       {item}
     </AnchorLink>
   );
