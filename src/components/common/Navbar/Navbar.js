@@ -47,16 +47,16 @@ class Navbar extends Component {
           <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</a>
         </NavItem>
         <NavItem>
-          <a href="#about">About</a>
+          <AnchorLink AnchorLink href="#about">About</AnchorLink>
         </NavItem>
         <NavItem>
-          <a href="#amenities">Amenities</a>
+          <AnchorLink AnchorLink href="#amenities">Amenities</AnchorLink>
         </NavItem>
         <NavItem>
-          <a href="#contactus">Contact Us</a>
+          <AnchorLink AnchorLink href="#contactus">Contact Us</AnchorLink>
         </NavItem>
         <NavItem>
-          <a href="#faq">FAQ</a>
+          <AnchorLink AnchorLink href="#faq">FAQ</AnchorLink>
         </NavItem>
       </Scrollspy>
     </NavListWrapper>
@@ -95,6 +95,8 @@ class Navbar extends Component {
               <br />
               <p2>
                 Princeton, TX
+                <br />
+                Now Under New Management!
               </p2>
             </center>
           </Brand>
