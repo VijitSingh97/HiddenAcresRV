@@ -4,6 +4,7 @@ import Scrollspy from 'react-scrollspy';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Container } from '@components/global';
 import {
@@ -44,19 +45,19 @@ class Navbar extends Component {
         offset={-64}
       >
         <NavItem>
-          <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</a>
+          <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</OutboundLink>
         </NavItem>
         <NavItem>
-          <AnchorLink AnchorLink href="#about">About</AnchorLink>
+          <AnchorLink href="#about">About</AnchorLink>
         </NavItem>
         <NavItem>
-          <AnchorLink AnchorLink href="#amenities">Amenities</AnchorLink>
+          <AnchorLink href="#amenities">Amenities</AnchorLink>
         </NavItem>
         <NavItem>
-          <AnchorLink AnchorLink href="#contactus">Contact Us</AnchorLink>
+          <AnchorLink href="#contactus">Contact Us</AnchorLink>
         </NavItem>
         <NavItem>
-          <AnchorLink AnchorLink href="#faq">FAQ</AnchorLink>
+          <AnchorLink href="#faq">FAQ</AnchorLink>
         </NavItem>
       </Scrollspy>
     </NavListWrapper>

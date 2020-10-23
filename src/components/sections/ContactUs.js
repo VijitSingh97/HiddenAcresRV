@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Section, Container } from '@components/global';
 // import ExternalLink from '@common/ExternalLink';
@@ -10,22 +10,22 @@ const ContactUs = ({data}) => (
   <Section id="contactus" accent='secondary'>
           <Container>
             <Grid>
-                <a href="https://goo.gl/maps/Fe2zQ4k8zSDXjGBq8">
+                <OutboundLink href="https://goo.gl/maps/Fe2zQ4k8zSDXjGBq8">
                     <Art>
                         <Img fluid={ data.staticMap.childFile.childImageSharp.fluid } />
                     </Art>
-                </a>
+                </OutboundLink>
               <Text>
               <h1>
                   Find us at:
               </h1>
               <br />
               <h2>
-                <a href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37">
+                <OutboundLink href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37">
                   10364 County Rd. 740 
                   <br />
                   Princeton, TX 75407
-                </a>
+                </OutboundLink>
               </h2>
               <br />
               <br />
@@ -38,7 +38,7 @@ const ContactUs = ({data}) => (
               <br />
               
               <h2>
-                  <a href="tel:9727361264">(972) 736-1264</a>
+                  <OutboundLink href="tel:9727361264">(972) 736-1264</OutboundLink>
               </h2>
               </Text>
             </Grid>

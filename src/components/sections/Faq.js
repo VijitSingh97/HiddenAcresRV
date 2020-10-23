@@ -3,7 +3,7 @@ import React from 'react';
 import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
-import ExternalLink from '@common/ExternalLink';
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 import parkRules from '../../../static/park_rules/Campground Rules.pdf' 
 
 
@@ -12,7 +12,7 @@ const FAQS = [
     title: 'What are the lot fees at Hidden Acres?',
     content: () => (
       <>
-        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <ExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=b28521e1-060f-4b0b-a205-821d4aa3f37f"> Reservation Portal</ExternalLink>.
+        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=b28521e1-060f-4b0b-a205-821d4aa3f37f"> Reservation Portal</OutboundLink>.
       </>
     ),
   },
@@ -58,7 +58,7 @@ const FAQS = [
           Any window ACs and window fans must be approved by management
         </li>
       </ul>
-          More information can be found in our campground rules: <a href={parkRules}>campground rules</a>.
+          More information can be found in our campground rules: <OutboundLink href={parkRules}>campground rules</OutboundLink>.
       </>
     ),
   },
@@ -66,7 +66,7 @@ const FAQS = [
     title: 'Is Hidden Acres pet friendly?',
     content: () => (
       <>
-        Yes we are! We allow for cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <a href={parkRules}>campground rules</a>.
+        Yes we are! We allow for cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules}>campground rules</OutboundLink>.
       </>
     ),
   },
@@ -74,7 +74,7 @@ const FAQS = [
     title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
-        You can find our campground rules here: <a href={parkRules}>campground rules</a>.
+        You can find our campground rules here: <OutboundLink href={parkRules}>campground rules</OutboundLink>.
       </>
     ),
   },

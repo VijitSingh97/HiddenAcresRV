@@ -4,7 +4,8 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
-import ExternalLink from '@common/ExternalLink';
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+
 
 const Reservation = () => (
   <StaticQuery
@@ -39,9 +40,9 @@ const Reservation = () => (
                 </h1>
                 <br />
                 <p>
-                  <StyledExternalLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
+                  <StyledOutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
                     Click here to reserve&nbsp;&#x2794;
-                  </StyledExternalLink>
+                  </StyledOutboundLink>
                 </p>
               </Text>
             </Grid>
@@ -91,7 +92,7 @@ const Text = styled.div`
   }
 `;
 
-const StyledExternalLink = styled(ExternalLink)`
+const StyledOutboundLink = styled(OutboundLink)`
   color: inherit;
   text-decoration: none;
   font-size: 35px;
