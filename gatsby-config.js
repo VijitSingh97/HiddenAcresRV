@@ -92,7 +92,7 @@ module.exports = {
           key: process.env.GOOGLE_MAPS_STATIC_API_KEY,
           center: `33.063741,-96.5126`,
           zoom: `11`,
-          mapType: `satellite`,
+          // mapType: `satellite`,
           markers: [
               {
                   location: `33.063741,-96.5126`,
