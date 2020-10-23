@@ -3,7 +3,7 @@ import React from 'react';
 import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { InboundLink, OutboundLink } from "gatsby-plugin-google-analytics"
 import parkRules from '../../../static/park_rules/Campground Rules.pdf' 
 
 
@@ -58,7 +58,7 @@ const FAQS = [
           Any window ACs and window fans must be approved by management
         </li>
       </ul>
-          More information can be found in our campground rules: <OutboundLink href={parkRules}>campground rules</OutboundLink>.
+          More information can be found in our campground rules: <InboundLink href={parkRules}>campground rules</InboundLink>.
       </>
     ),
   },
@@ -74,7 +74,7 @@ const FAQS = [
     title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
-        You can find our campground rules here: <OutboundLink href={parkRules}>campground rules</OutboundLink>.
+        You can find our campground rules here: <InboundLink href={parkRules}>campground rules</InboundLink>.
       </>
     ),
   },
