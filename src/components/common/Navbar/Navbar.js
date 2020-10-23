@@ -35,12 +35,6 @@ class Navbar extends Component {
     }
   };
 
-  getNavAnchorLink = item => (
-    <AnchorLink offset='140' href={`#${item.toLowerCase().replace(' ', '')}`} onClick={this.closeMobileMenu}>
-      {item}
-    </AnchorLink>
-  );
-
   getNavList = ({ mobile = false }) => (
     <NavListWrapper mobile={mobile}>
       <Scrollspy
@@ -52,10 +46,18 @@ class Navbar extends Component {
         <NavItem>
           <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</a>
         </NavItem>
-        
-        {NAV_ITEMS.slice(1).map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
-        ))}
+        <NavItem>
+          <a href="#about">About</a>
+        </NavItem>
+        <NavItem>
+          <a href="#amenities">Amenities</a>
+        </NavItem>
+        <NavItem>
+          <a href="#contactus">Contact Us</a>
+        </NavItem>
+        <NavItem>
+          <a href="#faq">FAQ</a>
+        </NavItem>
       </Scrollspy>
     </NavListWrapper>
   );
