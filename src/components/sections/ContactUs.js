@@ -1,34 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+
 
 import { Section, Container } from '@components/global';
 // import ExternalLink from '@common/ExternalLink';
 
-const ContactUs = () => (
-  <StaticQuery
-    query={graphql`
-      query {
-        map_apple_maps: file(
-          sourceInstanceName: { eq: "map" }
-          name: { eq: "apple-maps" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 1400) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-      }
-    `}
-    render={data => (
-      <Section id="contactus" accent='secondary'>
+const ContactUs = ({data}) => (
+  <Section id="contactus" accent='secondary'>
           <Container>
             <Grid>
-              <Art>
-                <Img fluid={data.map_apple_maps.childImageSharp.fluid} />
-              </Art>
+                <a href="https://goo.gl/maps/Fe2zQ4k8zSDXjGBq8">
+                    <Art>
+                        <Img fluid={ data.staticMap.childFile.childImageSharp.fluid } />
+                    </Art>
+                </a>
               <Text>
               <h1>
                   Find us at:
@@ -58,11 +44,7 @@ const ContactUs = () => (
             </Grid>
           </Container>
       </Section>
-    )}
-  />
 );
-
-
 
 const Art = styled.figure`
   width: 100%;

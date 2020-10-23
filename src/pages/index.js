@@ -11,7 +11,7 @@ import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
 import styled from 'styled-components';
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <NavbarSpacing>
       <Navbar />
@@ -19,11 +19,26 @@ const IndexPage = () => (
     <Reservation />
     <About />
     <Amenities />
-    <ContactUs />
+    <ContactUs data={data}/>
     <Faq />
     <Footer />
   </Layout>
 );
+
+export const googleMaps = graphql`
+  query StaticMapQuery {
+    staticMap {
+        childFile {
+            childImageSharp {
+                fluid {
+                    # or fixed
+                    ...GatsbyImageSharpFluid
+                }
+            }
+        }
+    }
+  }
+`
 
 const NavbarSpacing = styled.div`
   padding-bottom: 100px;

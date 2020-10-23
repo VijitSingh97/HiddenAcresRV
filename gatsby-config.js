@@ -1,5 +1,9 @@
 const path = require('path');
 
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -82,6 +86,21 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
+      options: {
+          key: process.env.GOOGLE_MAPS_STATIC_API_KEY,
+          center: `33.063741,-96.5126`,
+          zoom: `11`,
+          mapType: `satellite`,
+          markers: [
+              {
+                  location: `33.063741,-96.5126`,
+              },
+          ]
+      },
+    },
+    
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ],
 };
