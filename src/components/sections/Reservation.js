@@ -44,6 +44,10 @@ const Reservation = () => (
                     Click here to reserve&nbsp;&#x2794;
                   </StyledOutboundLink>
                 </p>
+                <br />
+                <h4>  
+                  Now Under New Management!
+                </h4>
               </Text>
             </Grid>
           </Container>
@@ -51,8 +55,6 @@ const Reservation = () => (
     )}
   />
 );
-
-
 
 const Art = styled.figure`
   width: 100%;
@@ -76,7 +78,7 @@ const Grid = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;
-    grid-gap: 80px;
+    grid-gap: 0px;
 
     > ${Art} {
       order: 2;

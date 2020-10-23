@@ -16,7 +16,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: normal;
   }
 
-  h1, h2 {
+  h1, h2, h4 {
     font-family: ${props => props.theme.font.primary};
   }
 
@@ -32,6 +32,10 @@ const GlobalStyles = createGlobalStyle`
     ${props => props.theme.font_size.large};
   }
 
+  h4 {
+    ${props => props.theme.font_size.regular};
+  }
+
   p {
     ${props => props.theme.font_size.regular};
     color: ${props => props.theme.color.black.light};
@@ -40,7 +44,7 @@ const GlobalStyles = createGlobalStyle`
   p2 {
     margin: 0;
     font-weight: normal;
-    ${props => props.theme.font_size.regular};
+    ${props => props.theme.font_size.small};
   }
 
   @media (max-width: ${props => props.theme.screen.sm}) {

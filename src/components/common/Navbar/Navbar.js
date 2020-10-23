@@ -92,12 +92,13 @@ class Navbar extends Component {
           />
           <Brand>
             <center>
-              Hidden Acres RV Campground
+              Hidden Acres 
+              {/* RV Campground */}
               <br />
               <p2>
                 Princeton, TX
-                <br />
-                Now Under New Management!
+                {/* <br />
+                Now Under New Management! */}
               </p2>
             </center>
           </Brand>
@@ -123,7 +124,7 @@ class Navbar extends Component {
 
 const Art = styled.figure`
   margin: 0;
-  max-width: 150px;
+  max-width: 85px;
   width: 50%;
 `;
 

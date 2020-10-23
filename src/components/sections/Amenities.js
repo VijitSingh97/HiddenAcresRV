@@ -135,7 +135,7 @@ const Art = styled.figure`
   width: 800px;
   margin: -80px 0;
   position: absolute;
-  top: 0;
+  top: 10%;
   left: 70%;
 
   @media (max-width: ${props => props.theme.screen.lg}) {
