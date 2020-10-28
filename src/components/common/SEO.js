@@ -2,11 +2,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 const SEO_DATA = {
-  description: 'A quiet and friendly place to relax! Hidden Acres RV Park is located in Princeton, TX. On Lake Lavon, lush trees, with beach access, 20 min from Plano and McKinney!',
-  title: 'Hidden Acres RV Park',
+  // description: 'A quiet and friendly place to relax! Hidden Acres RV Park is located in Princeton, TX. On Lake Lavon, lush trees, with beach access, 20 min from Plano and McKinney!',
+  description: '10364 County Rd. 740 • Princeton TX 75407. Surrounded by Lake Lavon, lush trees, and with beach access. Nearby Allen, Mckinney, North Dallas, and Plano!',
+  title: 'Hidden Acres RV Park - A Friendly Place to Relax',
   url: 'https://www.hiddenacresrv.com',
   author: 'Vijit Singh',
-  keywords: ['rv park near me', 'rv near me', 'rv park near princeton tx', 'rv park near lake lavon tx', 'rv park near mckinney tx', 'rv park near plano tx', 'rv park near frisco txt', 'rv park near dallas tx', 'campground near me'],
+  keywords: ['rv parks', 'lodging', 'campgrounds', 'lake lavon', 'texas', 'mckinney', 'allen', 'plano', 'north dallas', 'collin county', 'beach', 'tree', 'lake', 'taco', 'lavon', 'princeton', 'fish', 'fishing'],
   img: '../../images/logo/HiddenAcresRVCampgroundLogo1.png',
   twitterId: '@Hidden_Acres_RV',
   facebookId: '',
