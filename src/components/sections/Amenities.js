@@ -123,7 +123,7 @@ const AmenitiesGrid = styled.div`
 
   @media (max-width: ${props => props.theme.screen.md}) {
     width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   }
 
   @media (max-width: ${props => props.theme.screen.xs}) {
@@ -148,7 +148,7 @@ const Art = styled.figure`
 `;
 
 const ArtMobile = styled.figure`
-  width: 100%;
+  width: 50%;
   margin: 0;
   display: none;
   margin-top: 64px;

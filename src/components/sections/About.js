@@ -50,7 +50,8 @@ const About = () => (
             <div>
               <h2>Quiet and Friendly</h2>
               <p>
-                Clear view of the stars at night. Surrounded by Lake Lavon on two sides.
+                Clear view of the stars at night.
+                Surrounded by Lake Lavon, lush trees, and with beach access. 
                 Enjoy the company of a small community of 24 RVs.
               </p>
             </div>
@@ -65,9 +66,9 @@ const About = () => (
             <div>
               <h2>Suburban Staples Nearby</h2>
               <p>
-                Located on Lake Lavon just 15 miles east of Plano, and 15 miles south east of McKinney. 
-                Close to boat ramps and swimming areas. Downtown Dallas is a short 30 minute drive.
-                You are only 15 minutes to major mall, movie complex and restaurants. Gas and propane are nearby.
+                Located on Lake Lavon! 10 miles east of Allen, 15 miles southeast of McKinney, 15 miles east of Plano, and 20 miles northeast of Dallas.
+                5 minute walk to the beach, fishing, and swimming. Close to boat ramps. You are only 15 minutes to major mall, movie complex and restaurants. 
+                Gas and propane are nearby.
               </p>
             </div>
           </Grid>
