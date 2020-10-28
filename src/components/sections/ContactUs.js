@@ -16,30 +16,46 @@ const ContactUs = ({data}) => (
                     </Art>
                 </OutboundLink>
               <Text>
-              <h1>
-                  Find us at:
-              </h1>
-              <br />
               <h2>
+                  Find us at:
+              </h2>
+              <h3>
                 <OutboundLink href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37">
                   10364 County Rd. 740 
                   <br />
                   Princeton, TX 75407
                 </OutboundLink>
-              </h2>
+              </h3>
               <br />
               <br />
-              <br />
-              <h1>
-                  Feel free to
-                  <br />
-                  contact us:
-              </h1>
-              <br />
-              
               <h2>
-                  <OutboundLink href="tel:9727361264">(972) 736-1264</OutboundLink>
+                  Contact us at:
               </h2>
+              <h3>
+                  <OutboundLink href="tel:9727361264">(972) 736-1264</OutboundLink>
+              </h3>
+              <h3>
+                  <OutboundLink href="mailto:reservations@hiddenacresrv.com">reservations@hiddenacresrv.com</OutboundLink>
+              </h3>
+              <br />
+              <br />
+              <h2>
+                  Take a tour:
+              </h2>
+              <h3>
+                  <OutboundLink href="https://goo.gl/maps/9URNXTdFGi63TMXj7">Take a 360&#176; Virtual Tour!&nbsp;&#x2794;</OutboundLink>
+              </h3>
+              <br />
+              <br />
+              <h2>
+                  Leave us a Review:
+              </h2>
+              <h3>
+                  <OutboundLink href="https://g.page/r/CWAoWnxskFyyEAg/review">Google Reviews&nbsp;&#x2794;</OutboundLink>
+              </h3>
+              <h3>
+                  <OutboundLink href="https://www.yelp.com/writeareview/biz/qKQpj62kyAdPpIJ_D1CDQQ?return_url=%2Fbiz%2FqKQpj62kyAdPpIJ_D1CDQQ&source=biz_details_war_button">Yelp Reviews&nbsp;&#x2794;</OutboundLink>
+              </h3>
               </Text>
             </Grid>
           </Container>
@@ -47,7 +63,7 @@ const ContactUs = ({data}) => (
 );
 
 const Art = styled.figure`
-  width: 100%;
+  width: 95%;
   margin: 0;
 
   > div {
@@ -80,17 +96,8 @@ const Text = styled.div`
   justify-self: center;
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: stsignage;
+    justify-self: auto;
   }
 `;
-
-// const StyledExternalLink = styled(ExternalLink)`
-//   color: inherit;
-//   text-decoration: none;
-
-//   &:hover {
-//     color: ${props => props.theme.color.black.regular};
-//   }
-// `;
 
 export default ContactUs;

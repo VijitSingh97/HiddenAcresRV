@@ -24,7 +24,7 @@ const Reservation = () => (
       }
     `}
     render={data => (
-      <Section id="reservation" accent>
+      <ReservationSection id="reservation" accent>
           <Container>
             <Grid>
               <Art>
@@ -51,7 +51,7 @@ const Reservation = () => (
               </Text>
             </Grid>
           </Container>
-      </Section>
+      </ReservationSection>
     )}
   />
 );
@@ -90,7 +90,7 @@ const Text = styled.div`
   justify-self: center;
 
   @media (max-width: ${props => props.theme.screen.md}) {
-    justify-self: stsignage;
+    justify-self: auto;
   }
 `;
 
@@ -100,8 +100,16 @@ const StyledOutboundLink = styled(OutboundLink)`
   font-size: 35px;
 
   &:hover {
-    color: ${props => props.theme.color.black.regular};
+    /* color: ${props => props.theme.color.black.regular}; */
   }
+`;
+
+const ReservationSection = styled(Section)`
+
+@media (max-width: ${props => props.theme.screen.md}) {
+  padding: 50px 0;
+}
+
 `;
 
 export default Reservation;
