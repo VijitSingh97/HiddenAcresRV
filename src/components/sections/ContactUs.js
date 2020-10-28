@@ -35,7 +35,7 @@ const ContactUs = ({data}) => (
                   <OutboundLink href="tel:9727361264">(972) 736-1264</OutboundLink>
               </h3>
               <h3>
-                  <OutboundLink href="mailto:reservations@hiddenacresrv.com">reservations@hiddenacresrv.com</OutboundLink>
+                  <OutboundLink href="mailto:reservations@hiddenacresrv.com?subject=Reservation Request">reservations@hiddenacresrv.com</OutboundLink>
               </h3>
               <br />
               <br />
