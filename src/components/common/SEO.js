@@ -7,7 +7,7 @@ const SEO_DATA = {
   title: 'Hidden Acres RV Park - A Friendly Place to Relax',
   url: 'https://www.hiddenacresrv.com',
   author: 'Vijit Singh',
-  keywords: ['rv parks', 'lodging', 'campgrounds', 'lake lavon', 'texas', 'mckinney', 'allen', 'plano', 'north dallas', 'collin county', 'beach', 'tree', 'lake', 'taco', 'lavon', 'princeton', 'fish', 'fishing'],
+  keywords: ['380', 'acre', 'acres', 'allen', 'beach', 'boat', 'boat ramp', 'campground', 'campgrounds', 'camping', 'collin county', 'dallas', 'dfw', 'dog', 'exotic', 'fish', 'fishing', 'friend', 'friendly', 'hidden', 'hidden acres', 'lake', 'lake lavon', 'lavon', 'lavon lake', 'lodging', 'long term', 'lots', 'mckinney', 'mesquite', 'north dallas', 'park', 'parks', 'pet', 'pet friendly', 'plano', 'princeton', 'quiet', 'ramp', 'resort', 'richardson', 'rv', 'rv park', 'rv parks', 'secluded', 'taco', 'texas', 'trailer', 'tree', 'tx'],
   img: '../../images/logo/HiddenAcresRVCampgroundLogo1.png',
   twitterId: '@Hidden_Acres_RV',
   facebookId: '',
