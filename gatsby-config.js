@@ -64,7 +64,7 @@ module.exports = {
         background_color: `#8bd8ed`,
         theme_color: `#8bd8ed`,
         display: `minimal-ui`,
-        icon: `static/favicon.jpeg`,
+        icon: `static/HiddenAcresRVCampgroundLogo1.png`,
       },
     },
     {
