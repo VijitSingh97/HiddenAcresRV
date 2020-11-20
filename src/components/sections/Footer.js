@@ -56,14 +56,14 @@ const Footer = () => (
               <span>
                 Webpage created by
                 {` `}
-                <OutboundLink href="https://www.linkedin.com/in/vijit-singh/">
+                <OutboundLink href="https://www.linkedin.com/in/vijit-singh/" target="_blank">
                   Vijit Singh
                 </OutboundLink>
               </span>
             </Copyright>
             <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (
-                <OutboundLink key={link} href={link}>
+                <OutboundLink key={link} href={link} target="_blank">
                   <img src={icon} alt="link" />
                 </OutboundLink>
               ))}
