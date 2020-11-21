@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const About = () => (
   <StaticQuery
@@ -72,14 +73,28 @@ const About = () => (
               </p>
             </div>
           </Grid>
-          <Grid>
+          <Grid inverse>
             <div>
               <h2>Renowned Local Attractions</h2>
               <p>
-              There are several local and fun attractions located within a short drive of the RV park! The Allen outlet mall,
-              the American Airlines Center, the Fairview Town Center, Firewheel Town Center, Hawaiian Falls water park,
-              the Mesquite Championship Rodeo, the President George W. Bush Library, Southfork Ranch, In-Sync Exotic Animal Zoo,
-              the Heard Natural Science Museum & Wildlife Sanctuary, and so much more!
+                There are several local and fun attractions located within a short drive of the RV park:
+                <ul>
+                    <li><OutboundLink href="https://flyppc.com" target="_blank">Future Flight Powered Parachutes</OutboundLink></li>
+                    <li><OutboundLink href="https://hfalls.com" target="_blank">Hawaiian Falls Water Park</OutboundLink></li>
+                    <li><OutboundLink href="https://www.insyncexotics.org" target="_blank">In-Sync Exotic Animal Zoo</OutboundLink></li>
+                    <li><OutboundLink href="https://www.heardmuseum.org" target="_blank">Heard Natural Science Museum & Wildlife Sanctuary</OutboundLink></li>
+                    <li><OutboundLink href="https://www.georgewbushlibrary.smu.edu" target="_blank">President George W. Bush Library</OutboundLink></li>
+                    <li><OutboundLink href="https://collinoakswinery.com" target="_blank">Collin Oaks Winery</OutboundLink></li>
+                    <li><OutboundLink href="https://www.southforkranch.com" target="_blank">Southfork Ranch</OutboundLink></li>
+                    <li><OutboundLink href="https://www.heritagefarmstead.org" target="_blank">Heritage Farmstead</OutboundLink></li>
+                    <li><OutboundLink href="https://mesquiterodeo.com" target="_blank">Mesquite Championship Rodeo</OutboundLink></li>
+                    <li><OutboundLink href="http://www.americanairlinescenter.com" target="_blank">American Airlines Center</OutboundLink></li>
+                    <li><OutboundLink href="https://www.premiumoutlets.com/outlet/allen" target="_blank">Allen Premium Outlet Mall</OutboundLink></li>
+                    <li><OutboundLink href="https://www.fairviewtowncenter.com" target="_blank">Fairview Town Center</OutboundLink></li>
+                    <li><OutboundLink href="https://www.simon.com/mall/firewheel-town-center" target="_blank">Firewheel Town Center</OutboundLink></li>
+                    
+                    <li>and so much more!</li>
+                </ul>
               </p>
             </div>
             <Art>
