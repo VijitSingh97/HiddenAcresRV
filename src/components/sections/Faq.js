@@ -9,10 +9,10 @@ import parkRules from '../../../static/park_rules/Campground Rules.pdf'
 
 const FAQS = [
   {
-    title: 'Is Hidden Acres pet friendly?',
+    title: 'What is Hidden Acres\'s pet policy?',
     content: () => (
       <>
-        Yes we are! We allow for cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules} target="_blank">campground rules</OutboundLink>.
+        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules} target="_blank">campground rules</OutboundLink>.
       </>
     ),
   },
