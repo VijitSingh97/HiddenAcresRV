@@ -21,7 +21,7 @@ const SOCIAL = [
   },
   {
     icon: GithubIcon,
-    link: 'https://github.com/VijitSingh97',
+    link: 'https://github.com/VijitSingh97/HiddenAcresRV',
   },
 ];
 
@@ -56,14 +56,14 @@ const Footer = () => (
               <span>
                 Webpage created by
                 {` `}
-                <OutboundLink href="https://www.linkedin.com/in/vijit-singh/" target="_blank">
+                <OutboundLink href="https://www.linkedin.com/in/vijit-singh/" target="_blank" rel="noopener noreferrer">
                   Vijit Singh
                 </OutboundLink>
               </span>
             </Copyright>
             <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (
-                <OutboundLink key={link} href={link} target="_blank">
+                <OutboundLink key={link} href={link} target="_blank" rel="noopener noreferrer">
                   <img src={icon} alt="link" />
                 </OutboundLink>
               ))}

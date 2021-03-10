@@ -12,7 +12,7 @@ const FAQS = [
     title: 'What is Hidden Acres\'s pet policy?',
     content: () => (
       <>
-        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules} target="_blank">campground rules</OutboundLink>.
+        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
       </>
     ),
   },
@@ -20,7 +20,7 @@ const FAQS = [
     title: 'What school are nearby Hidden Acres?',
     content: () => (
       <>
-        The schools around us include: <OutboundLink href="https://www.princetonisd.net/harper" target="_blank">Harper Elementary School</OutboundLink>, <OutboundLink href="https://www.princetonisd.net/Domain/148" target="_blank">Clark Jr High School</OutboundLink>, and <OutboundLink href="https://www.princetonisd.net/Domain/52" target="_blank">Princeton High School</OutboundLink>. All of which are in Princeton ISD.
+        The schools around us include: <OutboundLink href="https://www.princetonisd.net/harper" target="_blank" rel="noopener noreferrer">Harper Elementary School</OutboundLink>, <OutboundLink href="https://www.princetonisd.net/Domain/148" target="_blank" rel="noopener noreferrer">Clark Jr High School</OutboundLink>, and <OutboundLink href="https://www.princetonisd.net/Domain/52" target="_blank" rel="noopener noreferrer">Princeton High School</OutboundLink>. All of which are in Princeton ISD.
       </>
     ),
   },
@@ -66,7 +66,7 @@ const FAQS = [
           Any window ACs and window fans must be approved by management
         </li>
       </ul>
-          More information can be found in our campground rules: <OutboundLink href={parkRules} target="_blank">campground rules</OutboundLink>.
+          More information can be found in our campground rules: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
       </>
     ),
   },
@@ -74,7 +74,7 @@ const FAQS = [
     title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
-        You can find our campground rules here: <OutboundLink href={parkRules} target="_blank">campground rules</OutboundLink>.
+        You can find our campground rules here: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
       </>
     ),
   },
