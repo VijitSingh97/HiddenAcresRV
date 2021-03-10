@@ -1,0 +1,2 @@
+gatsby clean
+gatsby develop

@@ -45,6 +45,12 @@ const Reservation = () => (
                   </StyledOutboundLink>
                 </p>
                 <br />
+                <p>
+                  <StyledOutboundLink href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
+                    Click here to join our waitlist&nbsp;&#x2794;
+                  </StyledOutboundLink>
+                </p>
+                <br />
                 <h4>  
                   Now Under New Management!
                 </h4>
@@ -74,7 +80,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  grid-gap: 64px;
+  grid-gap: 100px;
 
   @media (max-width: ${props => props.theme.screen.md}) {
     grid-template-columns: 1fr;

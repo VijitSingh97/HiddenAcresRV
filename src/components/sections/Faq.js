@@ -86,6 +86,14 @@ const FAQS = [
       </>
     ),
   },
+  {
+    title: 'How can I join the waitlist at Hidden Acres?',
+    content: () => (
+      <>
+        You can join our waitlist here: <OutboundLink href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Hidden Acres Waitlist</OutboundLink>. We will contact you as soon as space is available.
+      </>
+    ),
+  },
 ];
 
 const Faq = () => (
