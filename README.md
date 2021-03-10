@@ -38,4 +38,6 @@ This project uses styled-components to handle styling: `src/styles/theme.js` def
 3. View Project in your browser
     Find the project running at <http://localhost:8000>
 
+---
+
 Adapted from: [gatsby-absurd](https://github.com/ajayns/gatsby-absurd)
