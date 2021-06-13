@@ -79,7 +79,7 @@ const Amenities = () => (
     `}
     render={data => (
       <Section id="amenities" accent>
-        <Container style={{ position: 'relative' }}>
+        <StyledContainer style={{ position: 'relative' }}>
           <h1>Arranged for your Convenience</h1>
           <AmenitiesGrid>
             {AMENITIES.map(({ name, image, role }) => {
@@ -102,11 +102,17 @@ const Amenities = () => (
           <ArtMobile>
             <Img fluid={data.signage_740_sign.childImageSharp.fluid} />
           </ArtMobile>
-        </Container>
+        </StyledContainer>
       </Section>
     )}
   />
 );
+
+const StyledContainer = styled(Container)`
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 72px;
+`;
 
 const AmenitiesGrid = styled.div`
   display: grid;

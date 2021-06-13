@@ -109,7 +109,8 @@ const Art = styled.figure`
   display: flex;
   justify-content: center;
   margin: 0;
-  margin-top: 48px;
+  margin-top: 0px;
+  background-color: #dfdbe0;
 `;
 
 const StyledContainer = styled(Container)`
