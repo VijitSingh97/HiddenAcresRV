@@ -111,7 +111,14 @@ const Amenities = () => (
 const StyledContainer = styled(Container)`
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 72px;
+  
+  @media (max-width: ${props => props.theme.screen.xs}) {
+    margin-bottom: 150px;
+  }
+
+  @media (max-width: ${props => props.theme.screen.xxs}) {
+    margin-bottom: 75px;
+  }
 `;
 
 const AmenitiesGrid = styled.div`

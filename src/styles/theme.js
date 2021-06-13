@@ -23,6 +23,7 @@ const theme = {
     primary: '#eb6234',
   },
   screen: {
+    xxs: '320px',
     xs: '575px',
     sm: '767px',
     md: '991px',
