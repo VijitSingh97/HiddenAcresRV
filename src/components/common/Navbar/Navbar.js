@@ -74,7 +74,7 @@ class Navbar extends Component {
               query HeaderQuery {
                 parkLogo: file(
                   sourceInstanceName: { eq: "logo" }
-                  name: { eq: "HiddenAcresRVCampgroundLogo1" }
+                  name: { eq: "HiddenAcreResort" }
                 ) {
                   childImageSharp {
                     fluid(maxWidth: 1000) {
