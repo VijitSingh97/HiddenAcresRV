@@ -52,7 +52,7 @@ const Reservation = () => (
                 </p>
                 <br />
                 <h4>  
-                  Now Under New Management!
+                  More lots now available!
                 </h4>
               </Text>
             </Grid>
