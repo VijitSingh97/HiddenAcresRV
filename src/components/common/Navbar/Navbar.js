@@ -96,8 +96,11 @@ class Navbar extends Component {
               {/* RV Campground */}
               <br />
               <p2>
-                10364 CR 740
-                Princeton, TX
+                <OutboundLink href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37" target="_blank" rel="noopener noreferrer">
+                  10364 County Rd. 740 
+                  <br />
+                  Princeton, TX 75407
+                </OutboundLink>
                 {/* <br />
                 Now Under New Management! */}
               </p2>

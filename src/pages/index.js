@@ -41,7 +41,7 @@ export const googleMaps = graphql`
 `
 
 const NavbarSpacing = styled.div`
-  padding-bottom: 100px;
+  padding-bottom: 150px;
 `;
 
 export default IndexPage;
