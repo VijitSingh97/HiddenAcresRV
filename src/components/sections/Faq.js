@@ -9,10 +9,10 @@ import parkRules from '../../../static/park_rules/Campground Rules.pdf'
 
 const FAQS = [
   {
-    title: 'What is Hidden Acres\'s pet policy?',
+    title: 'How can I join the waitlist at Hidden Acres?',
     content: () => (
       <>
-        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
+        You can join our waitlist here: <OutboundLink href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Hidden Acres Waitlist</OutboundLink>. We will contact you as soon as space is available.
       </>
     ),
   },
@@ -21,6 +21,14 @@ const FAQS = [
     content: () => (
       <>
         The schools around us include: <OutboundLink href="https://www.princetonisd.net/harper" target="_blank" rel="noopener noreferrer">Harper Elementary School</OutboundLink>, <OutboundLink href="https://www.princetonisd.net/Domain/148" target="_blank" rel="noopener noreferrer">Clark Jr High School</OutboundLink>, and <OutboundLink href="https://www.princetonisd.net/Domain/52" target="_blank" rel="noopener noreferrer">Princeton High School</OutboundLink>. All of which are in Princeton ISD.
+      </>
+    ),
+  },
+  {
+    title: 'What are the lot fees at Hidden Acres?',
+    content: () => (
+      <>
+        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</OutboundLink>.
       </>
     ),
   },
@@ -71,26 +79,29 @@ const FAQS = [
     ),
   },
   {
+    title: 'What is Hidden Acres\'s pet policy?',
+    content: () => (
+      <>
+        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. Please call before reserving a lot with larger dogs: <OutboundLink href="tel:9727361264" target="_blank" rel="noopener noreferrer">(972) 736-1264</OutboundLink>.
+        <br></br>
+        <br></br>
+        You can find more information in our <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
+      </>
+    ),
+  },
+  {
+    title: 'Does Hidden Acres do background checks?',
+    content: () => (
+      <>
+        Yes. Hidden Acres does background checks for sex offenders. Applicants must disclose this information before reserving a lot. Failing to disclose this information will terminate your reservation.
+      </>
+    ),
+  },
+  {
     title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
         You can find our campground rules here: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
-      </>
-    ),
-  },
-  {
-    title: 'What are the lot fees at Hidden Acres?',
-    content: () => (
-      <>
-        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</OutboundLink>.
-      </>
-    ),
-  },
-  {
-    title: 'How can I join the waitlist at Hidden Acres?',
-    content: () => (
-      <>
-        You can join our waitlist here: <OutboundLink href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Hidden Acres Waitlist</OutboundLink>. We will contact you as soon as space is available.
       </>
     ),
   },
