@@ -2,7 +2,7 @@
   "name": "hiddenacresrvpark",
   "private": true,
   "description": "Website for Hidden Acres RV Campground located in Princeton, TX",
-  "version": "0.1.0",
+  "version": "1.0",
   "author": "Vijit Singh <vijit.n.singh@gmail.com>",
   "dependencies": {
     "@ccalamos/gatsby-source-googlemaps-static": "^1.4.9",
@@ -12,6 +12,7 @@
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-google-analytics": "^2.3.19",
     "gatsby-plugin-google-fonts": "^0.0.4",
+    "gatsby-plugin-google-gtag": "^5.11.0",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^2.0.16",
@@ -35,9 +36,9 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "start": "npm run dev",
+    "build": "export SET NODE_OPTIONS=--openssl-legacy-provider && gatsby build",
+    "dev": "export SET NODE_OPTIONS=--openssl-legacy-provider && gatsby develop",
+    "start": "export SET NODE_OPTIONS=--openssl-legacy-provider && npm run dev",
     "format": "prettier --write \"src/**/*.js\"",
     "clean": "rm -rf .cache && rm -rf public"
   },

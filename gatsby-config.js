@@ -101,28 +101,18 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: false,
-        // Avoids sending pageview hits from custom paths
-        exclude: [],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "",
-        // Enables Google Optimize Experiment ID
-        experimentId: "",
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "0",
-        // Defers execution of google analytics script after page load
-        defer: false,
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          process.env.GOOGLE_ANALYTICS_TRACKING_ID, // Google Analytics / GA
+          // "AW-CONVERSION_ID", // Google Ads / Adwords / AW
+          // "DC-FLOODIGHT_ID", // Marketing Platform advertising products (Display & Video 360, Search Ads 360, and Campaign Manager)
+        ],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          origin: process.env.HOSTNAME,
+        },
       },
     },
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
