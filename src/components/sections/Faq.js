@@ -20,7 +20,7 @@ const FAQS = [
     title: 'What school are nearby Hidden Acres?',
     content: () => (
       <>
-        The schools around us include: <OutboundLink href="https://www.princetonisd.net/harper" target="_blank" rel="noopener noreferrer">Harper Elementary School</OutboundLink>, <OutboundLink href="https://www.princetonisd.net/Domain/148" target="_blank" rel="noopener noreferrer">Clark Jr High School</OutboundLink>, and <OutboundLink href="https://www.princetonisd.net/Domain/52" target="_blank" rel="noopener noreferrer">Princeton High School</OutboundLink>. All of which are in Princeton ISD.
+        The schools around us include: <OutboundLink href="https://www.princetonisd.net/godwin" target="_blank" rel="noopener noreferrer">Godwin Elementary School</OutboundLink>, <OutboundLink href="https://www.princetonisd.net/clark" target="_blank" rel="noopener noreferrer">Clark Middle School</OutboundLink>, and <OutboundLink href="https://www.princetonisd.net/phs" target="_blank" rel="noopener noreferrer">Princeton High School</OutboundLink>. All of which are in Princeton ISD.
       </>
     ),
   },
@@ -28,7 +28,7 @@ const FAQS = [
     title: 'What are the lot fees at Hidden Acres?',
     content: () => (
       <>
-        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</OutboundLink>.
+        Lot fees start at $60 a night for daily visitors. More information about rates can be found in our <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</OutboundLink>.
       </>
     ),
   },
@@ -59,7 +59,7 @@ const FAQS = [
       Our restrictions include:
       <ul>
         <li>
-          RV must be 15 years old or younger
+          RV must be 15 years old or younger (Call us for older RVs)
         </li>
         <li>
           No damage to the outside of the RV
@@ -82,7 +82,7 @@ const FAQS = [
     title: 'What is Hidden Acres\'s pet policy?',
     content: () => (
       <>
-        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. Please call before reserving a lot with larger dogs: <OutboundLink href="tel:9727361264" target="_blank" rel="noopener noreferrer">(972) 736-1264</OutboundLink>.
+        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. If you have a larger dog please call us: <OutboundLink href="tel:9727361264" target="_blank" rel="noopener noreferrer">(972) 736-1264</OutboundLink>.
         <br></br>
         <br></br>
         You can find more information in our <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
