@@ -93,7 +93,7 @@ const FAQS = [
     title: 'Does Hidden Acres do background checks?',
     content: () => (
       <>
-        Yes. Hidden Acres does background checks for sex offenders. Applicants must disclose this information before reserving a lot. Failing to disclose this information will terminate your reservation.
+        Yes. Hidden Acres does background checks for sex offenders and any other hard crime(s). Applicants must disclose this information before reserving a lot. Failing to disclose this information will terminate your reservation or occupancy at anytime.
       </>
     ),
   },
