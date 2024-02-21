@@ -4,7 +4,7 @@ import Scrollspy from 'react-scrollspy';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Container } from '@components/global';
 import {
@@ -45,7 +45,7 @@ class Navbar extends Component {
         offset={-64}
       >
         <NavItem>
-          <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</OutboundLink>
+          <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">Reservation</a>
         </NavItem>
         <NavItem>
           <AnchorLink href="#about">About</AnchorLink>
@@ -96,11 +96,11 @@ class Navbar extends Component {
               {/* RV Campground */}
               <br />
               <p2>
-                <OutboundLink href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37" target="_blank" rel="noopener noreferrer">
+                <a href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37" target="_blank" rel="noopener noreferrer">
                   10364 CR 740 
                   <br />
                   Princeton, TX
-                </OutboundLink>
+                </a>
                 {/* <br />
                 Now Under New Management! */}
               </p2>

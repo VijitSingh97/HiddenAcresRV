@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const About = () => (
   <StaticQuery
@@ -79,19 +79,19 @@ const About = () => (
               <p>
                 There are several local and fun attractions located within a short drive of the RV park:
                 <ul>
-                    <li><OutboundLink href="https://flyppc.com" target="_blank" rel="noopener noreferrer">Future Flight Powered Parachutes</OutboundLink></li>
-                    <li><OutboundLink href="https://hfalls.com" target="_blank" rel="noopener noreferrer">Hawaiian Falls Water Park</OutboundLink></li>
-                    <li><OutboundLink href="https://www.insyncexotics.org" target="_blank" rel="noopener noreferrer">In-Sync Exotic Animal Zoo</OutboundLink></li>
-                    <li><OutboundLink href="https://www.heardmuseum.org" target="_blank" rel="noopener noreferrer">Heard Natural Science Museum & Wildlife Sanctuary</OutboundLink></li>
-                    <li><OutboundLink href="https://www.georgewbushlibrary.smu.edu" target="_blank" rel="noopener noreferrer">President George W. Bush Library</OutboundLink></li>
-                    <li><OutboundLink href="https://collinoakswinery.com" target="_blank" rel="noopener noreferrer">Collin Oaks Winery</OutboundLink></li>
-                    <li><OutboundLink href="https://www.southforkranch.com" target="_blank" rel="noopener noreferrer">Southfork Ranch</OutboundLink></li>
-                    <li><OutboundLink href="https://www.heritagefarmstead.org" target="_blank" rel="noopener noreferrer">Heritage Farmstead</OutboundLink></li>
-                    <li><OutboundLink href="https://mesquiterodeo.com" target="_blank" rel="noopener noreferrer">Mesquite Championship Rodeo</OutboundLink></li>
-                    <li><OutboundLink href="http://www.americanairlinescenter.com" target="_blank" rel="noopener noreferrer">American Airlines Center</OutboundLink></li>
-                    <li><OutboundLink href="https://www.premiumoutlets.com/outlet/allen" target="_blank" rel="noopener noreferrer">Allen Premium Outlet Mall</OutboundLink></li>
-                    <li><OutboundLink href="https://www.fairviewtowncenter.com" target="_blank" rel="noopener noreferrer">Fairview Town Center</OutboundLink></li>
-                    <li><OutboundLink href="https://www.simon.com/mall/firewheel-town-center" target="_blank" rel="noopener noreferrer">Firewheel Town Center</OutboundLink></li>
+                    <li><a href="https://flyppc.com" target="_blank" rel="noopener noreferrer">Future Flight Powered Parachutes</a></li>
+                    <li><a href="https://hfalls.com" target="_blank" rel="noopener noreferrer">Hawaiian Falls Water Park</a></li>
+                    <li><a href="https://www.insyncexotics.org" target="_blank" rel="noopener noreferrer">In-Sync Exotic Animal Zoo</a></li>
+                    <li><a href="https://www.heardmuseum.org" target="_blank" rel="noopener noreferrer">Heard Natural Science Museum & Wildlife Sanctuary</a></li>
+                    <li><a href="https://www.georgewbushlibrary.smu.edu" target="_blank" rel="noopener noreferrer">President George W. Bush Library</a></li>
+                    <li><a href="https://collinoakswinery.com" target="_blank" rel="noopener noreferrer">Collin Oaks Winery</a></li>
+                    <li><a href="https://www.southforkranch.com" target="_blank" rel="noopener noreferrer">Southfork Ranch</a></li>
+                    <li><a href="https://www.heritagefarmstead.org" target="_blank" rel="noopener noreferrer">Heritage Farmstead</a></li>
+                    <li><a href="https://mesquiterodeo.com" target="_blank" rel="noopener noreferrer">Mesquite Championship Rodeo</a></li>
+                    <li><a href="http://www.americanairlinescenter.com" target="_blank" rel="noopener noreferrer">American Airlines Center</a></li>
+                    <li><a href="https://www.premiumoutlets.com/outlet/allen" target="_blank" rel="noopener noreferrer">Allen Premium Outlet Mall</a></li>
+                    <li><a href="https://www.fairviewtowncenter.com" target="_blank" rel="noopener noreferrer">Fairview Town Center</a></li>
+                    <li><a href="https://www.simon.com/mall/firewheel-town-center" target="_blank" rel="noopener noreferrer">Firewheel Town Center</a></li>
                     
                     <li>and so much more!</li>
                 </ul>

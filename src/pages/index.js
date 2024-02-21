@@ -11,6 +11,8 @@ import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
 import styled from 'styled-components';
 
+import { graphql } from 'gatsby'
+
 const IndexPage = ({ data }) => (
   <Layout>
     <NavbarSpacing>

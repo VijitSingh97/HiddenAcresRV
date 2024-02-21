@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 
 const Reservation = () => (
@@ -40,15 +40,15 @@ const Reservation = () => (
                 </h1>
                 <br />
                 <p>
-                  <StyledOutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
+                  <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
                     Click here to reserve&nbsp;&#x2794;
-                  </StyledOutboundLink>
+                  </a>
                 </p>
                 <br />
                 <p>
-                  <StyledOutboundLink href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
+                  <a href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601">
                     Click here to join our waitlist&nbsp;&#x2794;
-                  </StyledOutboundLink>
+                  </a>
                 </p>
                 <br />
                 <h4>  
@@ -100,15 +100,15 @@ const Text = styled.div`
   }
 `;
 
-const StyledOutboundLink = styled(OutboundLink)`
-  color: inherit;
-  text-decoration: none;
-  font-size: 35px;
+// const a = styled(a)`
+//   color: inherit;
+//   text-decoration: none;
+//   font-size: 35px;
 
-  &:hover {
-    /* color: ${props => props.theme.color.black.regular}; */
-  }
-`;
+//   &:hover {
+//     /* color: ${props => props.theme.color.black.regular}; */
+//   }
+// `;
 
 const ReservationSection = styled(Section)`
 

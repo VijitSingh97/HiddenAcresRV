@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Container } from '@components/global';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
+// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import GithubIcon from '@static/icons/github.svg';
 import InstagramIcon from '@static/icons/instagram.svg';
@@ -56,16 +56,16 @@ const Footer = () => (
               <span>
                 Webpage created by
                 {` `}
-                <OutboundLink href="https://www.linkedin.com/in/vijit-singh/" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/vijit-singh/" target="_blank" rel="noopener noreferrer">
                   Vijit Singh
-                </OutboundLink>
+                </a>
               </span>
             </Copyright>
             <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (
-                <OutboundLink key={link} href={link} target="_blank" rel="noopener noreferrer">
+                <a key={link} href={link} target="_blank" rel="noopener noreferrer">
                   <img src={icon} alt="link" />
-                </OutboundLink>
+                </a>
               ))}
             </SocialIcons>
           </StyledContainer>
