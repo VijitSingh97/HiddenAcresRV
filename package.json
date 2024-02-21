@@ -2,7 +2,7 @@
   "name": "hiddenacresrvpark",
   "private": true,
   "description": "Website for Hidden Acres RV Campground located in Princeton, TX",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "author": "Vijit Singh <vijit.n.singh@gmail.com>",
   "dependencies": {
     "@ccalamos/gatsby-source-googlemaps-static": "^3.1.1",
