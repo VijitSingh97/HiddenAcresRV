@@ -6,7 +6,7 @@ const SEO_DATA = {
   title: 'Hidden Acres RV Resort - A Friendly Place to Relax',
   url: 'https://www.hiddenacresrv.com',
   author: 'Vijit Singh',
-  keywords: ['380', 'acre', 'acres', 'allen', 'beach', 'boat', 'boat ramp', 'campground', 'campgrounds', 'camping', 'collin county', 'dallas', 'dfw', 'dog', 'exotic', 'fish', 'fishing', 'friend', 'friendly', 'hidden', 'hidden acres', 'lake', 'lake lavon', 'lavon', 'lavon lake', 'lodging', 'long term', 'lots', 'mckinney', 'mesquite', 'north dallas', 'park', 'parks', 'pet', 'pet friendly', 'plano', 'princeton', 'quiet', 'ramp', 'resort', 'richardson', 'rv', 'rv park', 'rv parks', 'secluded', 'taco', 'texas', 'trailer', 'tree', 'tx', 'rv resort', 'resort', '78', '982', 'FM982'],
+  keywords: ['380', '78', '982', 'FM982', 'acre', 'acres', 'allen', 'beach', 'boat', 'boat ramp', 'campground', 'campgrounds', 'camping', 'collin county', 'dallas', 'dfw', 'dog', 'exotic', 'fish', 'fishing', 'friend', 'friendly', 'hidden', 'hidden acres', 'lake', 'lake lavon', 'lavon', 'lavon lake', 'lodging', 'long', 'long term', 'long term', 'lots', 'mckinney', 'mesquite', 'near me', 'north dallas', 'park', 'parks', 'pet', 'pet friendly', 'plano', 'princeton', 'quiet', 'ramp', 'resort', 'resort', 'richardson', 'rv', 'rv park', 'rv parks', 'rv resort', 'secluded', 'short', 'short term', 'taco', 'term', 'texas', 'trailer', 'tree', 'tx'],
   img: '../../images/logo/HiddenAcresRVCampgroundLogo1.png',
   twitterId: '@Hidden_Acres_RV',
   facebookId: '',
