@@ -15,9 +15,7 @@ import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => (
   <Layout>
-    <NavbarSpacing>
-      <Navbar />
-    </NavbarSpacing>
+    <Navbar />
     <Reservation />
     <About />
     <Amenities />
@@ -41,9 +39,5 @@ export const googleMaps = graphql`
     }
   }
 `
-
-const NavbarSpacing = styled.div`
-  padding-bottom: 150px;
-`;
 
 export default IndexPage;

@@ -4,7 +4,6 @@ import Scrollspy from 'react-scrollspy';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
-// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Container } from '@components/global';
 import {
@@ -93,16 +92,9 @@ class Navbar extends Component {
           <Brand>
             <center>
               Hidden Acres 
-              {/* RV Campground */}
               <br />
               <p2>
-                <a href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37" target="_blank" rel="noopener noreferrer">
-                  10364 CR 740 
-                  <br />
-                  Princeton, TX
-                </a>
-                {/* <br />
-                Now Under New Management! */}
+                <a href="tel:9727361264" target="_blank" rel="noopener noreferrer">(972) 736-1264</a>
               </p2>
             </center>
           </Brand>

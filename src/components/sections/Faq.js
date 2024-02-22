@@ -3,7 +3,6 @@ import React from 'react';
 import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
-// import { OutboundLink } from "gatsby-plugin-google-analytics"
 import parkRules from '../../../static/park_rules/Campground Rules.pdf' 
 
 

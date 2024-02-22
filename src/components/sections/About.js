@@ -4,7 +4,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
-// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const About = () => (
   <StaticQuery

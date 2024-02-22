@@ -4,8 +4,6 @@ import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
-// import { OutboundLink } from "gatsby-plugin-google-analytics"
-
 
 const Reservation = () => (
   <StaticQuery
@@ -100,20 +98,10 @@ const Text = styled.div`
   }
 `;
 
-// const a = styled(a)`
-//   color: inherit;
-//   text-decoration: none;
-//   font-size: 35px;
-
-//   &:hover {
-//     /* color: ${props => props.theme.color.black.regular}; */
-//   }
-// `;
-
 const ReservationSection = styled(Section)`
 
 @media (max-width: ${props => props.theme.screen.md}) {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 `;

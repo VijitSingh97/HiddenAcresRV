@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-// import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { Section, Container } from '@components/global';
-// import ExternalLink from '@common/ExternalLink';
 
 const ContactUs = ({data}) => (
   <Section id="contactus" accent='secondary'>
