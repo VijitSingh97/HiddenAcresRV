@@ -3,7 +3,6 @@ import React from 'react';
 import { Section, Container } from '@components/global';
 
 import FaqItem from '@common/FaqItem';
-import { OutboundLink } from "gatsby-plugin-google-analytics"
 import parkRules from '../../../static/park_rules/Campground Rules.pdf' 
 
 
@@ -12,7 +11,7 @@ const FAQS = [
     title: 'What is Hidden Acres\'s pet policy?',
     content: () => (
       <>
-        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
+        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>.
       </>
     ),
   },
@@ -20,7 +19,7 @@ const FAQS = [
     title: 'What school are nearby Hidden Acres?',
     content: () => (
       <>
-        The schools around us include: <OutboundLink href="https://www.princetonisd.net/harper" target="_blank" rel="noopener noreferrer">Harper Elementary School</OutboundLink>, <OutboundLink href="https://www.princetonisd.net/Domain/148" target="_blank" rel="noopener noreferrer">Clark Jr High School</OutboundLink>, and <OutboundLink href="https://www.princetonisd.net/Domain/52" target="_blank" rel="noopener noreferrer">Princeton High School</OutboundLink>. All of which are in Princeton ISD.
+        The schools around us include: <a href="https://www.princetonisd.net/harper" target="_blank" rel="noopener noreferrer">Harper Elementary School</a>, <a href="https://www.princetonisd.net/Domain/148" target="_blank" rel="noopener noreferrer">Clark Jr High School</a>, and <a href="https://www.princetonisd.net/Domain/52" target="_blank" rel="noopener noreferrer">Princeton High School</a>. All of which are in Princeton ISD.
       </>
     ),
   },
@@ -66,7 +65,7 @@ const FAQS = [
           Any window ACs and window fans must be approved by management
         </li>
       </ul>
-          More information can be found in our campground rules: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
+          More information can be found in our campground rules: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>.
       </>
     ),
   },
@@ -74,7 +73,7 @@ const FAQS = [
     title: 'What rules does Hidden Acres have?',
     content: () => (
       <>
-        You can find our campground rules here: <OutboundLink href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</OutboundLink>.
+        You can find our campground rules here: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>.
       </>
     ),
   },
@@ -82,7 +81,7 @@ const FAQS = [
     title: 'What are the lot fees at Hidden Acres?',
     content: () => (
       <>
-        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <OutboundLink href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</OutboundLink>.
+        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</a>.
       </>
     ),
   },
@@ -90,7 +89,7 @@ const FAQS = [
     title: 'How can I join the waitlist at Hidden Acres?',
     content: () => (
       <>
-        You can join our waitlist here: <OutboundLink href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Hidden Acres Waitlist</OutboundLink>. We will contact you as soon as space is available.
+        You can join our waitlist here: <a href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Hidden Acres Waitlist</a>. We will contact you as soon as space is available.
       </>
     ),
   },

@@ -8,12 +8,22 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-plugin-svgr`,
+      resolve: 'gatsby-plugin-svgr',
       options: {
+        prettier: true,          // use prettier to format JS code output (default)
+        svgo: true,              // use svgo to optimize SVGs (default)
         svgoConfig: {
-          plugins: {
-            removeViewBox: false,
-          },
+          plugins: [
+            {
+              name: 'preset-default',
+              params: {
+                overrides: {
+                  // disable plugins
+                  removeViewBox: false,
+                },
+              },
+            },
+          ],
         },
       },
     },
@@ -101,28 +111,14 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        // The property ID; the tracking code won't be generated without it
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: true,
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: false,
-        // Avoids sending pageview hits from custom paths
-        exclude: [],
-        // Delays sending pageview hits on route update (in milliseconds)
-        pageTransitionDelay: 0,
-        // Enables Google Optimize using your container Id
-        optimizeId: "",
-        // Enables Google Optimize Experiment ID
-        experimentId: "",
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "0",
-        // Defers execution of google analytics script after page load
-        defer: false,
+        trackingIds: [
+          process.env.GOOGLE_ANALYTICS_TRACKING_ID, // Google Analytics / GA
+        ],
+        pluginConfig: {
+          head: true
+        },
       },
     },
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
