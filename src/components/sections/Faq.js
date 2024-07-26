@@ -11,7 +11,7 @@ const FAQS = [
     title: 'What is Hidden Acres\'s pet policy?',
     content: () => (
       <>
-        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. You can find more information in our campground rules here: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>.
+        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. Please let us know about your pets before booking. You can find more information in our campground rules here: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>.
       </>
     ),
   },
@@ -30,9 +30,6 @@ const FAQS = [
         Our RV pad sizes are:
         <ul>
           <li>
-            25' L x 16' W
-          </li>
-          <li>
             35' L x 16' W
           </li>
           <li>
@@ -49,9 +46,6 @@ const FAQS = [
       <>
       Our restrictions include:
       <ul>
-        <li>
-          RV must be 15 years old or younger
-        </li>
         <li>
           No damage to the outside of the RV
         </li>

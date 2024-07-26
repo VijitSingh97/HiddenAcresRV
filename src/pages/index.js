@@ -9,9 +9,6 @@ import Amenities from '@sections/Amenities';
 import ContactUs from '@sections/ContactUs'
 import Faq from '@sections/Faq';
 import Footer from '@sections/Footer';
-import styled from 'styled-components';
-
-import { graphql } from 'gatsby'
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -24,20 +21,5 @@ const IndexPage = ({ data }) => (
     <Footer />
   </Layout>
 );
-
-export const googleMaps = graphql`
-  query StaticMapQuery {
-    staticMap {
-        childFile {
-            childImageSharp {
-                fluid {
-                    # or fixed
-                    ...GatsbyImageSharpFluid
-                }
-            }
-        }
-    }
-  }
-`
 
 export default IndexPage;
