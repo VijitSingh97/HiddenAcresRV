@@ -52,7 +52,7 @@ const About = () => (
               <p>
                 Clear view of the stars at night.
                 Surrounded by Lake Lavon, lush trees, and with beach access. 
-                Enjoy the company of a small community of 24 RVs.
+                Enjoy the company of a small community of 38 RVs.
               </p>
             </div>
             <Art>

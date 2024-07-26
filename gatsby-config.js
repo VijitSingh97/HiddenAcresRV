@@ -96,31 +96,6 @@ module.exports = {
         },
       },
     },
-    {
-      resolve: `@ccalamos/gatsby-source-googlemaps-static`,
-      options: {
-          key: process.env.GOOGLE_MAPS_STATIC_API_KEY,
-          center: `33.063741,-96.5126`,
-          zoom: `11`,
-          // mapType: `satellite`,
-          markers: [
-              {
-                  location: `33.063741,-96.5126`,
-              },
-          ]
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          process.env.GOOGLE_ANALYTICS_TRACKING_ID, // Google Analytics / GA
-        ],
-        pluginConfig: {
-          head: true
-        },
-      },
-    },
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ],
 };
