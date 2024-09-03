@@ -63,15 +63,6 @@ const ContactUs = ({ data }) => (
               </h3>
               <br />
               <br />
-              <h2>
-                Leave us a Review:
-              </h2>
-              <h3>
-                <a href="https://g.page/r/CWAoWnxskFyyEAg/review" target="_blank" rel="noopener noreferrer">Google Reviews&nbsp;&#x2794;</a>
-              </h3>
-              <h3>
-                <a href="https://www.yelp.com/writeareview/biz/qKQpj62kyAdPpIJ_D1CDQQ?return_url=%2Fbiz%2FqKQpj62kyAdPpIJ_D1CDQQ&source=biz_details_war_button" target="_blank" rel="noopener noreferrer">Yelp Reviews&nbsp;&#x2794;</a>
-              </h3>
             </Text>
           </Grid>
         </Container>

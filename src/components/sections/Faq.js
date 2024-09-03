@@ -11,7 +11,23 @@ const FAQS = [
     title: 'What is Hidden Acres\'s pet policy?',
     content: () => (
       <>
-        Most pets are welcome. We allow cats, dogs under 30 pounds, and all service animals. Please let us know about your pets before booking. You can find more information in our campground rules here: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>.
+      <ul>
+        <li>
+          Most pets are welcome
+        </li>
+        <li>
+          We allow cats, dogs, and all service animals
+        </li>
+        <li>
+          Please call us if your dog is over 30lb
+        </li>
+        <li>
+          Please let us know about your pets before booking
+        </li>
+        <li>
+          You can find more information in our campground rules here: <a href={parkRules} target="_blank" rel="noopener noreferrer">campground rules</a>
+        </li>
+      </ul>
       </>
     ),
   },
@@ -47,6 +63,9 @@ const FAQS = [
       Our restrictions include:
       <ul>
         <li>
+          Please call us if your RV is older than 15 years
+        </li>
+        <li>
           No damage to the outside of the RV
         </li>
         <li>
@@ -75,7 +94,7 @@ const FAQS = [
     title: 'What are the lot fees at Hidden Acres?',
     content: () => (
       <>
-        Lot fees start at $50 a night for daily visitors. More information about rates can be found in our <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</a>.
+        Lot fees start at $60 a night for daily visitors. More information about rates can be found in our <a href="https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Reservation Portal</a>.
       </>
     ),
   },
@@ -84,6 +103,14 @@ const FAQS = [
     content: () => (
       <>
         You can join our waitlist here: <a href="https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"> Hidden Acres Waitlist</a>. We will contact you as soon as space is available.
+      </>
+    ),
+  },
+  {
+    title: 'Are there any restrictions on hard crimes at Hidden Acres?',
+    content: () => (
+      <>
+      Yes, there is a background check on those staying with us. You must disclose any hard crimes at time of booking of anyone who will be staying at Hidden Acres. Failure to disclose this information will result in immediate termination of reservations and residency.
       </>
     ),
   },
