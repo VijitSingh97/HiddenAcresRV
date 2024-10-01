@@ -46,10 +46,10 @@ const FAQS = [
         Our RV pad sizes are:
         <ul>
           <li>
-            35' L x 16' W
+            55' L x 25' W
           </li>
           <li>
-            45' L x 16' W
+            65' L x 25' W
           </li>
         </ul>
         Each lot also includes a 2 vehicle, 24' L x 20' W, parking spot in front of them. Longer RVs can utilize this additional space to increases the lot length by up to 24'.
