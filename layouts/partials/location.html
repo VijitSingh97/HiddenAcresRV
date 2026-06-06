@@ -31,6 +31,13 @@
         <p><a href="{{ $p.links.tour }}" target="_blank" rel="noopener noreferrer">Take a 360° virtual tour&nbsp;&#x2794;</a></p>
       </div>
 
+      {{- with .Params.directions }}
+      <details class="directions">
+        <summary>Driving directions</summary>
+        <div class="directions-body">{{ . | markdownify }}</div>
+      </details>
+      {{- end }}
+
       <div class="location-actions">
         <a class="btn btn-primary" href="{{ $p.links.reserve }}" target="_blank" rel="noopener noreferrer">Reserve your spot</a>
         <a class="btn btn-ghost" href="{{ $p.links.waitlist }}" target="_blank" rel="noopener noreferrer">Join the waitlist</a>

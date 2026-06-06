@@ -7,6 +7,9 @@
 {{- range hugo.Data.amenities -}}
   {{- $amenities = $amenities | append (dict "@type" "LocationFeatureSpecification" "name" .name "value" true) -}}
 {{- end -}}
+{{- range hugo.Data.highlights -}}
+  {{- $amenities = $amenities | append (dict "@type" "LocationFeatureSpecification" "name" . "value" true) -}}
+{{- end -}}
 {{- $img := "" -}}
 {{- with resources.Get (printf "images/%s" $p.ogImage) -}}
   {{- $img = (.Fill "1200x630 jpg q85").Permalink -}}

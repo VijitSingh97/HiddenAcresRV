@@ -29,6 +29,16 @@ about:
       among lush trees with private beach access, Hidden Acres is a small,
       welcoming community of 38 RVs.
 
+  - heading: "On the Shores of Lake Lavon"
+    image: "park/open_water.jpg"
+    body: >-
+      You're about a hundred yards from the water on a quiet peninsula, with no
+      through-traffic, streetlights, or railroads to break the calm. Lake Lavon
+      spans more than 23,000 acres, and the nearest boat ramp is roughly a mile
+      and a half away — with major ramps, swimming areas, and lakeside parks
+      every few miles. Fishing, swimming, and boating are all a short walk or
+      drive from your site.
+
   - heading: "City Conveniences Nearby"
     image: "park/close.jpg"
     body: >-
@@ -44,4 +54,18 @@ about:
       Several popular attractions are just a short drive from the park:
     # Setting `attractions: true` renders the linked list from data/attractions.yaml
     attractions: true
+
+# Driving directions, shown in a collapsible block in the Location section.
+# (The live Google Maps link above it always gives turn-by-turn navigation.)
+directions: |
+  **From McKinney:** Take Hwy 380 east about 9 miles to Princeton, then south on
+  FM 982 about 9 miles to RD 437.
+
+  **From Plano:** Take Hwy 75 north to Exit 33 (Bethany), head east about 7 miles
+  to Lucas, then east on FM 3286 about 5 miles to FM 982, and south on FM 982
+  about 2 miles to RD 437.
+
+  **The last stretch:** At RD 437, turn right (west) and go about ⅓ mile to RD
+  438. Turn left (south) on 438 about ⅓ mile to RD 740, then left (east) on 740 —
+  and you're home.
 ---

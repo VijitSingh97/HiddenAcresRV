@@ -4,6 +4,13 @@
       <h2>Arranged for your convenience</h2>
       <p class="section-sub">Everything you need for a comfortable, easygoing stay.</p>
     </header>
+    {{- with hugo.Data.highlights }}
+    <ul class="highlights" aria-label="Park highlights">
+      {{- range . }}
+      <li class="highlight">{{ . }}</li>
+      {{- end }}
+    </ul>
+    {{- end }}
     <ul class="amenity-grid">
       {{- range hugo.Data.amenities }}
       <li class="amenity-card">

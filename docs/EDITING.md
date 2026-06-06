@@ -26,7 +26,9 @@ All file paths below are relative to the project's main folder.
 | Hero headline & subtext | `content/_index.md` | the `hero:` section |
 | "More lots now available!" banner | `content/_index.md` | `hero:` → `note` (delete the line to remove it) |
 | The "About" paragraphs | `content/_index.md` | the `about:` section |
+| Driving directions | `content/_index.md` | the `directions:` block |
 | Amenities (the cards) | `data/amenities.yaml` | one block per amenity |
+| Highlight pills (above amenities) | `data/highlights.yaml` | one line per pill |
 | Local attractions list | `data/attractions.yaml` | one line per attraction |
 | FAQ questions & answers | `data/faqs.yaml` | one block per question |
 | Gallery photos | `data/gallery.yaml` | one line per photo |
