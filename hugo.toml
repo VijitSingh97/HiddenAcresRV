@@ -104,21 +104,21 @@ disableKinds = ["taxonomy", "term", "rss"]
 # anchor (#about) or a full URL. Add/remove items to change the menu.
 [[menu.main]]
   name = "About"
-  url = "#about"
+  url = "/#about"
   weight = 10
 [[menu.main]]
   name = "Amenities"
-  url = "#amenities"
+  url = "/#amenities"
   weight = 20
 [[menu.main]]
   name = "Gallery"
-  url = "#gallery"
+  url = "/#gallery"
   weight = 30
 [[menu.main]]
   name = "Location"
-  url = "#location"
+  url = "/#location"
   weight = 40
 [[menu.main]]
   name = "FAQ"
-  url = "#faq"
+  url = "/#faq"
   weight = 50

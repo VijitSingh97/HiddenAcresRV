@@ -246,6 +246,11 @@ ul { margin: 0; padding: 0; }
 .footer-bottom a { color: var(--accent); text-decoration: none; }
 .footer-bottom a:hover { color: var(--white); }
 
+/* ----- 404 page ---------------------------------------------------------- */
+.page-error { min-height: 52vh; display: flex; align-items: center; text-align: center; }
+.page-error p { color: var(--ink-soft); }
+.page-error-actions { margin-top: 28px; }
+
 /* ----- Responsive -------------------------------------------------------- */
 @media (max-width: 880px) {
   .nav-burger { display: flex; }

@@ -22,6 +22,22 @@ secure, and nearly maintenance-free for years.
 
 ---
 
+## 👋 Coming back after a while?
+
+Everything you need to pick this back up, at a glance:
+
+| To… | Do this |
+| --- | --- |
+| **Change text** (phone, rates, FAQs, photos…) | Edit a file in `hugo.toml`, `content/`, or `data/` — see **[`docs/EDITING.md`](docs/EDITING.md)** |
+| **Preview your changes live** | `hugo server`, then open <http://localhost:1313> |
+| **Check nothing broke** | `./test.sh` |
+| **Publish** | `git commit` + `git push` — GitHub rebuilds & redeploys automatically |
+
+Routine updates never require touching the design or any code. On a new computer?
+See [Getting started](#getting-started-running-it-on-your-computer).
+
+---
+
 ## ✏️ I just want to update some text
 
 You almost never need to touch the design. Day-to-day content (phone number,
@@ -83,24 +99,26 @@ A fuller tour is in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
 ## Testing
 
+One command builds the site and validates it. Run it before you publish — and
+it runs automatically on every push and pull request:
+
 ```sh
 ./test.sh
 ```
 
-This does a strict production build (warnings are treated as errors) and then
-runs [`htmltest`](https://github.com/wjdp/htmltest) to confirm every internal
-link, page anchor, and image reference resolves. The same checks run
-automatically on GitHub for every change (see below).
+It does a **strict build**, validates **HTML & links** with
+[`htmltest`](https://github.com/wjdp/htmltest), then asserts the things a visitor
+relies on — the **Reserve / Waitlist / phone / email** links, that every menu
+item lands on a real section, the **FAQ / mobile menu / map**, **alt text** on
+every image, **safe** new-tab links, and the **SEO** essentials. See
+**[`docs/TESTING.md`](docs/TESTING.md)** for the full list and why each one matters.
 
-`htmltest` is optional locally; install it once with:
+The whole suite is **zero-dependency** (Hugo plus an optional Go binary — no
+Node). Install the optional link checker once:
 
 ```sh
 go install github.com/wjdp/htmltest@latest
 ```
-
-> **Tip:** to spot-check performance/SEO/accessibility, run a
-> [Lighthouse](https://developer.chrome.com/docs/lighthouse/) audit in Chrome
-> DevTools against a local `hugo server` (or the live site).
 
 ---
 

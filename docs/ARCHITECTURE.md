@@ -42,6 +42,7 @@ static/                    Copied verbatim to the site root:
 layouts/
   _default/baseof.html     HTML skeleton (<head> + landmarks + skip link)
   index.html               Home page: composes the section partials
+  404.html                 Branded "page not found" page
   robots.txt               Custom robots.txt (adds the Sitemap line)
   partials/
     head.html              <title>, meta, canonical, Open Graph/Twitter, favicon, CSS link
@@ -118,8 +119,10 @@ the `@font-face` `src` URLs.
 ## Build, test, deploy
 
 - **Local:** `hugo server` to preview; `./test.sh` to validate.
-- **`test.sh` / CI:** `hugo --gc --minify --panicOnWarning` (warnings fail the
-  build) followed by `htmltest` (internal links, anchors, image refs).
+- **`test.sh` / CI:** a strict build (`--panicOnWarning`), `htmltest` link
+  validation, then ~three dozen zero-dependency assertions on the built page
+  (booking/contact links, nav anchors, FAQ/menu/map, alt text, safe links, SEO).
+  See [`TESTING.md`](TESTING.md).
 - **CI/CD:** `.github/workflows/ci.yml` runs build + validation on every push and
   PR, and deploys `public/` to GitHub Pages on `master`. Hugo's version is pinned
   via `HUGO_VERSION` — keep it in sync with your local version when upgrading.

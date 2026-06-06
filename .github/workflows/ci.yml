@@ -37,11 +37,8 @@ jobs:
       - name: Install htmltest
         run: go install github.com/wjdp/htmltest@latest
 
-      - name: Build (strict — warnings fail the build)
-        run: hugo --gc --minify --panicOnWarning
-
-      - name: Validate HTML & internal links
-        run: "$(go env GOPATH)/bin/htmltest"
+      - name: Build & test (strict build + htmltest + UX/SEO checks)
+        run: bash ./test.sh
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/master'
