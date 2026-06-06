@@ -15,7 +15,7 @@ aliases:
 # The big headline and call-to-action area at the top of the page.
 hero:
   heading: "A quiet and friendly place to relax"
-  subtext: "Surrounded by Lake Lavon, lush trees, and beach access — a welcoming community just minutes from Allen, McKinney, Plano, and North Dallas."
+  subtext: "Surrounded by Lake Lavon, lush trees, and beach access — a welcoming community just minutes from Allen, McKinney, Plano, Frisco, and North Dallas."
   note: "More lots now available!"
 
 # The "About" section is a series of blocks, each with a heading, a paragraph,

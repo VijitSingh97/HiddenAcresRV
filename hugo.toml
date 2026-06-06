@@ -50,7 +50,7 @@ disableKinds = ["taxonomy", "term", "rss"]
   brand       = "Hidden Acres RV Park"
   shortBrand  = "Hidden Acres"
   tagline     = "A quiet and friendly place to relax"
-  description = "Hidden Acres RV Park in Princeton, TX — surrounded by Lake Lavon, lush trees, and beach access. A quiet, friendly community minutes from Allen, McKinney, Plano, and North Dallas."
+  description = "Hidden Acres RV Park in Princeton, TX — surrounded by Lake Lavon, lush trees, and beach access. A quiet, friendly community minutes from Allen, McKinney, Plano, Frisco, and North Dallas."
 
   # Contact
   phone    = "(972) 736-1264"   # shown to visitors
