@@ -47,7 +47,7 @@ layouts/
     head.html              <title>, meta, canonical, Open Graph/Twitter, favicon, CSS link
     schema.html            JSON-LD (Campground/RVPark) structured data
     header.html            Sticky nav + CSS-only mobile menu
-    hero.html  about.html  amenities.html  gallery.html  reviews.html  location.html  faq.html  footer.html
+    hero.html  about.html  amenities.html  gallery.html  location.html  faq.html  footer.html
     image.html             Reusable responsive-image helper (see below)
 .github/workflows/ci.yml   Build + validate + deploy to GitHub Pages
 .htmltest.yml              HTML/link validation config

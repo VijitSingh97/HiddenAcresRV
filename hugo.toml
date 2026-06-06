@@ -95,17 +95,6 @@ disableKinds = ["taxonomy", "term", "rss"]
     twitter   = "https://twitter.com/Hidden_Acres_RV"
     github    = "https://github.com/VijitSingh97/HiddenAcresRV"
 
-  # Guest reviews. Add your current ratings to show rating badges on the site and
-  # enable star rich-results in search (leave blank to hide them). Featured quotes
-  # live in data/reviews.yaml. See docs/EDITING.md.
-  [params.reviews]
-    google_url    = "https://maps.app.goo.gl/eEMEGFBUCestE484A"
-    yelp_url      = "https://www.yelp.com/biz/hidden-acres-rv-park-princeton-2"
-    google_rating = ""   # e.g. "4.8"
-    google_count  = ""   # e.g. "27"
-    yelp_rating   = ""   # e.g. "5.0"
-    yelp_count    = ""   # e.g. "9"
-
 # Navigation anchors shown in the header (in order). "url" can be an in-page
 # anchor (#about) or a full URL. Add/remove items to change the menu.
 [[menu.main]]
@@ -120,10 +109,6 @@ disableKinds = ["taxonomy", "term", "rss"]
   name = "Gallery"
   url = "#gallery"
   weight = 30
-[[menu.main]]
-  name = "Reviews"
-  url = "#reviews"
-  weight = 35
 [[menu.main]]
   name = "Location"
   url = "#location"
