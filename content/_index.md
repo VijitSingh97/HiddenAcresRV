@@ -60,16 +60,14 @@ about:
 # Driving directions, shown in a collapsible block in the Location section.
 # (The live Google Maps link above it always gives turn-by-turn navigation.)
 directions: |
-  The easiest way in is from **US-380**, the main highway through Princeton.
+  **From McKinney:** Take Hwy 380 east about 9 miles to Princeton, then south on
+  FM 982 about 9 miles to RD 437.
 
-  1. From US-380 in Princeton, turn **south onto FM 982** and follow it toward
-     Lake Lavon.
-  2. Stay with the county roads heading west toward the water — **CR 437, then
-     CR 438, then CR 740**.
-  3. Hidden Acres is at the end of **County Road 740** — watch for our sign, and
-     welcome home.
+  **From Plano:** Take Hwy 75 north to Exit 33 (Bethany), head east about 7 miles
+  to Lucas, then east on FM 3286 about 5 miles to FM 982, and south on FM 982
+  about 2 miles to RD 437.
 
-  Coming from Plano or Allen? Take **US-75 north to US-380**, head east into
-  Princeton, and follow the steps above. For live turn-by-turn, tap **Open in
-  Google Maps** above.
+  **The last stretch:** At RD 437, turn right (west) and go about ⅓ mile to RD
+  438. Turn left (south) on 438 about ⅓ mile to RD 740, then left (east) on 740 —
+  and you're home.
 ---
