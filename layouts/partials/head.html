@@ -1,0 +1,48 @@
+{{- $p := site.Params -}}
+{{- $pageTitle := printf "%s — %s" $p.brand $p.tagline -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $p.description }}">
+<meta name="author" content="{{ $p.author }}">
+<link rel="canonical" href="{{ site.BaseURL }}">
+<meta name="theme-color" content="{{ "#eb6234" }}">
+
+{{- /* Favicon + touch icon, generated from the logo */ -}}
+{{- with resources.Get "images/logo/HiddenAcresRVCampgroundLogo1.png" -}}
+  {{- $icon := .Resize "180x180 png" -}}
+  <link rel="icon" type="image/png" href="{{ $icon.RelPermalink }}">
+  <link rel="apple-touch-icon" href="{{ $icon.RelPermalink }}">
+{{- end }}
+
+{{- /* Open Graph + Twitter share cards (absolute image URL) */ -}}
+{{- $ogURL := site.BaseURL -}}
+{{- with resources.Get (printf "images/%s" $p.ogImage) -}}
+  {{- $og := .Fill "1200x630 jpg q85" -}}
+  <meta property="og:image" content="{{ $og.Permalink }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="{{ $og.Permalink }}">
+{{- end }}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ $p.brand }}">
+<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:description" content="{{ $p.description }}">
+<meta property="og:url" content="{{ $ogURL }}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:description" content="{{ $p.description }}">
+{{- with $p.twitterHandle }}
+<meta name="twitter:site" content="{{ . }}">
+<meta name="twitter:creator" content="{{ . }}">
+{{- end }}
+
+{{- /* Stylesheet: minified + fingerprinted for long-term caching */ -}}
+{{- with resources.Get "css/main.css" -}}
+  {{- $css := . | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end }}
+
+{{- /* Structured data for search engines */ -}}
+{{ partial "schema.html" . }}

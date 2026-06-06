@@ -1,0 +1,4 @@
+# Redirects for Netlify / Cloudflare Pages.
+# (Hugo also emits meta-refresh fallbacks for these via the page aliases.)
+/Hidden-Acres-RV-Park/OverView    /   301
+/Hidden-Acres-RV-Park/OverView/   /   301

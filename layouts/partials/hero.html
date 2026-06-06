@@ -1,0 +1,22 @@
+{{- $p := site.Params -}}
+{{- $hero := .Params.hero -}}
+<section class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    {{ partial "image.html" (dict "src" $p.heroImage "alt" "" "class" "hero-img" "sizes" "100vw" "loading" "eager") }}
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="container hero-content">
+    <p class="hero-eyebrow">{{ $p.address.city }}, {{ $p.address.state }} · on Lake Lavon</p>
+    <h1 class="hero-heading">{{ $hero.heading }}</h1>
+    <p class="hero-subtext">{{ $hero.subtext }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ $p.links.reserve }}" target="_blank" rel="noopener noreferrer">
+        Reserve your spot&nbsp;&#x2794;
+      </a>
+      <a class="btn btn-ghost" href="{{ $p.links.waitlist }}" target="_blank" rel="noopener noreferrer">
+        Join the waitlist
+      </a>
+    </div>
+    {{- with $hero.note }}<p class="hero-note">{{ . }}</p>{{ end }}
+  </div>
+</section>

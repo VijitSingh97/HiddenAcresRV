@@ -1,0 +1,35 @@
+{{- $p := site.Params -}}
+<header class="site-header">
+  <div class="container header-inner">
+    {{- /* Hidden checkbox drives the mobile menu with zero JavaScript */ -}}
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+
+    <a class="brand-link" href="#main" aria-label="{{ $p.brand }} — home">
+      {{- with resources.Get "images/logo/HiddenAcreResort.png" -}}
+        {{- $logo := .Resize "140x webp q85" -}}
+        <img class="brand-logo" src="{{ $logo.RelPermalink }}" width="56"
+             height="{{ mul 56 (div (float .Height) (float .Width)) | int }}" alt="">
+      {{- end -}}
+      <span class="brand-name">{{ $p.shortBrand }}</span>
+    </a>
+
+    <label for="nav-toggle" class="nav-burger" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="site-nav" aria-label="Primary">
+      <ul>
+        {{- range site.Menus.main }}
+        <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{- end }}
+        <li class="nav-phone">
+          <a href="tel:{{ $p.phoneRaw }}">{{ $p.phone }}</a>
+        </li>
+        <li>
+          <a class="btn btn-primary btn-sm" href="{{ $p.links.reserve }}"
+             target="_blank" rel="noopener noreferrer">Reserve</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

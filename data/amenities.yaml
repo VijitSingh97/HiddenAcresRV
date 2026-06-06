@@ -1,0 +1,40 @@
+# =============================================================================
+#  Amenities grid. Each item shows a photo, a title, and a short line of text.
+#  - name:  the title
+#  - image: photo filename, relative to assets/images/amenities/
+#  - blurb: the short description under the title
+#  To add an amenity: copy a block, change the text, and drop a photo into
+#  assets/images/amenities/. See docs/EDITING.md.
+# =============================================================================
+
+- name: "Ample space for all RVs"
+  image: "ample_space.jpg"
+  blurb: "Park your RV in our large, level spaces"
+
+- name: "Laundry room"
+  image: "laundry.jpg"
+  blurb: "Washer and dryer on site"
+
+- name: "20, 30, and 50 amp hookups"
+  image: "electrical.jpg"
+  blurb: "Electricity included for daily and weekly visitors"
+
+- name: "24' L x 20' W parking per lot"
+  image: "parking.jpg"
+  blurb: "Room for 2–3 vehicles"
+
+- name: "High-speed internet"
+  image: "internet.jpg"
+  blurb: "Included with every reservation"
+
+- name: "Walk to the lakefront"
+  image: "beach.jpg"
+  blurb: "Relax and enjoy the calm water"
+
+- name: "Boat docks nearby"
+  image: "dock.jpg"
+  blurb: "Easy to access"
+
+- name: "Close to public parks"
+  image: "park.jpg"
+  blurb: "Open green areas near the lake"

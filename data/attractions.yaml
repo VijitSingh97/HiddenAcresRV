@@ -1,0 +1,31 @@
+# =============================================================================
+#  Local attractions — shown as a linked list in the "About" section.
+#  Each item is a name and a URL. Add, remove, or reorder freely.
+# =============================================================================
+
+- name: "Future Flight Powered Parachutes"
+  url: "https://flyppc.com"
+- name: "Hawaiian Falls Water Park"
+  url: "https://hfalls.com"
+- name: "In-Sync Exotic Animal Zoo"
+  url: "https://www.insyncexotics.org"
+- name: "Heard Natural Science Museum & Wildlife Sanctuary"
+  url: "https://www.heardmuseum.org"
+- name: "President George W. Bush Library"
+  url: "https://www.georgewbushlibrary.smu.edu"
+- name: "Collin Oaks Winery"
+  url: "https://collinoakswinery.com"
+- name: "Southfork Ranch"
+  url: "https://www.southforkranch.com"
+- name: "Heritage Farmstead Museum"
+  url: "https://www.heritagefarmstead.org"
+- name: "Mesquite Championship Rodeo"
+  url: "https://mesquiterodeo.com"
+- name: "American Airlines Center"
+  url: "https://www.americanairlinescenter.com"
+- name: "Allen Premium Outlets"
+  url: "https://www.premiumoutlets.com/outlet/allen"
+- name: "Fairview Town Center"
+  url: "https://www.fairviewtowncenter.com"
+- name: "Firewheel Town Center"
+  url: "https://www.simon.com/mall/firewheel-town-center"

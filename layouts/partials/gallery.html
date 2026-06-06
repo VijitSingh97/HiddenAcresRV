@@ -1,0 +1,15 @@
+<section class="section gallery" id="gallery">
+  <div class="container">
+    <header class="section-head">
+      <h2>A look around the park</h2>
+      <p class="section-sub">Wide-open lots, mature trees, and the lake just a short walk away.</p>
+    </header>
+    <div class="gallery-grid">
+      {{- range hugo.Data.gallery }}
+      <figure class="gallery-item">
+        {{ partial "image.html" (dict "src" .image "alt" .alt "sizes" "(max-width: 700px) 100vw, 380px") }}
+      </figure>
+      {{- end }}
+    </div>
+  </div>
+</section>

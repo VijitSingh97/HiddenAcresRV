@@ -1,0 +1,31 @@
+{{- /* Reusable responsive image (WebP + srcset + intrinsic size to avoid layout shift).
+       Call:
+         {{ partial "image.html" (dict
+              "src" "park/hidden.jpg"        (required, relative to assets/images/)
+              "alt" "Description"            (required for accessibility/SEO)
+              "class" "about-photo"          (optional CSS class)
+              "sizes" "(max-width:800px) 100vw, 380px"  (optional)
+              "loading" "eager") }}          (optional, defaults to "lazy") */ -}}
+{{- $src := printf "images/%s" .src -}}
+{{- $img := resources.Get $src -}}
+{{- if not $img -}}{{- errorf "partials/image.html: image not found: %s" $src -}}{{- end -}}
+{{- /* Require a conscious alt decision on every image (use "" for decorative) */ -}}
+{{- if not (isset . "alt") -}}{{- errorf "partials/image.html: 'alt' is required for %s (pass an empty string for decorative images)" $src -}}{{- end -}}
+{{- $alt := .alt -}}
+{{- $class := .class | default "" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $maxW := $img.Width -}}
+{{- $srcset := slice -}}
+{{- range (slice 400 800 1200 1600) -}}
+  {{- if le . $maxW -}}
+    {{- $r := $img.Resize (printf "%dx webp q80" .) -}}
+    {{- $srcset = $srcset | append (printf "%s %dw" $r.RelPermalink $r.Width) -}}
+  {{- end -}}
+{{- end -}}
+{{- $fallback := $img.Resize (printf "%dx webp q80" (int (math.Min 1000 $maxW))) -}}
+<img src="{{ $fallback.RelPermalink }}"
+  {{- with $srcset }} srcset="{{ delimit . ", " }}" sizes="{{ $sizes }}"{{ end }}
+  width="{{ $img.Width }}" height="{{ $img.Height }}"
+  alt="{{ $alt }}"{{ with $class }} class="{{ . }}"{{ end }}
+  loading="{{ $loading }}"{{ if eq $loading "eager" }} fetchpriority="high"{{ end }} decoding="async">

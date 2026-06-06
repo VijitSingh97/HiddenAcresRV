@@ -1,0 +1,26 @@
+{{- $p := site.Params -}}
+{{- $rules := "/park_rules/campground-rules.pdf" -}}
+<section class="section faq" id="faq">
+  <div class="container container-narrow">
+    <header class="section-head">
+      <h2>Frequently asked questions</h2>
+    </header>
+    <div class="faq-list">
+      {{- range hugo.Data.faqs }}
+      {{- $answer := .answer -}}
+      {{- $answer = replace $answer "{{reserve}}" $p.links.reserve -}}
+      {{- $answer = replace $answer "{{waitlist}}" $p.links.waitlist -}}
+      {{- $answer = replace $answer "{{rules}}" $rules -}}
+      <details class="faq-item">
+        <summary class="faq-question">
+          <span>{{ .question }}</span>
+          <span class="faq-icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq-answer">
+          {{ $answer | markdownify }}
+        </div>
+      </details>
+      {{- end }}
+    </div>
+  </div>
+</section>

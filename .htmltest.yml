@@ -1,0 +1,27 @@
+# Configuration for htmltest (https://github.com/wjdp/htmltest).
+# It validates the generated HTML in ./public — checking that internal links,
+# anchors, and image references all resolve. Run it with: ./test.sh
+DirectoryPath: "public"
+
+# Internal checks (the reliable, high-value gate that runs on every build):
+CheckInternal: true
+CheckInternalHash: true        # verify in-page #anchors (e.g. #about) exist
+CheckImages: true              # verify every <img src> resolves
+CheckScripts: true
+CheckLinks: true
+IgnoreInternalEmptyHash: true
+
+# External link checking is OFF by default: third-party sites (Instagram, X,
+# the reservation portal, school district, etc.) often block or rate-limit bots,
+# which makes CI flaky. To audit external links periodically, run:
+#   htmltest --conf .htmltest.yml -s   (and set CheckExternal: true)
+CheckExternal: false
+
+# Don't fail on a missing trailing slash for internal directory links.
+IgnoreDirectoryMissingTrailingSlash: true
+
+# Decorative images (the logo and the hero background) intentionally use an
+# empty alt="" — this is correct accessibility practice. Our image partial
+# (layouts/partials/image.html) still REQUIRES a conscious alt on every image,
+# so content images can't silently ship without alt text.
+IgnoreAltMissing: true

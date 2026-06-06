@@ -1,0 +1,24 @@
+{{- $p := site.Params -}}
+<section class="section about" id="about">
+  <div class="container">
+    {{- range $i, $block := .Params.about }}
+    <div class="about-row {{ if eq (mod $i 2) 1 }}is-reversed{{ end }}">
+      <div class="about-text">
+        <h2>{{ $block.heading }}</h2>
+        <p>{{ $block.body }}</p>
+        {{- if $block.attractions }}
+        <ul class="attraction-list">
+          {{- range hugo.Data.attractions }}
+          <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .name }}</a></li>
+          {{- end }}
+          <li class="attraction-more">…and so much more!</li>
+        </ul>
+        {{- end }}
+      </div>
+      <figure class="about-figure">
+        {{ partial "image.html" (dict "src" $block.image "alt" $block.heading "sizes" "(max-width: 800px) 100vw, 460px") }}
+      </figure>
+    </div>
+    {{- end }}
+  </div>
+</section>

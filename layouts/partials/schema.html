@@ -1,0 +1,34 @@
+{{- /* JSON-LD structured data: tells Google this is a campground/RV park with
+       a real address, phone, and price, powering rich results + local search. */ -}}
+{{- $p := site.Params -}}
+{{- $amenities := slice -}}
+{{- range hugo.Data.amenities -}}
+  {{- $amenities = $amenities | append (dict "@type" "LocationFeatureSpecification" "name" .name "value" true) -}}
+{{- end -}}
+{{- $data := dict
+  "@context" "https://schema.org"
+  "@type" (slice "Campground" "RVPark")
+  "name" $p.brand
+  "description" $p.description
+  "url" site.BaseURL
+  "telephone" (printf "+1-%s" $p.phoneRaw)
+  "email" $p.email
+  "priceRange" $p.priceRange
+  "image" (printf "%s%s" (trim site.BaseURL "/") "/")
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" $p.address.street
+    "addressLocality" $p.address.city
+    "addressRegion" $p.address.state
+    "postalCode" $p.address.zip
+    "addressCountry" "US")
+  "geo" (dict
+    "@type" "GeoCoordinates"
+    "latitude" $p.geo.lat
+    "longitude" $p.geo.lng)
+  "amenityFeature" $amenities
+  "sameAs" (slice $p.social.instagram $p.social.twitter)
+-}}
+<script type="application/ld+json">
+{{ $data | jsonify (dict "indent" "  ") | safeJS }}
+</script>
