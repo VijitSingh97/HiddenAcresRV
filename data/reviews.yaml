@@ -1,0 +1,19 @@
+# =============================================================================
+#  Featured guest reviews (testimonials) shown in the "What our guests say"
+#  section.
+#
+#  IMPORTANT: only add REAL quotes from real guests — copy them straight from
+#  your own Google or Yelp reviews. (Inventing reviews is against the law and
+#  against Google/Yelp policy.) Leaving this list empty simply shows the
+#  "Read our reviews" buttons instead. See docs/EDITING.md.
+#
+#  Format for each review:
+#    - quote:  "the review text (a sentence or two works best)"
+#      name:   "First L."          # reviewer's name as shown publicly
+#      source: "Google"            # or "Yelp"
+# =============================================================================
+
+# Add your real reviews below, for example:
+# - quote: "Quiet, clean, and right on the lake — the owners made us feel at home."
+#   name: "Sarah M."
+#   source: "Google"

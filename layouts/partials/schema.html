@@ -54,6 +54,13 @@
       "@type" "Reservation"
       "name" "Reserve an RV site"))
 -}}
+{{- /* Add the aggregate star rating only when a real rating is set in hugo.toml */ -}}
+{{- $rv := $p.reviews -}}
+{{- if $rv.google_rating -}}
+  {{- $agg := dict "@type" "AggregateRating" "ratingValue" $rv.google_rating "bestRating" "5" -}}
+  {{- with $rv.google_count }}{{ $agg = merge $agg (dict "reviewCount" .) }}{{ end -}}
+  {{- $data = merge $data (dict "aggregateRating" $agg) -}}
+{{- end -}}
 <script type="application/ld+json">
 {{ $data | jsonify (dict "indent" "  ") | safeJS }}
 </script>

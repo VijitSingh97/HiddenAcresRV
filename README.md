@@ -1,17 +1,24 @@
 # Hidden Acres RV Park
 
-The website for [Hidden Acres RV Park](https://www.hiddenacresrv.com) in
-[Princeton, TX](https://www.google.com/maps/search/?api=1&query=10364+County+Rd+740+Princeton+TX+75407)
-— a quiet, friendly RV park on Lake Lavon. The site describes the park,
-its amenities and local attractions, answers common questions, and points
-visitors to the online reservation and waitlist portals.
+A fast, accessible, SEO-optimized marketing site for [Hidden Acres RV Park](https://www.hiddenacresrv.com)
+— a quiet RV park on Lake Lavon in Princeton, TX.
 
-Built with **[Hugo](https://gohugo.io)**, a single-binary static site generator.
-There is **no `npm`, no Node, and no dependency tree** to keep patched — the
-whole site is plain HTML and CSS once built, which keeps it fast, secure, and
-low-maintenance for years.
+This is a **showcase rebuild.** The site was previously a Gatsby app carrying a
+deep npm dependency tree and dozens of security advisories. It's now a
+**[Hugo](https://gohugo.io)** static site — a single Go binary with **zero npm
+dependency tree** — that compiles to plain HTML/CSS and is built to stay fast,
+secure, and nearly maintenance-free for years.
 
 ![Hidden Acres RV Park](assets/images/signage/big_sign.jpg)
+
+### What this build demonstrates
+
+- **Zero-dependency static architecture** — no Node or npm tree to patch; almost nothing to keep secure
+- **Performance-first** — ships ~no JavaScript (one tiny click-to-load map script), self-hosted fonts, and build-time responsive WebP images
+- **SEO & local discovery** — JSON-LD `Campground`/`RVPark` schema, accurate geo, sitemap, robots, Open Graph, and a reviews section
+- **Accessibility** — semantic landmarks, a single `<h1>`, real alt text, keyboard support, and visible focus styles
+- **Content/layout separation** — every word lives in plain config/data files, so the owner updates text without touching templates
+- **CI/CD + testing** — every push is built, link-checked, and SEO-asserted, then deployed to GitHub Pages
 
 ---
 

@@ -47,7 +47,7 @@ layouts/
     head.html              <title>, meta, canonical, Open Graph/Twitter, favicon, CSS link
     schema.html            JSON-LD (Campground/RVPark) structured data
     header.html            Sticky nav + CSS-only mobile menu
-    hero.html  about.html  amenities.html  gallery.html  location.html  faq.html  footer.html
+    hero.html  about.html  amenities.html  gallery.html  reviews.html  location.html  faq.html  footer.html
     image.html             Reusable responsive-image helper (see below)
 .github/workflows/ci.yml   Build + validate + deploy to GitHub Pages
 .htmltest.yml              HTML/link validation config
@@ -94,13 +94,19 @@ text. The hero and Open Graph images are generated the same way.
 - One `<h1>` (the hero), semantic landmarks, a skip link, visible focus styles,
   and `prefers-reduced-motion` handling.
 
-## Zero-JS interactions
+## Near-zero JavaScript
+
+The site's only JavaScript is a ~10-line inline script that lazy-loads the
+interactive map on click. Everything else is HTML/CSS:
 
 - **FAQ accordion** — native `<details>`/`<summary>`.
 - **Mobile menu** — a hidden checkbox (`#nav-toggle`) toggled by the hamburger
   `<label>`; CSS `:checked ~ .site-nav` reveals the menu.
 - **Smooth anchor scrolling** — CSS `scroll-behavior: smooth` + `scroll-padding-top`
   to clear the sticky header.
+- **Interactive map (facade)** — `location.html` renders a fast static map image;
+  tapping it swaps in the Google Maps `<iframe>` (built keyless from `[params.geo]`),
+  so no map code loads until the visitor asks for it. Keeps initial load fast.
 
 ## Fonts
 

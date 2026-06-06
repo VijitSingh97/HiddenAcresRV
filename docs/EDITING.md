@@ -32,6 +32,8 @@ All file paths below are relative to the project's main folder.
 | Local attractions list | `data/attractions.yaml` | one line per attraction |
 | FAQ questions & answers | `data/faqs.yaml` | one block per question |
 | Gallery photos | `data/gallery.yaml` | one line per photo |
+| Featured guest reviews | `data/reviews.yaml` | one block per review (real quotes only) |
+| Review star ratings (badges) | `hugo.toml` | `[params.reviews]` → `google_rating`, `google_count`, etc. |
 | Navigation menu items | `hugo.toml` | the `[[menu.main]]` entries |
 | Park rules PDF | `static/park_rules/campground-rules.pdf` | replace the file (keep the same name) |
 | Logo / favicon | `assets/images/logo/` | replace the image files |

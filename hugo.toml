@@ -74,18 +74,17 @@ disableKinds = ["taxonomy", "term", "rss"]
     state  = "TX"
     zip    = "75407"
 
-  # Map coordinates for SEO structured data.
-  # APPROXIMATE — to set exact: open Google Maps, right-click your spot,
-  # click the lat,long at the top to copy it, and paste below. See docs/EDITING.md.
+  # Map coordinates for SEO structured data and the embedded map.
+  # (Verified from the park's Google Maps listing.)
   [params.geo]
-    lat = 33.1577
-    lng = -96.4347
+    lat = 33.063741
+    lng = -96.5126
 
   # Key outbound links. The reservation/waitlist links come from FireflyReservations.
   [params.links]
     reserve  = "https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"
     waitlist = "https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"
-    map      = "https://www.google.com/maps/search/?api=1&query=10364+County+Rd+740+Princeton+TX+75407"
+    map      = "https://maps.app.goo.gl/eEMEGFBUCestE484A"
     # The 360° virtual tour (carried over from the previous site). NOTE: this is a
     # legacy goo.gl short link — Google is sunsetting these, so verify it still
     # works and, if needed, replace it with the current Google Maps tour URL.
@@ -95,6 +94,17 @@ disableKinds = ["taxonomy", "term", "rss"]
     instagram = "https://instagram.com/Hidden_Acres_RV"
     twitter   = "https://twitter.com/Hidden_Acres_RV"
     github    = "https://github.com/VijitSingh97/HiddenAcresRV"
+
+  # Guest reviews. Add your current ratings to show rating badges on the site and
+  # enable star rich-results in search (leave blank to hide them). Featured quotes
+  # live in data/reviews.yaml. See docs/EDITING.md.
+  [params.reviews]
+    google_url    = "https://maps.app.goo.gl/eEMEGFBUCestE484A"
+    yelp_url      = "https://www.yelp.com/biz/hidden-acres-rv-park-princeton-2"
+    google_rating = ""   # e.g. "4.8"
+    google_count  = ""   # e.g. "27"
+    yelp_rating   = ""   # e.g. "5.0"
+    yelp_count    = ""   # e.g. "9"
 
 # Navigation anchors shown in the header (in order). "url" can be an in-page
 # anchor (#about) or a full URL. Add/remove items to change the menu.
@@ -110,6 +120,10 @@ disableKinds = ["taxonomy", "term", "rss"]
   name = "Gallery"
   url = "#gallery"
   weight = 30
+[[menu.main]]
+  name = "Reviews"
+  url = "#reviews"
+  weight = 35
 [[menu.main]]
   name = "Location"
   url = "#location"

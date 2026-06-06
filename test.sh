@@ -26,4 +26,17 @@ else
   echo "  Install it with:  go install github.com/wjdp/htmltest@latest"
 fi
 
+echo "==> Checking key SEO elements are present…"
+seo_ok=1
+check() { if grep -q "$1" public/index.html; then echo "  ✓ $2"; else echo "  ✗ MISSING: $2"; seo_ok=0; fi; }
+check '<title>'              'page title'
+check 'canonical'           'canonical URL'
+check 'og:image'            'Open Graph share image'
+check 'application/ld+json' 'JSON-LD structured data'
+check 'viewport'            'responsive viewport'
+for f in sitemap.xml robots.txt site.webmanifest; do
+  if [ -f "public/$f" ]; then echo "  ✓ $f"; else echo "  ✗ MISSING: public/$f"; seo_ok=0; fi
+done
+[ "$seo_ok" -eq 1 ] || { echo "✗ SEO checks failed."; exit 1; }
+
 echo "✓ All checks passed."
