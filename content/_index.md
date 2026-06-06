@@ -43,7 +43,7 @@ about:
     image: "park/close.jpg"
     body: >-
       Located right on Lake Lavon — 10 miles east of Allen, 15 miles southeast
-      of McKinney, 15 miles east of Plano, and 20 miles northeast of Dallas.
+      of McKinney, 15 miles east of Plano, about 20 miles east of Frisco, and 20 miles northeast of Dallas.
       It's a five-minute walk to the beach, fishing, and swimming, with boat
       ramps close by. You're only 15 minutes from a major mall, movie complex,
       and restaurants, and gas and propane are nearby.
