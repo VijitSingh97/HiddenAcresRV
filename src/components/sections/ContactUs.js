@@ -26,7 +26,7 @@ const ContactUs = ({ data }) => (
       <Section id="contactus" accent='secondary'>
         <Container>
           <Grid>
-            <a href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37" target="_blank">
+            <a href="https://goo.gl/maps/5jtXzJ2n8rnDhJY37" target="_blank" rel="noopener noreferrer">
               <Art>
                 <Img fluid={data.google_maps.childImageSharp.fluid} />
               </Art>
