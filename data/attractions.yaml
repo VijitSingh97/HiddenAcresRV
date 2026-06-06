@@ -1,0 +1,39 @@
+# =============================================================================
+#  Local attractions — shown as a linked list in the "About" section.
+#  Each item is a name and a URL. Add, remove, or reorder freely.
+#  (Princeton and Collin County are growing fast — refresh these now and then.)
+# =============================================================================
+
+# --- In & around Princeton ---
+- name: "Reeves Family Farm (Princeton)"
+  url: "https://www.reevesfamilyfarm.com"
+- name: "Collin Oaks Winery (Princeton)"
+  url: "https://collinoakswinery.com"
+- name: "Lavon Lake & Ticky Creek Park"
+  url: "https://www.swf-wc.usace.army.mil/lavon/Recreation/"
+
+# --- McKinney (about 20 minutes) ---
+- name: "Historic Downtown McKinney"
+  url: "https://www.visitmckinney.com"
+- name: "TUPPS Brewery — Best Brewery in Texas (McKinney)"
+  url: "https://tuppsbrewery.com"
+- name: "Heard Natural Science Museum & Wildlife Sanctuary"
+  url: "https://www.heardmuseum.org"
+
+# --- Allen & Plano ---
+- name: "Watters Creek (Allen)"
+  url: "https://www.watterscreek.com"
+- name: "Allen Premium Outlets"
+  url: "https://www.premiumoutlets.com/outlet/allen"
+- name: "Heritage Farmstead Museum (Plano)"
+  url: "https://www.heritagefarmstead.org"
+
+# --- A short drive farther ---
+- name: "In-Sync Exotics Wildlife Rescue (Wylie)"
+  url: "https://www.insyncexotics.org"
+- name: "Southfork Ranch (Parker)"
+  url: "https://www.southforkranch.com"
+- name: "George W. Bush Presidential Library (Dallas)"
+  url: "https://www.georgewbushlibrary.smu.edu"
+- name: "Mesquite Championship Rodeo"
+  url: "https://www.mesquiterodeo.com"

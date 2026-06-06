@@ -1,0 +1,69 @@
+# =============================================================================
+#  Frequently Asked Questions. Each item has a `question` and an `answer`.
+#  Answers are written in Markdown (you can use **bold**, lists, and [links](url)).
+#
+#  Handy shortcuts you can use inside an answer (they expand automatically):
+#    {{reserve}}   -> the reservation link        (set in hugo.toml)
+#    {{waitlist}}  -> the waitlist link            (set in hugo.toml)
+#    {{rules}}     -> the park rules PDF      (/park_rules/campground-rules.pdf)
+#
+#  See docs/EDITING.md to add or edit questions.
+# =============================================================================
+
+- question: "What is Hidden Acres's pet policy?"
+  answer: |
+    - Most pets are welcome
+    - We allow cats, dogs, and all service animals
+    - Please call us if your dog is over 30 lb
+    - Let us know about your pets before booking
+    - More details are in our [park rules]({{rules}})
+
+- question: "What schools are nearby Hidden Acres?"
+  answer: |
+    The schools around us are all in Princeton ISD:
+    [Harper Elementary School](https://www.princetonisd.net/harper),
+    [Clark Jr High School](https://www.princetonisd.net/Domain/148), and
+    [Princeton High School](https://www.princetonisd.net/Domain/52).
+
+- question: "What are the dimensions of the RV pads at Hidden Acres?"
+  answer: |
+    Our RV pad sizes are:
+
+    - 55' L x 25' W
+    - 65' L x 25' W
+
+    Each lot also includes a two-vehicle, 24' L x 20' W parking spot in front.
+    Longer RVs can use this extra space to extend the lot length by up to 24'.
+
+- question: "What are the RV age restrictions at Hidden Acres? Any other restrictions?"
+  answer: |
+    Our restrictions include:
+
+    - Please call us if your RV is older than 15 years
+    - No damage to the outside of the RV
+    - RV must have safe, working electrical plugs
+    - RV must have undamaged, working water and sewage hookups
+    - Any window ACs or window fans must be approved by management
+
+    More information can be found in our [park rules]({{rules}}).
+
+- question: "What rules does Hidden Acres have?"
+  answer: |
+    You can find our full [park rules]({{rules}}) here.
+
+- question: "What are the lot fees at Hidden Acres?"
+  answer: |
+    Lot fees start at $60 a night for daily visitors. More detail on rates is
+    available in our [reservation portal]({{reserve}}).
+
+- question: "How can I join the waitlist at Hidden Acres?"
+  answer: |
+    You can [join our waitlist]({{waitlist}}) and we'll contact you as soon as
+    space is available.
+
+- question: "Are there any restrictions related to criminal history at Hidden Acres?"
+  answer: |
+    Yes. We run a background check on those staying with us. You must disclose
+    any serious offenses at the time of booking for anyone who will be staying
+    at Hidden Acres. Failure to disclose this information will result in
+    immediate termination of the reservation and residency.

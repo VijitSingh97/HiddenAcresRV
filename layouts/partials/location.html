@@ -1,0 +1,60 @@
+{{- $p := site.Params -}}
+<section class="section section-accent location" id="location">
+  {{- /* Preserve the previous site's #contactus anchor so old links still land here */ -}}
+  <span id="contactus" class="anchor-alias" aria-hidden="true"></span>
+  <div class="container location-grid">
+    {{- $embed := printf "https://www.google.com/maps?q=%v,%v&z=14&output=embed" $p.geo.lat $p.geo.lng -}}
+    <div class="location-media">
+      <div class="location-map">
+        {{- /* Facade: shows a fast static image; a tap loads the live Google map
+               (no map code runs until the visitor asks for it). */ -}}
+        <a class="map-facade" href="{{ $p.links.map }}" target="_blank" rel="noopener noreferrer"
+           data-map-embed="{{ $embed }}" aria-label="Load an interactive map of {{ $p.brand }}">
+          {{ partial "image.html" (dict "src" "map/google-maps.png" "alt" (printf "Map showing %s in %s, %s" $p.brand $p.address.city $p.address.state) "sizes" "(max-width: 800px) 100vw, 540px") }}
+          <span class="map-facade-cta" aria-hidden="true">▶&nbsp;Tap to load interactive map</span>
+        </a>
+      </div>
+      <a class="map-open" href="{{ $p.links.map }}" target="_blank" rel="noopener noreferrer">Open in Google&nbsp;Maps&nbsp;↗</a>
+    </div>
+    <div class="location-details">
+      <h2>Come stay with us</h2>
+
+      <div class="contact-block">
+        <h3>Find us</h3>
+        <p>
+          <a href="{{ $p.links.map }}" target="_blank" rel="noopener noreferrer">
+            {{ $p.address.street }}<br>
+            {{ $p.address.city }}, {{ $p.address.state }} {{ $p.address.zip }}
+          </a>
+        </p>
+      </div>
+
+      <div class="contact-block">
+        <h3>Contact us</h3>
+        <p><a href="tel:{{ $p.phoneRaw }}">{{ $p.phone }}</a></p>
+        <p><a href="mailto:{{ $p.email }}?subject=Reservation%20Request">{{ $p.email }}</a></p>
+      </div>
+
+      <div class="contact-block">
+        <h3>Take a tour</h3>
+        <p><a href="{{ $p.links.tour }}" target="_blank" rel="noopener noreferrer">Take a 360° virtual tour&nbsp;&#x2794;</a></p>
+      </div>
+
+      {{- with .Params.directions }}
+      <details class="directions">
+        <summary>Driving directions</summary>
+        <div class="directions-body">{{ . | markdownify }}</div>
+      </details>
+      {{- end }}
+
+      <div class="location-actions">
+        <a class="btn btn-primary" href="{{ $p.links.reserve }}" target="_blank" rel="noopener noreferrer">Reserve your spot</a>
+        <a class="btn btn-ghost" href="{{ $p.links.waitlist }}" target="_blank" rel="noopener noreferrer">Join the waitlist</a>
+      </div>
+    </div>
+  </div>
+  {{- /* ~10 lines of JS that only run on click — keeps initial load fast */ -}}
+  <script>
+  (function(){var a=document.querySelector('.map-facade');if(!a)return;a.addEventListener('click',function(e){var s=a.getAttribute('data-map-embed');if(!s)return;e.preventDefault();var f=document.createElement('iframe');f.src=s;f.title='Interactive map';f.loading='lazy';f.className='map-frame';f.setAttribute('allowfullscreen','');f.setAttribute('referrerpolicy','no-referrer-when-downgrade');a.replaceWith(f);});})();
+  </script>
+</section>

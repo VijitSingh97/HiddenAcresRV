@@ -1,0 +1,18 @@
+# =============================================================================
+#  Photo gallery. Each item is a photo filename (relative to assets/images/)
+#  plus descriptive `alt` text for screen readers and SEO.
+#  To change the gallery, edit this list and add photos to assets/images/.
+# =============================================================================
+
+- image: "park/open_water.jpg"
+  alt: "Open water view of Lake Lavon at sunset from Hidden Acres"
+- image: "park/space.jpg"
+  alt: "Spacious, level RV lots with mature trees"
+- image: "park/hidden.jpg"
+  alt: "Quiet, secluded RV park surrounded by greenery"
+- image: "park/close.jpg"
+  alt: "RV sites a short walk from the lakefront"
+- image: "signage/740_sign.jpg"
+  alt: "Hidden Acres entrance sign on County Road 740"
+- image: "amenities/beach.jpg"
+  alt: "Calm lakefront beach a short walk from the campsites"

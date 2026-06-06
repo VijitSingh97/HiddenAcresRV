@@ -1,0 +1,17 @@
+{{- /* Web app manifest — describes the site for "add to home screen" / PWA.
+       Icons are generated from the logo at build time. */ -}}
+{{- $src := resources.Get "images/logo/HiddenAcresRVCampgroundLogo1.png" -}}
+{{- $i192 := $src.Resize "192x192 png" -}}
+{{- $i512 := $src.Resize "512x512 png" -}}
+{
+  "name": {{ site.Params.brand | jsonify }},
+  "short_name": {{ site.Params.shortBrand | jsonify }},
+  "start_url": "/",
+  "display": "minimal-ui",
+  "background_color": "#8bd8ed",
+  "theme_color": "#eb6234",
+  "icons": [
+    { "src": {{ $i192.RelPermalink | jsonify }}, "sizes": "192x192", "type": "image/png" },
+    { "src": {{ $i512.RelPermalink | jsonify }}, "sizes": "512x512", "type": "image/png" }
+  ]
+}

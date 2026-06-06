@@ -1,0 +1,11 @@
+{{- /* Visitor analytics — OFF by default (no tracking, no cookies).
+
+   To turn on Google Analytics 4: put your Measurement ID (G-XXXXXXXXXX) in
+   hugo.toml under [services.googleAnalytics]. Nothing loads until you do, and
+   it never loads during local `hugo server` previews.
+
+   Privacy-friendlier alternative (no cookies, no banner needed): Cloudflare
+   Web Analytics or Plausible — paste their <script> tag below instead. */ -}}
+{{- if hugo.IsProduction -}}
+  {{- template "_internal/google_analytics.html" . -}}
+{{- end -}}

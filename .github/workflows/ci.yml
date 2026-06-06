@@ -1,0 +1,63 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+
+# Allow this workflow to publish to GitHub Pages.
+permissions:
+  contents: read
+
+# Only one deploy at a time; don't cancel an in-progress deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  # --- Build the site and validate the HTML on every push and PR -----------
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.162.1   # keep in sync with the version you run locally
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Hugo (extended)
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Set up Go (for htmltest)
+        uses: actions/setup-go@v6
+        with:
+          go-version: stable
+
+      - name: Install htmltest
+        run: go install github.com/wjdp/htmltest@latest
+
+      - name: Build & test (strict build + htmltest + UX/SEO checks)
+        run: bash ./test.sh
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
+
+  # --- Deploy to GitHub Pages, only on master ------------------------------
+  deploy:
+    if: github.ref == 'refs/heads/master'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write       # to deploy to Pages
+      id-token: write    # to verify the deploy originates from this workflow
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

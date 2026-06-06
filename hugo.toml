@@ -1,0 +1,124 @@
+# =============================================================================
+#  Hidden Acres RV Park — site configuration
+# =============================================================================
+#  Most day-to-day text edits happen HERE or in the data/ and content/ files.
+#  See docs/EDITING.md for a "I want to change X -> edit this file" guide.
+# =============================================================================
+
+baseURL = "https://www.hiddenacresrv.com/"
+defaultContentLanguage = "en"
+title = "Hidden Acres RV Park"
+enableRobotsTXT = true   # generates /robots.txt
+enableGitInfo = false
+
+# This is a single marketing page — turn off tags/categories and RSS feeds.
+disableKinds = ["taxonomy", "term", "rss"]
+
+# Pretty, readable output; fail the build if a template references missing data.
+[build]
+  writeStats = false
+
+[markup.goldmark.renderer]
+  unsafe = true   # allow inline HTML/links inside FAQ + about markdown
+
+[minify]
+  disableJSON = false
+
+# Emit a web app manifest (/site.webmanifest) alongside the HTML home page,
+# matching what the old site produced. Template: layouts/index.webmanifest
+[mediaTypes."application/manifest+json"]
+  suffixes = ["webmanifest"]
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  baseName = "site"
+  isPlainText = true
+  notAlternative = true
+[outputs]
+  home = ["HTML", "WebAppManifest"]
+
+# Visitor analytics — OFF by default (no tracking, no cookies). To enable Google
+# Analytics 4, paste your Measurement ID (looks like G-XXXXXXXXXX) below. Nothing
+# loads until you do, and never during local previews. See layouts/partials/analytics.html.
+[services.googleAnalytics]
+  ID = ""
+
+# -----------------------------------------------------------------------------
+#  [params] — site-wide facts. Change a phone number, address, or link once here
+#  and it updates everywhere on the site (header, contact section, footer, SEO).
+# -----------------------------------------------------------------------------
+[params]
+  brand       = "Hidden Acres RV Park"
+  shortBrand  = "Hidden Acres"
+  tagline     = "A quiet and friendly place to relax"
+  description = "Hidden Acres RV Park in Princeton, TX — surrounded by Lake Lavon, lush trees, and beach access. A quiet, friendly community minutes from Allen, McKinney, Plano, Frisco, and North Dallas."
+
+  # Contact
+  phone    = "(972) 736-1264"   # shown to visitors
+  phoneRaw = "9727361264"       # used for tap-to-call links (digits only)
+  email    = "reservations@hiddenacresrv.com"
+
+  # Pricing (used in the FAQ + SEO data)
+  priceFrom  = "$60"
+  priceRange = "$$"
+
+  # Social / sharing
+  twitterHandle = "@Hidden_Acres_RV"
+  author        = "Vijit Singh"
+  ogImage       = "signage/big_sign.jpg"   # source photo used to generate the share image
+  heroImage     = "park/open_water.jpg"     # large background photo behind the headline
+
+  # Paste your Google Search Console verification token here to verify ownership
+  # (Search Console → add property → "HTML tag" method → copy the content value).
+  # Leave blank if you're not using it.
+  googleSiteVerification = ""
+
+  # Street address (shown in Contact + used for SEO/maps)
+  [params.address]
+    street = "10364 County Rd. 740"
+    city   = "Princeton"
+    state  = "TX"
+    zip    = "75407"
+
+  # Map coordinates for SEO structured data and the embedded map.
+  # (Verified from the park's Google Maps listing.)
+  [params.geo]
+    lat = 33.063741
+    lng = -96.5126
+
+  # Key outbound links. The reservation/waitlist links come from FireflyReservations.
+  [params.links]
+    reserve  = "https://app.fireflyreservations.com/reserve?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"
+    waitlist = "https://app.fireflyreservations.com/reserve/joinwaitlist?propertyGUID=8b116da5-c2e9-45e4-acc7-e64ab4e5f601"
+    map      = "https://maps.app.goo.gl/eEMEGFBUCestE484A"
+    # The 360° virtual tour (carried over from the previous site). NOTE: this is a
+    # legacy goo.gl short link — Google is sunsetting these, so verify it still
+    # works and, if needed, replace it with the current Google Maps tour URL.
+    tour     = "https://goo.gl/maps/9URNXTdFGi63TMXj7"
+
+  [params.social]
+    instagram = "https://instagram.com/Hidden_Acres_RV"
+    twitter   = "https://twitter.com/Hidden_Acres_RV"
+    github    = "https://github.com/VijitSingh97/HiddenAcresRV"
+
+# Navigation anchors shown in the header (in order). "url" can be an in-page
+# anchor (#about) or a full URL. Add/remove items to change the menu.
+[[menu.main]]
+  name = "About"
+  url = "/#about"
+  weight = 10
+[[menu.main]]
+  name = "Amenities"
+  url = "/#amenities"
+  weight = 20
+[[menu.main]]
+  name = "Gallery"
+  url = "/#gallery"
+  weight = 30
+[[menu.main]]
+  name = "Location"
+  url = "/#location"
+  weight = 40
+[[menu.main]]
+  name = "FAQ"
+  url = "/#faq"
+  weight = 50

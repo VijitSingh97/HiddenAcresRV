@@ -1,0 +1,59 @@
+{{- /* JSON-LD structured data: tells Google this is an RV park with a real
+       address, phone, price, amenities, map, and online booking — powering
+       rich results and local search. Validate at
+       https://search.google.com/test/rich-results */ -}}
+{{- $p := site.Params -}}
+{{- $amenities := slice -}}
+{{- range hugo.Data.amenities -}}
+  {{- $amenities = $amenities | append (dict "@type" "LocationFeatureSpecification" "name" .name "value" true) -}}
+{{- end -}}
+{{- range hugo.Data.highlights -}}
+  {{- $amenities = $amenities | append (dict "@type" "LocationFeatureSpecification" "name" . "value" true) -}}
+{{- end -}}
+{{- $img := "" -}}
+{{- with resources.Get (printf "images/%s" $p.ogImage) -}}
+  {{- $img = (.Fill "1200x630 jpg q85").Permalink -}}
+{{- end -}}
+{{- $data := dict
+  "@context" "https://schema.org"
+  "@type" (slice "Campground" "RVPark")
+  "name" $p.brand
+  "description" $p.description
+  "url" site.BaseURL
+  "telephone" (printf "+1-%s" $p.phoneRaw)
+  "email" $p.email
+  "priceRange" $p.priceRange
+  "currenciesAccepted" "USD"
+  "petsAllowed" true
+  "image" $img
+  "hasMap" $p.links.map
+  "address" (dict
+    "@type" "PostalAddress"
+    "streetAddress" $p.address.street
+    "addressLocality" $p.address.city
+    "addressRegion" $p.address.state
+    "postalCode" $p.address.zip
+    "addressCountry" "US")
+  "geo" (dict
+    "@type" "GeoCoordinates"
+    "latitude" $p.geo.lat
+    "longitude" $p.geo.lng)
+  "amenityFeature" $amenities
+  "sameAs" (slice $p.social.instagram $p.social.twitter)
+  "potentialAction" (dict
+    "@type" "ReserveAction"
+    "target" (dict
+      "@type" "EntryPoint"
+      "urlTemplate" $p.links.reserve
+      "inLanguage" "en-US"
+      "actionPlatform" (slice
+        "http://schema.org/DesktopWebPlatform"
+        "http://schema.org/IOSPlatform"
+        "http://schema.org/AndroidPlatform"))
+    "result" (dict
+      "@type" "Reservation"
+      "name" "Reserve an RV site"))
+-}}
+<script type="application/ld+json">
+{{ $data | jsonify (dict "indent" "  ") | safeJS }}
+</script>

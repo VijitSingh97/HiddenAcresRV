@@ -1,0 +1,55 @@
+{{- $p := site.Params -}}
+{{- /* The <title> is the headline Google shows in results — lead with the brand and
+       the local search terms (town + Lake Lavon). Social cards keep the warm tagline. */ -}}
+{{- $titleTag := printf "%s — %s, %s on Lake Lavon" $p.brand $p.address.city $p.address.state -}}
+{{- $socialTitle := printf "%s — %s" $p.brand $p.tagline -}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ $titleTag }}</title>
+<meta name="description" content="{{ $p.description }}">
+<meta name="author" content="{{ $p.author }}">
+<link rel="canonical" href="{{ site.BaseURL }}">
+<meta name="theme-color" content="{{ "#eb6234" }}">
+{{- with $p.googleSiteVerification }}
+<meta name="google-site-verification" content="{{ . }}">
+{{- end }}
+
+{{- /* Favicon + touch icon, generated from the logo */ -}}
+{{- with resources.Get "images/logo/HiddenAcresRVCampgroundLogo1.png" -}}
+  {{- $icon := .Resize "180x180 png" -}}
+  <link rel="icon" type="image/png" href="{{ $icon.RelPermalink }}">
+  <link rel="apple-touch-icon" href="{{ $icon.RelPermalink }}">
+{{- end }}
+<link rel="manifest" href="/site.webmanifest">
+
+{{- /* Open Graph + Twitter share cards (absolute image URL) */ -}}
+{{- $ogURL := site.BaseURL -}}
+{{- with resources.Get (printf "images/%s" $p.ogImage) -}}
+  {{- $og := .Fill "1200x630 jpg q85" -}}
+  <meta property="og:image" content="{{ $og.Permalink }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="{{ $og.Permalink }}">
+{{- end }}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ $p.brand }}">
+<meta property="og:title" content="{{ $socialTitle }}">
+<meta property="og:description" content="{{ $p.description }}">
+<meta property="og:url" content="{{ $ogURL }}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $socialTitle }}">
+<meta name="twitter:description" content="{{ $p.description }}">
+{{- with $p.twitterHandle }}
+<meta name="twitter:site" content="{{ . }}">
+<meta name="twitter:creator" content="{{ . }}">
+{{- end }}
+
+{{- /* Stylesheet: minified + fingerprinted for long-term caching */ -}}
+{{- with resources.Get "css/main.css" -}}
+  {{- $css := . | minify | fingerprint -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{- end }}
+
+{{- /* Structured data for search engines */ -}}
+{{ partial "schema.html" . }}

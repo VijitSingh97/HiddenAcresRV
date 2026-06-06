@@ -1,0 +1,26 @@
+<section class="section section-accent amenities" id="amenities">
+  <div class="container">
+    <header class="section-head">
+      <h2>Arranged for your convenience</h2>
+      <p class="section-sub">Everything you need for a comfortable, easygoing stay.</p>
+    </header>
+    {{- with hugo.Data.highlights }}
+    <ul class="highlights" aria-label="Park highlights">
+      {{- range . }}
+      <li class="highlight">{{ . }}</li>
+      {{- end }}
+    </ul>
+    {{- end }}
+    <ul class="amenity-grid">
+      {{- range hugo.Data.amenities }}
+      <li class="amenity-card">
+        <div class="amenity-photo">
+          {{ partial "image.html" (dict "src" (printf "amenities/%s" .image) "alt" .name "sizes" "(max-width: 600px) 50vw, 260px") }}
+        </div>
+        <h3 class="amenity-name">{{ .name }}</h3>
+        <p class="amenity-blurb">{{ .blurb }}</p>
+      </li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
