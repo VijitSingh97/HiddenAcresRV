@@ -32,7 +32,7 @@ const FAQS = [
     ),
   },
   {
-    title: 'What school are nearby Hidden Acres?',
+    title: 'What schools are nearby Hidden Acres?',
     content: () => (
       <>
         The schools around us include: <a href="https://www.princetonisd.net/harper" target="_blank" rel="noopener noreferrer">Harper Elementary School</a>, <a href="https://www.princetonisd.net/Domain/148" target="_blank" rel="noopener noreferrer">Clark Jr High School</a>, and <a href="https://www.princetonisd.net/Domain/52" target="_blank" rel="noopener noreferrer">Princeton High School</a>. All of which are in Princeton ISD.

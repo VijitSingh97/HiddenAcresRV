@@ -37,7 +37,7 @@ const AMENITIES = [
     role: 'Relax and enjoy the calm water',
   },
   {
-    name: 'Boat Docks Neaby',
+    name: 'Boat Docks Nearby',
     image: 'dock.jpg',
     role: 'Easy to access',
   },
