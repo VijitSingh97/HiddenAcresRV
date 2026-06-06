@@ -1,9 +1,15 @@
-{{- /* JSON-LD structured data: tells Google this is a campground/RV park with
-       a real address, phone, and price, powering rich results + local search. */ -}}
+{{- /* JSON-LD structured data: tells Google this is an RV park with a real
+       address, phone, price, amenities, map, and online booking — powering
+       rich results and local search. Validate at
+       https://search.google.com/test/rich-results */ -}}
 {{- $p := site.Params -}}
 {{- $amenities := slice -}}
 {{- range hugo.Data.amenities -}}
   {{- $amenities = $amenities | append (dict "@type" "LocationFeatureSpecification" "name" .name "value" true) -}}
+{{- end -}}
+{{- $img := "" -}}
+{{- with resources.Get (printf "images/%s" $p.ogImage) -}}
+  {{- $img = (.Fill "1200x630 jpg q85").Permalink -}}
 {{- end -}}
 {{- $data := dict
   "@context" "https://schema.org"
@@ -14,7 +20,10 @@
   "telephone" (printf "+1-%s" $p.phoneRaw)
   "email" $p.email
   "priceRange" $p.priceRange
-  "image" (printf "%s%s" (trim site.BaseURL "/") "/")
+  "currenciesAccepted" "USD"
+  "petsAllowed" true
+  "image" $img
+  "hasMap" $p.links.map
   "address" (dict
     "@type" "PostalAddress"
     "streetAddress" $p.address.street
@@ -28,6 +37,19 @@
     "longitude" $p.geo.lng)
   "amenityFeature" $amenities
   "sameAs" (slice $p.social.instagram $p.social.twitter)
+  "potentialAction" (dict
+    "@type" "ReserveAction"
+    "target" (dict
+      "@type" "EntryPoint"
+      "urlTemplate" $p.links.reserve
+      "inLanguage" "en-US"
+      "actionPlatform" (slice
+        "http://schema.org/DesktopWebPlatform"
+        "http://schema.org/IOSPlatform"
+        "http://schema.org/AndroidPlatform"))
+    "result" (dict
+      "@type" "Reservation"
+      "name" "Reserve an RV site"))
 -}}
 <script type="application/ld+json">
 {{ $data | jsonify (dict "indent" "  ") | safeJS }}

@@ -36,6 +36,12 @@ disableKinds = ["taxonomy", "term", "rss"]
 [outputs]
   home = ["HTML", "WebAppManifest"]
 
+# Visitor analytics — OFF by default (no tracking, no cookies). To enable Google
+# Analytics 4, paste your Measurement ID (looks like G-XXXXXXXXXX) below. Nothing
+# loads until you do, and never during local previews. See layouts/partials/analytics.html.
+[services.googleAnalytics]
+  ID = ""
+
 # -----------------------------------------------------------------------------
 #  [params] — site-wide facts. Change a phone number, address, or link once here
 #  and it updates everywhere on the site (header, contact section, footer, SEO).
