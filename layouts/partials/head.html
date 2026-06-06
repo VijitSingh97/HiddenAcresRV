@@ -1,12 +1,18 @@
 {{- $p := site.Params -}}
-{{- $pageTitle := printf "%s — %s" $p.brand $p.tagline -}}
+{{- /* The <title> is the headline Google shows in results — lead with the brand and
+       the local search terms (town + Lake Lavon). Social cards keep the warm tagline. */ -}}
+{{- $titleTag := printf "%s — %s, %s on Lake Lavon" $p.brand $p.address.city $p.address.state -}}
+{{- $socialTitle := printf "%s — %s" $p.brand $p.tagline -}}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ $pageTitle }}</title>
+<title>{{ $titleTag }}</title>
 <meta name="description" content="{{ $p.description }}">
 <meta name="author" content="{{ $p.author }}">
 <link rel="canonical" href="{{ site.BaseURL }}">
 <meta name="theme-color" content="{{ "#eb6234" }}">
+{{- with $p.googleSiteVerification }}
+<meta name="google-site-verification" content="{{ . }}">
+{{- end }}
 
 {{- /* Favicon + touch icon, generated from the logo */ -}}
 {{- with resources.Get "images/logo/HiddenAcresRVCampgroundLogo1.png" -}}
@@ -27,12 +33,12 @@
 {{- end }}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{ $p.brand }}">
-<meta property="og:title" content="{{ $pageTitle }}">
+<meta property="og:title" content="{{ $socialTitle }}">
 <meta property="og:description" content="{{ $p.description }}">
 <meta property="og:url" content="{{ $ogURL }}">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ $pageTitle }}">
+<meta name="twitter:title" content="{{ $socialTitle }}">
 <meta name="twitter:description" content="{{ $p.description }}">
 {{- with $p.twitterHandle }}
 <meta name="twitter:site" content="{{ . }}">

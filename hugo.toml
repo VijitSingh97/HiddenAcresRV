@@ -67,6 +67,11 @@ disableKinds = ["taxonomy", "term", "rss"]
   ogImage       = "signage/big_sign.jpg"   # source photo used to generate the share image
   heroImage     = "park/open_water.jpg"     # large background photo behind the headline
 
+  # Paste your Google Search Console verification token here to verify ownership
+  # (Search Console → add property → "HTML tag" method → copy the content value).
+  # Leave blank if you're not using it.
+  googleSiteVerification = ""
+
   # Street address (shown in Contact + used for SEO/maps)
   [params.address]
     street = "10364 County Rd. 740"
