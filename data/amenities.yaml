@@ -9,7 +9,7 @@
 
 - name: "Ample space for all RVs"
   image: "ample_space.jpg"
-  blurb: "Park your RV in our large, level spaces"
+  blurb: "Wide, level sites with room for any size RV"
 
 - name: "Laundry room"
   image: "laundry.jpg"
@@ -33,7 +33,7 @@
 
 - name: "Boat docks nearby"
   image: "dock.jpg"
-  blurb: "Easy to access"
+  blurb: "Quick, easy access for boaters"
 
 - name: "Close to public parks"
   image: "park.jpg"

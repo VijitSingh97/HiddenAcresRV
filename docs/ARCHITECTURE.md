@@ -35,7 +35,7 @@ assets/
   images/                  Source photos — processed by Hugo into responsive WebP
   fonts/                   Self-hosted Prata + Average (woff2)
 static/                    Copied verbatim to the site root:
-  park_rules/…pdf          Campground rules
+  park_rules/…pdf          Park rules (PDF)
   fonts/…                  Served at /fonts/… (referenced by @font-face in main.css)
   _redirects               Netlify/Cloudflare redirect rules
   CNAME                    GitHub Pages custom domain

@@ -1,8 +1,8 @@
-# Hidden Acres RV Campground
+# Hidden Acres RV Park
 
-The website for [Hidden Acres RV Campground](https://www.hiddenacresrv.com) in
+The website for [Hidden Acres RV Park](https://www.hiddenacresrv.com) in
 [Princeton, TX](https://www.google.com/maps/search/?api=1&query=10364+County+Rd+740+Princeton+TX+75407)
-— a quiet, friendly campground on Lake Lavon. The site describes the campground,
+— a quiet, friendly RV park on Lake Lavon. The site describes the park,
 its amenities and local attractions, answers common questions, and points
 visitors to the online reservation and waitlist portals.
 
@@ -11,7 +11,7 @@ There is **no `npm`, no Node, and no dependency tree** to keep patched — the
 whole site is plain HTML and CSS once built, which keeps it fast, secure, and
 low-maintenance for years.
 
-![Hidden Acres RV Campground](assets/images/signage/big_sign.jpg)
+![Hidden Acres RV Park](assets/images/signage/big_sign.jpg)
 
 ---
 

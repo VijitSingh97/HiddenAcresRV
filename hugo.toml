@@ -1,5 +1,5 @@
 # =============================================================================
-#  Hidden Acres RV Campground — site configuration
+#  Hidden Acres RV Park — site configuration
 # =============================================================================
 #  Most day-to-day text edits happen HERE or in the data/ and content/ files.
 #  See docs/EDITING.md for a "I want to change X -> edit this file" guide.
@@ -7,7 +7,7 @@
 
 baseURL = "https://www.hiddenacresrv.com/"
 defaultContentLanguage = "en"
-title = "Hidden Acres RV Campground"
+title = "Hidden Acres RV Park"
 enableRobotsTXT = true   # generates /robots.txt
 enableGitInfo = false
 
@@ -29,10 +29,10 @@ disableKinds = ["taxonomy", "term", "rss"]
 #  and it updates everywhere on the site (header, contact section, footer, SEO).
 # -----------------------------------------------------------------------------
 [params]
-  brand       = "Hidden Acres RV Campground"
+  brand       = "Hidden Acres RV Park"
   shortBrand  = "Hidden Acres"
   tagline     = "A quiet and friendly place to relax"
-  description = "Hidden Acres RV Campground in Princeton, TX — surrounded by Lake Lavon, lush trees, and beach access. A quiet, friendly community minutes from Allen, McKinney, Plano, and North Dallas."
+  description = "Hidden Acres RV Park in Princeton, TX — surrounded by Lake Lavon, lush trees, and beach access. A quiet, friendly community minutes from Allen, McKinney, Plano, and North Dallas."
 
   # Contact
   phone    = "(972) 736-1264"   # shown to visitors

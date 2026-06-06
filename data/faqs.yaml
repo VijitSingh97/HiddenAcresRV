@@ -5,7 +5,7 @@
 #  Handy shortcuts you can use inside an answer (they expand automatically):
 #    {{reserve}}   -> the reservation link        (set in hugo.toml)
 #    {{waitlist}}  -> the waitlist link            (set in hugo.toml)
-#    {{rules}}     -> the campground rules PDF      (/park_rules/campground-rules.pdf)
+#    {{rules}}     -> the park rules PDF      (/park_rules/campground-rules.pdf)
 #
 #  See docs/EDITING.md to add or edit questions.
 # =============================================================================
@@ -16,7 +16,7 @@
     - We allow cats, dogs, and all service animals
     - Please call us if your dog is over 30 lb
     - Let us know about your pets before booking
-    - More details are in our [campground rules]({{rules}})
+    - More details are in our [park rules]({{rules}})
 
 - question: "What schools are nearby Hidden Acres?"
   answer: |
@@ -45,11 +45,11 @@
     - RV must have undamaged, working water and sewage hookups
     - Any window ACs or window fans must be approved by management
 
-    More information can be found in our [campground rules]({{rules}}).
+    More information can be found in our [park rules]({{rules}}).
 
 - question: "What rules does Hidden Acres have?"
   answer: |
-    You can find our full [campground rules]({{rules}}) here.
+    You can find our full [park rules]({{rules}}) here.
 
 - question: "What are the lot fees at Hidden Acres?"
   answer: |

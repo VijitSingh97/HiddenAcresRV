@@ -31,7 +31,7 @@ All file paths below are relative to the project's main folder.
 | FAQ questions & answers | `data/faqs.yaml` | one block per question |
 | Gallery photos | `data/gallery.yaml` | one line per photo |
 | Navigation menu items | `hugo.toml` | the `[[menu.main]]` entries |
-| Campground rules PDF | `static/park_rules/campground-rules.pdf` | replace the file (keep the same name) |
+| Park rules PDF | `static/park_rules/campground-rules.pdf` | replace the file (keep the same name) |
 | Logo / favicon | `assets/images/logo/` | replace the image files |
 
 > **Golden rule for these files:** keep the existing punctuation and spacing
@@ -89,7 +89,7 @@ automatically from `hugo.toml`):
 | --- | --- |
 | `{{reserve}}` | the reservation link |
 | `{{waitlist}}` | the waitlist link |
-| `{{rules}}` | the campground rules PDF |
+| `{{rules}}` | the park rules PDF |
 
 ### Swap or add a gallery photo
 
@@ -99,7 +99,7 @@ automatically from `hugo.toml`):
 
 ```yaml
 - image: "park/sunset.jpg"
-  alt: "Sunset over Lake Lavon from the campground"
+  alt: "Sunset over Lake Lavon from the park"
 ```
 
 ### Add or remove a menu item
@@ -119,10 +119,10 @@ anchor like `#about` or a full web address. `weight` controls the order
 
 ## Setting the map coordinates
 
-The `[params.geo]` coordinates in `hugo.toml` help Google show the campground in
+The `[params.geo]` coordinates in `hugo.toml` help Google show the park in
 the right place. The values shipped are approximate. To set them exactly:
 
-1. Open [Google Maps](https://maps.google.com) and find the campground.
+1. Open [Google Maps](https://maps.google.com) and find the park.
 2. **Right-click** the exact spot → the menu shows the latitude and longitude at
    the top → click them to copy.
 3. Paste into `hugo.toml`:
