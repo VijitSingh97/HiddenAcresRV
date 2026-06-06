@@ -15,7 +15,7 @@ aliases:
 # The big headline and call-to-action area at the top of the page.
 hero:
   heading: "A quiet and friendly place to relax"
-  subtext: "Surrounded by Lake Lavon, lush trees, and beach access — a small, welcoming community just minutes from Allen, McKinney, Plano, and North Dallas."
+  subtext: "Surrounded by Lake Lavon, lush trees, and beach access — a welcoming community just minutes from Allen, McKinney, Plano, and North Dallas."
   note: "More lots now available!"
 
 # The "About" section is a series of blocks, each with a heading, a paragraph,
@@ -26,8 +26,8 @@ about:
     image: "park/hidden.jpg"
     body: >-
       Wake up to clear views of the stars and the calm of Lake Lavon. Tucked
-      among lush trees with private beach access, Hidden Acres is a small,
-      welcoming community of 38 RVs.
+      among lush trees with private beach access, Hidden Acres is a welcoming
+      community of 38 RVs.
 
   - heading: "On the Shores of Lake Lavon"
     image: "park/open_water.jpg"
