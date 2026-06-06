@@ -1,0 +1,49 @@
+# Throwaway PREVIEW deploy to https://vijitsingh97.github.io/HiddenAcresRV/
+# so the site can be viewed (correctly styled) before the DNS cutover.
+# Lives only on the `preview-pages` branch — never runs on master.
+# Delete this branch once you've cut over to www.hiddenacresrv.com.
+name: Preview on github.io
+
+on:
+  push:
+    branches: [preview-pages]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    env:
+      HUGO_VERSION: 0.162.1
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install Hugo (extended)
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: ${{ env.HUGO_VERSION }}
+          extended: true
+
+      - name: Build for the github.io subpath (no custom domain, no indexing)
+        run: |
+          hugo --gc --minify --baseURL "https://vijitsingh97.github.io/HiddenAcresRV/"
+          rm -f public/CNAME                                   # don't claim www
+          printf 'User-agent: *\nDisallow: /\n' > public/robots.txt  # keep the preview out of Google
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: ./public
+
+      - id: deploy
+        uses: actions/deploy-pages@v5
