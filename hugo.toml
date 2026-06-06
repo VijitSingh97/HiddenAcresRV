@@ -24,6 +24,18 @@ disableKinds = ["taxonomy", "term", "rss"]
 [minify]
   disableJSON = false
 
+# Emit a web app manifest (/site.webmanifest) alongside the HTML home page,
+# matching what the old site produced. Template: layouts/index.webmanifest
+[mediaTypes."application/manifest+json"]
+  suffixes = ["webmanifest"]
+[outputFormats.WebAppManifest]
+  mediaType = "application/manifest+json"
+  baseName = "site"
+  isPlainText = true
+  notAlternative = true
+[outputs]
+  home = ["HTML", "WebAppManifest"]
+
 # -----------------------------------------------------------------------------
 #  [params] — site-wide facts. Change a phone number, address, or link once here
 #  and it updates everywhere on the site (header, contact section, footer, SEO).
