@@ -40,7 +40,7 @@ disableKinds = ["taxonomy", "term", "rss"]
 # Analytics 4, paste your Measurement ID (looks like G-XXXXXXXXXX) below. Nothing
 # loads until you do, and never during local previews. See layouts/partials/analytics.html.
 [services.googleAnalytics]
-  ID = ""
+  ID = "G-5P1LKH0N84"
 
 # -----------------------------------------------------------------------------
 #  [params] — site-wide facts. Change a phone number, address, or link once here
