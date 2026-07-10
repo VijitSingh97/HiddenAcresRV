@@ -1,0 +1,11 @@
+# yamllint config — validates the YAML in data/ and .github/.
+# Run locally with: yamllint .    (install: brew install yamllint)
+extends: default
+
+rules:
+  # Prose lives in these files; don't fight over line width or doc markers.
+  line-length: disable
+  document-start: disable
+  # GitHub Actions uses "on:" which yamllint's default flags as a truthy key.
+  truthy:
+    check-keys: false

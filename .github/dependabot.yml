@@ -1,0 +1,13 @@
+# Dependabot — keeps the GitHub Actions in ci.yml up to date automatically.
+# (This site has no npm/Go module tree, so Actions are the only dependencies.)
+# Docs: https://docs.github.com/en/code-security/dependabot
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    # One combined PR instead of one per action — less noise for a quiet repo.
+    groups:
+      github-actions:
+        patterns: ["*"]
