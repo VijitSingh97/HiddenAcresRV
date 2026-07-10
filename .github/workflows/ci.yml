@@ -19,7 +19,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7
       - name: shellcheck (test.sh)
         run: shellcheck test.sh    # preinstalled on ubuntu runners
       - name: yamllint (data/ + .github/)
@@ -33,28 +33,28 @@ jobs:
     env:
       HUGO_VERSION: 0.162.1   # keep in sync with the version you run locally
     steps:
-      - uses: actions/checkout@v7
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7
 
       - name: Install Hugo (extended)
-        uses: peaceiris/actions-hugo@v3
+        uses: peaceiris/actions-hugo@2752ce1d29631191ea3f27c23495fa06139a5b78  # v3
         with:
           hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Set up Go (for htmltest)
-        uses: actions/setup-go@v6
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16  # v6
         with:
           go-version: stable
 
       - name: Install htmltest
-        run: go install github.com/wjdp/htmltest@latest
+        run: go install github.com/wjdp/htmltest@v0.17.0
 
       - name: Build & test (strict build + htmltest + UX/SEO checks)
         run: bash ./test.sh
 
       - name: Upload Pages artifact
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-pages-artifact@v5
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9  # v5
         with:
           path: ./public
 
@@ -72,4 +72,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128  # v5
