@@ -9,11 +9,6 @@ on:
 permissions:
   contents: read
 
-# Only one deploy at a time; don't cancel an in-progress deploy.
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
   # --- Lint the scripts and YAML on every push and PR -----------------------
   lint:
@@ -63,6 +58,12 @@ jobs:
     if: github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
+    # Only one deploy at a time; don't cancel an in-progress deploy. Scoped to
+    # this job (not the whole workflow) so PR builds never bump a queued
+    # master deploy out of the shared group.
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     permissions:
       pages: write       # to deploy to Pages
       id-token: write    # to verify the deploy originates from this workflow
