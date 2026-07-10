@@ -19,7 +19,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: shellcheck (test.sh)
         run: shellcheck test.sh    # preinstalled on ubuntu runners
       - name: yamllint (data/ + .github/)
@@ -33,7 +33,7 @@ jobs:
     env:
       HUGO_VERSION: 0.162.1   # keep in sync with the version you run locally
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - name: Install Hugo (extended)
         uses: peaceiris/actions-hugo@v3
