@@ -15,6 +15,18 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # --- Lint the scripts and YAML on every push and PR -----------------------
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: shellcheck (test.sh)
+        run: shellcheck test.sh    # preinstalled on ubuntu runners
+      - name: yamllint (data/ + .github/)
+        run: |
+          pipx install yamllint
+          yamllint .
+
   # --- Build the site and validate the HTML on every push and PR -----------
   build:
     runs-on: ubuntu-latest
