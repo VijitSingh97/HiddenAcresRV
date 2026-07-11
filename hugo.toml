@@ -11,6 +11,21 @@ title = "Hidden Acres RV Park"
 enableRobotsTXT = true   # generates /robots.txt
 enableGitInfo = false
 
+# === PAGES-PREVIEW MODE (temporary) ==========================================
+# Stakeholders are reviewing the site on the GitHub Pages *project* URL
+# (https://vijitsingh97.github.io/HiddenAcresRV/) before we cut over to the real
+# domain. That URL serves under a /HiddenAcresRV/ subpath, so relative asset
+# links are required — with root-absolute links, every /css and /image 404s.
+# relativeURLs makes links work at BOTH the subpath now and the root domain
+# later, so no rebuild is needed at cutover. (canonical + OG stay absolute on
+# the real domain, which keeps the preview URL out of the search index.)
+#
+# CUTOVER when ready:  `git revert <this commit>`  — removes this line and
+# restores static/CNAME. Then Settings → Pages → set the custom domain and
+# point DNS (see README "Building & deploying").
+relativeURLs = true
+# =============================================================================
+
 # This is a single marketing page — turn off tags/categories and RSS feeds.
 disableKinds = ["taxonomy", "term", "rss"]
 
