@@ -1,0 +1,33 @@
+{{- $p := site.Params -}}
+{{- $rulesURL := "park_rules/campground-rules.pdf" | absURL -}}
+# {{ $p.brand }}
+
+> {{ $p.description }}
+
+{{ $p.brand }} is an RV park in {{ $p.address.city }}, {{ $p.address.state }}, on the shores of Lake Lavon — {{ lower $p.tagline }}. Website: {{ site.BaseURL }}
+
+## Contact & booking
+- Address: {{ $p.address.street }}, {{ $p.address.city }}, {{ $p.address.state }} {{ $p.address.zip }}
+- Phone: {{ $p.phone }}
+- Email: {{ $p.email }}
+- Rates: from {{ $p.priceFrom }} per night
+- Reserve online: {{ $p.links.reserve }}
+- Join the waitlist: {{ $p.links.waitlist }}
+- Map & directions: {{ $p.links.map }}
+- Park rules (PDF): {{ $rulesURL }}
+
+## Highlights
+{{ range hugo.Data.highlights }}- {{ . }}
+{{ end }}
+## Amenities
+{{ range hugo.Data.amenities }}- {{ .name }}: {{ .blurb }}
+{{ end }}
+## Frequently asked questions
+{{ range hugo.Data.faqs }}### {{ .question }}
+{{ $a := .answer -}}
+{{ $a = replace $a "{{reserve}}" $p.links.reserve -}}
+{{ $a = replace $a "{{waitlist}}" $p.links.waitlist -}}
+{{ $a = replace $a "{{rules}}" $rulesURL -}}
+{{ $a | markdownify | plainify | htmlUnescape | strings.TrimSpace }}
+
+{{ end -}}

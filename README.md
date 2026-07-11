@@ -15,7 +15,7 @@ secure, and nearly maintenance-free for years.
 
 - **Zero-dependency static architecture** — no Node or npm tree to patch; almost nothing to keep secure
 - **Performance-first** — ships ~no JavaScript (one tiny click-to-load map script), self-hosted fonts, and build-time responsive WebP images
-- **SEO & local discovery** — JSON-LD `Campground`/`RVPark` schema, accurate geo, sitemap, robots, and Open Graph
+- **SEO & AI discovery** — JSON-LD `Campground`/`RVPark` + `FAQPage` schema, accurate geo, sitemap, robots, Open Graph, and a generated [`/llms.txt`](https://llmstxt.org) so AI assistants can recommend the park accurately
 - **Accessibility** — semantic landmarks, a single `<h1>`, real alt text, keyboard support, and visible focus styles
 - **Content/layout separation** — every word lives in plain config/data files, so the owner updates text without touching templates
 - **CI/CD + testing** — every push is built, link-checked, and SEO-asserted, then deployed to GitHub Pages
