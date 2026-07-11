@@ -57,3 +57,22 @@
 <script type="application/ld+json">
 {{ $data | jsonify (dict "indent" "  ") | safeJS }}
 </script>
+{{- /* FAQPage: the same Q&A shown on the page, so Google (rich results) and AI
+       assistants can quote accurate answers about pets, rates, rules, etc.
+       Answers mirror faq.html — expand the {{shortcodes}} and render markdown. */ -}}
+{{- $rulesURL := "park_rules/campground-rules.pdf" | absURL -}}
+{{- $questions := slice -}}
+{{- range hugo.Data.faqs -}}
+  {{- $a := .answer -}}
+  {{- $a = replace $a "{{reserve}}" $p.links.reserve -}}
+  {{- $a = replace $a "{{waitlist}}" $p.links.waitlist -}}
+  {{- $a = replace $a "{{rules}}" $rulesURL -}}
+  {{- $questions = $questions | append (dict
+    "@type" "Question"
+    "name" .question
+    "acceptedAnswer" (dict "@type" "Answer" "text" (string ($a | markdownify)))) -}}
+{{- end -}}
+{{- $faq := dict "@context" "https://schema.org" "@type" "FAQPage" "mainEntity" $questions -}}
+<script type="application/ld+json">
+{{ $faq | jsonify (dict "indent" "  ") | safeJS }}
+</script>

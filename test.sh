@@ -118,6 +118,7 @@ has '<title>' 'Page title'
 has 'canonical' 'Canonical URL'
 has 'og:image' 'Open Graph share image'
 has 'application/ld+json' 'JSON-LD structured data'
+has 'FAQPage' 'FAQ structured data (rich results + AI answers)'
 has 'viewport' 'Responsive viewport'
 if command -v python3 >/dev/null 2>&1; then
   if python3 - <<'PY' 2>/dev/null; then ok "JSON-LD is valid and complete"; else no "JSON-LD invalid or missing fields"; fi
@@ -134,6 +135,7 @@ isfile sitemap.xml
 isfile robots.txt
 isfile site.webmanifest
 isfile 404.html
+isfile llms.txt
 
 # --- Summary -----------------------------------------------------------------
 echo

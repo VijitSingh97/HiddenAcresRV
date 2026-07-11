@@ -33,8 +33,18 @@ disableKinds = ["taxonomy", "term", "rss"]
   baseName = "site"
   isPlainText = true
   notAlternative = true
+
+# Emit /llms.txt — a clean, plain-text profile of the park (contact, rates,
+# amenities, FAQ) so AI assistants can recommend and answer questions about it
+# accurately. Generated from the same data/ + params, so it never goes stale.
+# Convention: https://llmstxt.org  Template: layouts/index.llms.txt
+[outputFormats.LLMS]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
 [outputs]
-  home = ["HTML", "WebAppManifest"]
+  home = ["HTML", "WebAppManifest", "LLMS"]
 
 # Visitor analytics — Google Analytics 4 is ENABLED with the Measurement ID below.
 # To disable tracking, set ID to "" (nothing loads without an ID, and never during
