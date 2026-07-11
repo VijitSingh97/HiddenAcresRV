@@ -124,6 +124,13 @@ go install github.com/wjdp/htmltest@latest
 
 ## Building & deploying
 
+> **⏳ Currently in Pages-preview mode.** The site is live for stakeholder review at
+> **<https://vijitsingh97.github.io/HiddenAcresRV/>** (the GitHub Pages project URL),
+> not yet on the real domain. `relativeURLs` is on and `static/CNAME` is removed so
+> that URL renders correctly with no redirect. **To cut over to `www.hiddenacresrv.com`:**
+> `git revert` the "Pages-preview mode" commit (restores `CNAME` + absolute URLs),
+> then set the custom domain in **Settings → Pages** and point DNS (below).
+
 ### Automatic (recommended)
 
 Pushing to the `master` branch triggers
