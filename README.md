@@ -140,10 +140,8 @@ GitHub Pages re-reads that file on every deploy, so it is the source of truth;
 don't set the domain only in the Settings UI.
 
 Point DNS at GitHub Pages per
-[GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site):
-four `A` records on the apex to GitHub's published Pages IPs (plus the matching
-`AAAA` records for IPv6), and `www` as a `CNAME` to the repo's
-`<user>.github.io` host. GitHub then redirects the apex to `www`.
+[GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+— apex `A`/`AAAA` records, `www` as a `CNAME` to `<user>.github.io`.
 
 > **The domain also carries mail and other services.** Change only the apex
 > `A`/`AAAA` and the `www` record — leave `MX`, mail-related `TXT`, and other
