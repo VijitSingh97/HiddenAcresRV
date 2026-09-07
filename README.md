@@ -158,6 +158,39 @@ served directly — GitHub redirects `hiddenacresrv.com` →
 `www.hiddenacresrv.com`. The `www` CNAME needs no IPv6 record of its own;
 `vijitsingh97.github.io` already resolves to both families.
 
+### Email and subdomains — leave them alone
+
+`hiddenacresrv.com` also runs mail and other subdomains on the old server, so
+change **only** the apex `A`/`AAAA` and the `www` `CNAME`. Everything else
+stays exactly as it is:
+
+- **`MX` records** point at `*.spamhero.net` / `.com` (external), **not** at the
+  apex hostname — so repointing the apex does **not** affect inbound mail.
+- **`autodiscover`** (`CNAME` → `mxjohn1.johntesla.com`) and any other
+  subdomain records are independent of the apex. Untouched.
+
+**One record does need a matching edit — the apex `TXT` (SPF):**
+
+```
+v=spf1 mx a a:mxjohn1.johntesla.com ip4:162.254.209.170 ip4:162.254.209.235 include:spf.spamhero.com ~all
+                ^
+```
+
+The bare `a` mechanism means "whatever the apex `A` record resolves to is an
+authorized sender" — today that is the old server, `162.254.209.226`. Repoint
+the apex and that mechanism silently starts naming GitHub's web servers
+instead, dropping the old box's authorization. Pin it explicitly, same
+send-permissions as today:
+
+```
+v=spf1 mx ip4:162.254.209.226 a:mxjohn1.johntesla.com ip4:162.254.209.170 ip4:162.254.209.235 include:spf.spamhero.com ~all
+```
+
+Before switching, also check the zone for any record whose **value** is
+`hiddenacresrv.com` or `@` (a subdomain `CNAME`d to the apex) — those would
+follow the apex to GitHub Pages and 404. None were visible from outside, but
+only the registrar's zone editor shows the full list.
+
 **Order matters.** Deploy this branch first (so Pages is serving the site with
 the `CNAME` file present), then change DNS. After DNS propagates, go to
 **Settings → Pages** and tick **Enforce HTTPS** — the checkbox only becomes
