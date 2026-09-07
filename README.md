@@ -135,9 +135,8 @@ validates it, and publishes it to **GitHub Pages**.
 
 ### Custom domain (DNS)
 
-The domain is `www.hiddenacresrv.com`, declared in
-[`static/CNAME`](static/CNAME) — GitHub Pages reads that file on every deploy,
-so it is the source of truth; do not edit the domain only in the Settings UI.
+The domain is `www.hiddenacresrv.com`, set by [`static/CNAME`](static/CNAME)
+(Pages re-reads it on every deploy, so don't set the domain only in the UI).
 
 At the DNS host for `hiddenacresrv.com`, **replace** the existing `A` records
 (they point at the old server) with:
@@ -150,13 +149,8 @@ At the DNS host for `hiddenacresrv.com`, **replace** the existing `A` records
 | `A`     | `@`         | `185.199.111.153`    | 3600 |
 | `CNAME` | `www`       | `vijitsingh97.github.io.` | 3600 |
 
-The four apex `A` records are GitHub's published Pages IPs (all four, for
-redundancy). The apex isn't served directly — GitHub redirects
-`hiddenacresrv.com` → `www.hiddenacresrv.com` once both sides resolve.
-
-Optional IPv6 (`AAAA` on `@`), if the DNS host supports it:
-`2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`,
-`2606:50c0:8003::153`.
+Those are GitHub's four published Pages IPs. The apex isn't served directly —
+GitHub redirects `hiddenacresrv.com` → `www.hiddenacresrv.com`.
 
 **Order matters.** Deploy this branch first (so Pages is serving the site with
 the `CNAME` file present), then change DNS. After DNS propagates, go to
