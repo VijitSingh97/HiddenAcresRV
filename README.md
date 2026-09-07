@@ -135,9 +135,17 @@ validates it, and publishes it to **GitHub Pages**.
 
 ### Custom domain (DNS)
 
-The domain is `www.hiddenacresrv.com`, set by [`static/CNAME`](static/CNAME) —
-GitHub Pages re-reads that file on every deploy, so it is the source of truth;
-don't set the domain only in the Settings UI.
+The domain is `www.hiddenacresrv.com`. **Set it in Settings → Pages → Custom
+domain.** This repo deploys with a GitHub Actions workflow, and on that build
+type GitHub does *not* read [`static/CNAME`](static/CNAME) to register the
+domain — the file is only copied into the site like any other static asset.
+Until the domain is set in Settings, DNS pointed at Pages resolves fine and
+then serves "Site not found", because the edge has no idea which repo the
+hostname belongs to.
+
+(That is the opposite of the old branch-based Pages build, where the `CNAME`
+file *was* the source of truth. Keep the file — it does no harm and matters if
+the deploy method ever changes back — but it is not what turns the domain on.)
 
 Point DNS at GitHub Pages per
 [GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
