@@ -143,9 +143,8 @@ Until the domain is set in Settings, DNS pointed at Pages resolves fine and
 then serves "Site not found", because the edge has no idea which repo the
 hostname belongs to.
 
-(That is the opposite of the old branch-based Pages build, where the `CNAME`
-file *was* the source of truth. Keep the file — it does no harm and matters if
-the deploy method ever changes back — but it is not what turns the domain on.)
+(The old branch-based build did read it. Keep the file for that reason, but it
+is not what turns the domain on here.)
 
 Point DNS at GitHub Pages per
 [GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
