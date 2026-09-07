@@ -138,68 +138,85 @@ validates it, and publishes it to **GitHub Pages**.
 The domain is `www.hiddenacresrv.com`, set by [`static/CNAME`](static/CNAME)
 (Pages re-reads it on every deploy, so don't set the domain only in the UI).
 
-At the DNS host for `hiddenacresrv.com`, **replace** the existing `A` records
-(they point at the old server) with:
+`hiddenacresrv.com` also runs **mail** and other subdomains on the old server
+at `162.254.209.226`, so this is not a "repoint the domain" job — it's four
+records. Full target zone, at the DNS host (`grass1`/`grass2.26max.com`):
 
-| Type    | Name / Host | Value                | TTL  |
-| ------- | ----------- | -------------------- | ---- |
-| `A`     | `@`         | `185.199.108.153`    | 3600 |
-| `A`     | `@`         | `185.199.109.153`    | 3600 |
-| `A`     | `@`         | `185.199.110.153`    | 3600 |
-| `A`     | `@`         | `185.199.111.153`    | 3600 |
-| `AAAA`  | `@`         | `2606:50c0:8000::153` | 3600 |
-| `AAAA`  | `@`         | `2606:50c0:8001::153` | 3600 |
-| `AAAA`  | `@`         | `2606:50c0:8002::153` | 3600 |
-| `AAAA`  | `@`         | `2606:50c0:8003::153` | 3600 |
-| `CNAME` | `www`       | `vijitsingh97.github.io.` | 3600 |
+| Type    | Name           | Value                                   | TTL  | Action     |
+| ------- | -------------- | --------------------------------------- | ---- | ---------- |
+| `A`     | `@`            | `162.254.209.226`                       | 3600 | **delete** |
+| `A`     | `@`            | `185.199.108.153`                       | 3600 | **add**    |
+| `A`     | `@`            | `185.199.109.153`                       | 3600 | **add**    |
+| `A`     | `@`            | `185.199.110.153`                       | 3600 | **add**    |
+| `A`     | `@`            | `185.199.111.153`                       | 3600 | **add**    |
+| `AAAA`  | `@`            | `2606:50c0:8000::153`                   | 3600 | **add**    |
+| `AAAA`  | `@`            | `2606:50c0:8001::153`                   | 3600 | **add**    |
+| `AAAA`  | `@`            | `2606:50c0:8002::153`                   | 3600 | **add**    |
+| `AAAA`  | `@`            | `2606:50c0:8003::153`                   | 3600 | **add**    |
+| `A`     | `www`          | `162.254.209.226`                       | 3600 | **delete** |
+| `CNAME` | `www`          | `vijitsingh97.github.io.`               | 3600 | **add**    |
+| `TXT`   | `@`            | SPF — see below                         | 3600 | **edit**   |
+| `MX`    | `@`            | `10 iotondemand-com.p10.spamhero.com.`  | 3600 | keep       |
+| `MX`    | `@`            | `20 iotondemand-com.p20.spamhero.net.`  | 3600 | keep       |
+| `MX`    | `@`            | `30 iotondemand-com.p30.spamhero.net.`  | 3600 | keep       |
+| `MX`    | `@`            | `40 iotondemand-com.p40.spamhero.net.`  | 3600 | keep       |
+| `CNAME` | `autodiscover` | `mxjohn1.johntesla.com.`                | 3600 | keep       |
+| `TXT`   | `@`            | `google-site-verification=SyArl1V2Q6…`  | 3600 | keep       |
+| `TXT`   | `@`            | `google-site-verification=yDCfLhLCj0…`  | 3600 | keep       |
+| `NS`    | `@`            | `grass1.26max.com.` / `grass2.26max.com.` | —  | keep       |
 
-Those are GitHub's published Pages IPs — four IPv4, four IPv6. The apex isn't
-served directly — GitHub redirects `hiddenacresrv.com` →
-`www.hiddenacresrv.com`. The `www` CNAME needs no IPv6 record of its own;
-`vijitsingh97.github.io` already resolves to both families.
+Nine adds, three deletes, one edit. **Everything else stays.**
 
-### Email and subdomains — leave them alone
+#### Why the apex changes are safe for email
 
-`hiddenacresrv.com` also runs mail and other subdomains on the old server, so
-change **only** the apex `A`/`AAAA` and the `www` `CNAME`. Everything else
-stays exactly as it is:
+- `MX` points at **spamhero** (external), not at the apex hostname — so
+  repointing the apex `A`/`AAAA` does not touch inbound mail.
+- `autodiscover` is its own `CNAME` to a different host. Unaffected.
 
-- **`MX` records** point at `*.spamhero.net` / `.com` (external), **not** at the
-  apex hostname — so repointing the apex does **not** affect inbound mail.
-- **`autodiscover`** (`CNAME` → `mxjohn1.johntesla.com`) and any other
-  subdomain records are independent of the apex. Untouched.
-
-**One record does need a matching edit — the apex `TXT` (SPF):**
+#### The one edit: the apex SPF `TXT`
 
 ```
 v=spf1 mx a a:mxjohn1.johntesla.com ip4:162.254.209.170 ip4:162.254.209.235 include:spf.spamhero.com ~all
-                ^
+          ^
 ```
 
-The bare `a` mechanism means "whatever the apex `A` record resolves to is an
-authorized sender" — today that is the old server, `162.254.209.226`. Repoint
-the apex and that mechanism silently starts naming GitHub's web servers
-instead, dropping the old box's authorization. Pin it explicitly, same
-send-permissions as today:
+The bare `a` means "whatever the apex `A` record resolves to is an authorized
+sender" — today `162.254.209.226`. Repoint the apex and that mechanism
+silently starts naming GitHub's web servers instead, dropping the old box.
+Pin it explicitly, same send-permissions as today:
 
 ```
 v=spf1 mx ip4:162.254.209.226 a:mxjohn1.johntesla.com ip4:162.254.209.170 ip4:162.254.209.235 include:spf.spamhero.com ~all
 ```
 
-Before switching, also check the zone for any record whose **value** is
-`hiddenacresrv.com` or `@` (a subdomain `CNAME`d to the apex) — those would
-follow the apex to GitHub Pages and 404. None were visible from outside, but
-only the registrar's zone editor shows the full list.
+#### Before you switch
 
-**Order matters.** Deploy this branch first (so Pages is serving the site with
-the `CNAME` file present), then change DNS. After DNS propagates, go to
-**Settings → Pages** and tick **Enforce HTTPS** — the checkbox only becomes
-available once GitHub has issued the Let's Encrypt certificate, which can take
-up to ~24h. Verify with:
+The table above is what resolves **from outside**; a zone transfer is
+(correctly) refused, so private records aren't visible. In the registrar's zone
+editor, check for any record whose **value** is `hiddenacresrv.com` or `@` — a
+subdomain `CNAME`d to the apex would follow it to Pages and 404. None were
+visible externally.
+
+Note: there is no `DMARC` record and no `CAA` record. No `CAA` is good here —
+nothing blocks GitHub from issuing the Let's Encrypt certificate.
+
+#### Order matters
+
+1. **SPF edit first** — harmless on its own, and lets its TTL expire before the
+   apex moves.
+2. **Merge to `master`** so Pages deploys with the `CNAME` file present.
+3. **Then** the apex `A`/`AAAA` and `www` `CNAME` changes.
+4. Once propagated, **Settings → Pages → Enforce HTTPS**. The checkbox only
+   becomes available after GitHub issues the certificate — up to ~24h. Until
+   then `https://` may show a warning, so cut over at a low-traffic hour.
+
+Verify:
 
 ```sh
 dig +short www.hiddenacresrv.com        # -> vijitsingh97.github.io -> 185.199.x.153
 dig +short AAAA hiddenacresrv.com       # -> the four 2606:50c0:800x::153
+dig +short MX hiddenacresrv.com         # -> still the four spamhero hosts
+dig +short TXT hiddenacresrv.com        # -> SPF with ip4:162.254.209.226, no bare "a"
 curl -sI https://www.hiddenacresrv.com | head -1
 ```
 
