@@ -147,10 +147,16 @@ At the DNS host for `hiddenacresrv.com`, **replace** the existing `A` records
 | `A`     | `@`         | `185.199.109.153`    | 3600 |
 | `A`     | `@`         | `185.199.110.153`    | 3600 |
 | `A`     | `@`         | `185.199.111.153`    | 3600 |
+| `AAAA`  | `@`         | `2606:50c0:8000::153` | 3600 |
+| `AAAA`  | `@`         | `2606:50c0:8001::153` | 3600 |
+| `AAAA`  | `@`         | `2606:50c0:8002::153` | 3600 |
+| `AAAA`  | `@`         | `2606:50c0:8003::153` | 3600 |
 | `CNAME` | `www`       | `vijitsingh97.github.io.` | 3600 |
 
-Those are GitHub's four published Pages IPs. The apex isn't served directly —
-GitHub redirects `hiddenacresrv.com` → `www.hiddenacresrv.com`.
+Those are GitHub's published Pages IPs — four IPv4, four IPv6. The apex isn't
+served directly — GitHub redirects `hiddenacresrv.com` →
+`www.hiddenacresrv.com`. The `www` CNAME needs no IPv6 record of its own;
+`vijitsingh97.github.io` already resolves to both families.
 
 **Order matters.** Deploy this branch first (so Pages is serving the site with
 the `CNAME` file present), then change DNS. After DNS propagates, go to
@@ -159,7 +165,8 @@ available once GitHub has issued the Let's Encrypt certificate, which can take
 up to ~24h. Verify with:
 
 ```sh
-dig +short www.hiddenacresrv.com   # -> vijitsingh97.github.io -> 185.199.x.153
+dig +short www.hiddenacresrv.com        # -> vijitsingh97.github.io -> 185.199.x.153
+dig +short AAAA hiddenacresrv.com       # -> the four 2606:50c0:800x::153
 curl -sI https://www.hiddenacresrv.com | head -1
 ```
 
