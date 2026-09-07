@@ -124,13 +124,6 @@ go install github.com/wjdp/htmltest@latest
 
 ## Building & deploying
 
-> **⏳ Currently in Pages-preview mode.** The site is live for stakeholder review at
-> **<https://vijitsingh97.github.io/HiddenAcresRV/>** (the GitHub Pages project URL),
-> not yet on the real domain. `relativeURLs` is on and `static/CNAME` is removed so
-> that URL renders correctly with no redirect. **To cut over to `www.hiddenacresrv.com`:**
-> `git revert` the "Pages-preview mode" commit (restores `CNAME` + absolute URLs),
-> then set the custom domain in **Settings → Pages** and point DNS (below).
-
 ### Automatic (recommended)
 
 Pushing to the `master` branch triggers
@@ -138,8 +131,45 @@ Pushing to the `master` branch triggers
 validates it, and publishes it to **GitHub Pages**.
 
 **One-time setup:** in the GitHub repo, go to **Settings → Pages** and set
-**Source = GitHub Actions**. The custom domain is handled by
-[`static/CNAME`](static/CNAME); point your DNS at GitHub Pages per
+**Source = GitHub Actions**.
+
+### Custom domain (DNS)
+
+The domain is `www.hiddenacresrv.com`, declared in
+[`static/CNAME`](static/CNAME) — GitHub Pages reads that file on every deploy,
+so it is the source of truth; do not edit the domain only in the Settings UI.
+
+At the DNS host for `hiddenacresrv.com`, **replace** the existing `A` records
+(they point at the old server) with:
+
+| Type    | Name / Host | Value                | TTL  |
+| ------- | ----------- | -------------------- | ---- |
+| `A`     | `@`         | `185.199.108.153`    | 3600 |
+| `A`     | `@`         | `185.199.109.153`    | 3600 |
+| `A`     | `@`         | `185.199.110.153`    | 3600 |
+| `A`     | `@`         | `185.199.111.153`    | 3600 |
+| `CNAME` | `www`       | `vijitsingh97.github.io.` | 3600 |
+
+The four apex `A` records are GitHub's published Pages IPs (all four, for
+redundancy). The apex isn't served directly — GitHub redirects
+`hiddenacresrv.com` → `www.hiddenacresrv.com` once both sides resolve.
+
+Optional IPv6 (`AAAA` on `@`), if the DNS host supports it:
+`2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`,
+`2606:50c0:8003::153`.
+
+**Order matters.** Deploy this branch first (so Pages is serving the site with
+the `CNAME` file present), then change DNS. After DNS propagates, go to
+**Settings → Pages** and tick **Enforce HTTPS** — the checkbox only becomes
+available once GitHub has issued the Let's Encrypt certificate, which can take
+up to ~24h. Verify with:
+
+```sh
+dig +short www.hiddenacresrv.com   # -> vijitsingh97.github.io -> 185.199.x.153
+curl -sI https://www.hiddenacresrv.com | head -1
+```
+
+Full reference:
 [GitHub's custom-domain guide](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
 
 ### Manual
