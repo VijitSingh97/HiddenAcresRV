@@ -32,6 +32,7 @@ Everything you need to pick this back up, at a glance:
 | **Preview your changes live** | `hugo server`, then open <http://localhost:1313> |
 | **Check nothing broke** | `./test.sh` |
 | **Publish** | `git commit` + `git push` — GitHub rebuilds & redeploys automatically |
+| **Get it listed on Google** | Nothing to generate — see **[Google Search Console](#google-search-console)** |
 
 Routine updates never require touching the design or any code. On a new computer?
 See [Getting started](#getting-started-running-it-on-your-computer).
@@ -190,6 +191,37 @@ Both auto-build Hugo from this repo with zero extra config:
 
 They also honor [`static/_redirects`](static/_redirects) for the legacy URL
 redirect and give you preview deploys on every pull request.
+
+---
+
+## Google Search Console
+
+**There is no sitemap to write — Hugo already builds one.** Every deploy emits
+[`/sitemap.xml`](https://www.hiddenacresrv.com/sitemap.xml), and
+[`layouts/robots.txt`](layouts/robots.txt) links to it, so crawlers find it
+without being told. `./test.sh` asserts both files exist on every build.
+
+It lists a single URL (`https://www.hiddenacresrv.com/`). That is correct: this
+is a one-page site, and the section links (`/#about`, `/#faq`…) are anchors on
+that page, not separate pages. Don't add them — Google ignores fragments.
+
+To get the site into Search Console:
+
+1. **Add the property.** Search Console → *Add property* → **Domain**
+   (`hiddenacresrv.com`), which covers apex, `www`, http and https in one go.
+2. **Verify ownership** with the `TXT` record it gives you. Add it alongside the
+   existing records — see the mail warning in [Custom domain (DNS)](#custom-domain-dns).
+   *Alternative if you'd rather not touch DNS:* choose the **URL prefix**
+   property for `https://www.hiddenacresrv.com/`, pick the *HTML tag* method,
+   and paste the token's `content` value into `googleSiteVerification` in
+   [`hugo.toml`](hugo.toml), then push. The tag only renders when that value is
+   set.
+3. **Submit the sitemap.** *Sitemaps* → enter `sitemap.xml` → *Submit*.
+4. **Check back in a few days.** *Pages* shows whether the homepage is indexed;
+   *Sitemaps* should read "Success — 1 discovered URL".
+
+Bing Webmaster Tools takes the same sitemap URL and can import the property
+straight from Search Console.
 
 ---
 
